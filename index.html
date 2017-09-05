@@ -48,7 +48,15 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $(this).customTags();
-        
+        MENU.forEach(function(i,idx) {
+
+            $('.gnbDepthLst01').append('<li><a href="' + i[0][1] + '" class="txt">' + i[0][0] + '</a><ul class="gnb_dp02 nanum gnbDepthLst02"></ul></li>');
+            i[1].forEach(function(j) {
+                console.log(j)
+                $('.gnbDepthLst01>li:eq('+idx+')>.gnbDepthLst02').append('<li><a href="' + j[1] + '" class="txt">' + j[0] + '</a></li>');
+            });
+
+        });
     });
     </script>
     <!--[if lt IE 9]>
@@ -145,98 +153,14 @@
             <div class="gnb_area">
                 <div class="in_box">
                     <ul class="gnb_dp01 gnbDepthLst01">
-                        <li>
-                            <!-- 학부모창의 tp tp01 -->
-                            <a href="http://www.crezone.net/?page_id=300" class="txt">창의체험활동존</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li><a href="http://www.crezone.net/?page_id=300" class="txt">창의적체험활동 소개</a></li>
-                                <li class="inDp03"><a href="#" class="txt">창의교육 거점센터</a>
-                                    <ul class="gnb_dp03 gnbDepthLst03">
-                                        <li><a href="#" class="txt">수도권 창의체험 수업모델</a></li>
-                                        <li><a href="#" class="txt">강원 / 충청권 창의체험 수업모델</a></li>
-                                        <li><a href="#" class="txt">영남권 창의체험 수업모델 </a></li>
-                                        <li><a href="#" class="txt">제주 / 전라권 창의체험 수업모델</a></li>
-                                        <li><a href="#" class="txt">계기교육 수업모델  범교과</a></li>
-                                        <li><a href="#" class="txt">100대 주제 수업모델</a></li>
-                                        <li><a href="#" class="txt">100대 주제 수업모델</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" class="txt">창의교육 백문 백답</a></li>
-                                <li><a href="#" class="txt">창의 인성 수업연구회</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <!-- 학부모창의 tp tp01 -->
-                            <a href="#" class="txt">창의적 체험활동</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li class="inDp03"><a href="#" class="txt">창의체험활동 소개</a>
-                                    <ul class="gnb_dp03 gnbDepthLst03">
-                                        <li><a href="#" class="txt">수도권 창의체험 수업모델</a></li>
-                                        <li><a href="#" class="txt">강원 / 충청권 창의체험 수업모델</a></li>
-                                        <li><a href="#" class="txt">영남권 창의체험 수업모델 </a></li>
-                                        <li><a href="#" class="txt">제주 / 전라권 창의체험 수업모델</a></li>
-                                        <li><a href="#" class="txt">계기교육 수업모델  범교과</a></li>
-                                        <li><a href="#" class="txt">100대 주제 수업모델</a></li>
-                                        <li><a href="#" class="txt">100대 주제 수업모델</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" class="txt">창의체험 자원</a></li>
-                                <li><a href="#" class="txt">창의체험 프로그램</a></li>
-                                <li><a href="#" class="txt">창의체험 수업모델</a></li>
-                                <li class="inDp03"><a href="#" class="txt">이달의 추천 큐레이션</a>
-                                    <ul class="gnb_dp03 gnbDepthLst03">
-                                        <li><a href="#" class="txt">수도권 창의체험 수업모델</a></li>
-                                        <li><a href="#" class="txt">강원 / 충청권 창의체험 수업모델</a></li>
-                                        <li><a href="#" class="txt">영남권 창의체험 수업모델 </a></li>
-                                        <li><a href="#" class="txt">제주 / 전라권 창의체험 수업모델</a></li>
-                                        <li><a href="#" class="txt">계기교육 수업모델  범교과</a></li>
-                                        <li><a href="#" class="txt">100대 주제 수업모델</a></li>
-                                        <li><a href="#" class="txt">100대 주제 수업모델</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#" class="txt">창의적 체험활동 교사 연구회</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <!-- 학부모창의 tp tp01 -->
-                            <a href="#" class="txt">현장체험학습</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li><a href="#" class="txt">현장체험학습이란?</a></li>
-                                <li><a href="#" class="txt">현장체험학습 모델 (코스)</a></li>
-                                <li><a href="#" class="txt">시도교육청 현장학습  공개방</a></li>
-                                <li><a href="#" class="txt">현장체험학습  자료실</a></li>
-                                <li><a href="#" class="txt">안전요원 구인/구직</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <!-- 학부모창의 tp tp01 -->
-                            <a href="#" class="txt">지속가능발전교육</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li><a href="#" class="txt">지속가능발전교육 수업모델</a></li>
-                                <li><a href="#" class="txt">지속가능발전교육 실천교사 연구회</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <!-- 학부모창의 tp tp01 -->
-                            <a href="#" class="txt">크레존 블로그</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li><a href="#" class="txt">해외창의 이야기</a></li>
-                                <li><a href="#" class="txt">행복학교 이야기</a></li>
-                                <li><a href="#" class="txt">창의교육 이야기</a></li>
-                                <li><a href="#" class="txt">테마여행 이야기</a></li>
-                                <li><a href="#" class="txt">뉴스레터</a></li>
-                                <li><a href="#" class="txt">카드뉴스</a></li>
-                            </ul>
-                        </li>
-                        <li class="tp tp01">
-                            <!-- 학부모창의 tp tp01 -->
+                        <!-- <li class="tp tp01">
                             <a href="#" class="txt">학부모창의교실</a>
                             <ul class="gnb_dp02 nanum gnbDepthLst02">
                                 <li><a href="#" class="txt">프로그램 개요</a></li>
                                 <li><a href="#" class="txt">프로그램 내용</a></li>
                                 <li><a href="#" class="txt">창의교실 전체보기</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                     <div class="gnb_bl_dm gnbBlGround">
                         <a href="#;" class="gnb_close gnbCloseBtn" title="메뉴닫기"></a>
