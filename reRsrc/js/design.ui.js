@@ -551,7 +551,6 @@ var cmmImgAlignClip = {
             }
         });
         $(_this.obj.img).each(function(idx) {
-            console.log($(this))
             $thisParent = _this.obj.parent ? $(this).closest(_this.obj.parent) : $(this).parent();
             $thisParent.css({
                 'height': $(this).width() * ratio,
