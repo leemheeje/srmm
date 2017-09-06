@@ -48,15 +48,21 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $(this).customTags();
-        MENU.forEach(function(i,idx) {
-
-            $('.gnbDepthLst01').append('<li><a href="' + i[0][1] + '" class="txt">' + i[0][0] + '</a><ul class="gnb_dp02 nanum gnbDepthLst02"></ul></li>');
-            i[1].forEach(function(j) {
-                console.log(j)
-                $('.gnbDepthLst01>li:eq('+idx+')>.gnbDepthLst02').append('<li><a href="' + j[1] + '" class="txt">' + j[0] + '</a></li>');
+        var menupars = (function() {
+            MENU.forEach(function(i, idx) {
+                $('.gnbDepthLst01').append('<li><a href="' + i[0][1] + '" class="txt">' + i[0][0] + '</a><ul class="gnb_dp02 nanum gnbDepthLst02"></ul></li>');
+                i[1].forEach(function(j, idx2) {
+                    if (!j[2]) {
+                        $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02').append('<li><a href="' + j[1] + '" class="txt">' + j[0] + '</a></li>');
+                    } else {
+                        $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02').append('<li class="inDp03"><a href="' + j[1] + '" class="txt">' + j[0] + '</a><ul class="gnb_dp03 gnbDepthLst03"></ul></li>');
+                        j[2].forEach(function(q) {
+                            $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02>li:eq(' + idx2 + ')>.gnbDepthLst03').append('<li><a href="' + q[1] + '" class="txt">' + q[0] + '</a></li>');
+                        });
+                    }
+                });
             });
-
-        });
+        })();
     });
     </script>
     <!--[if lt IE 9]>

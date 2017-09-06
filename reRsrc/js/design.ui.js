@@ -236,6 +236,7 @@ var gnbMenuActFun = {
         $(this.dept03ToggBtn).off().on({
             'click': function() {
                 $(this).closest('li').toggleClass('active');
+                _this.show(true);
                 return false;
             },
         });
