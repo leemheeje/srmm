@@ -114,6 +114,7 @@ var gnbMenuActFun = {
             'click': function() {
                 $(_this.mmGnbDepthLst01).find('>li').removeClass('active');
                 $(this).closest('li').addClass('active');
+                return false;
             },
         });
         $(this.mmGnbDepthLst02).find('>li>.txt').off().on({
@@ -347,12 +348,6 @@ var asideMenuFun = {
                         _this.show(false, $(this), 'close');
                     }
                 }
-                /*$(this).toggleClass('active')
-                if ($(this).is('.active')) {
-                    _this.show(false, $(this));
-                } else {
-                    _this.show(false, $(this), 'close');
-                }*/
                 return false;
             },
         });
