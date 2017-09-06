@@ -34,18 +34,17 @@ if (location.host.indexOf(':8000') != -1) document.write('<script src="http://' 
         include: function(bool) {
             if (bool) {
                 var include = [
-                    /*
                         ['header', {
-                            target: '.header',
-                            url: '/include/header.html',
+                            target: '.nm_header',
+                            url: '../reRsrc/include/header.html',
                             get: 'on'
                         }],
                         ['footer', {
-                            target: '.footer',
-                            url: '/include/footer.html',
+                            target: '.nm_footer',
+                            url: '../reRsrc/include/footer.html',
                             get: 'on'
                         }],
-                        
+                        /*
                         ['asideNav', {
                             target: '.aside_area',
                             url: '/include/asideNav.html',

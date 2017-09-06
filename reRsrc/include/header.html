@@ -1,0 +1,135 @@
+<!-- 상단배너 : S -->
+<script type="text/javascript">
+$(document).ready(function() {
+    var menupars = (function() {
+        MENU.forEach(function(i, idx) {
+            $('.gnbDepthLst01').append('<li><a href="' + i[0][1] + '" class="txt">' + i[0][0] + '</a><ul class="gnb_dp02 nanum gnbDepthLst02"></ul></li>');
+            i[1].forEach(function(j, idx2) {
+                if (!j[2]) {
+                    $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02').append('<li><a href="' + j[1] + '" class="txt">' + j[0] + '</a></li>');
+                } else {
+                    $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02').append('<li class="inDp03"><a href="' + j[1] + '" class="txt">' + j[0] + '</a><ul class="gnb_dp03 gnbDepthLst03"></ul></li>');
+                    j[2].forEach(function(q) {
+                        $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02>li:eq(' + idx2 + ')>.gnbDepthLst03').append('<li><a href="' + q[1] + '" class="txt">' + q[0] + '</a></li>');
+                    });
+                }
+            });
+        });
+    })();
+    gnbMenuActFun.init();
+    $(this).find('.tbccCloseBtn').click(function() {
+        $('.tbccCloseBanner').slideToggle();
+    });
+});
+</script>
+<div class="nm_tbcc tbccCloseBanner dataBgColor" data-background='{"start" : "#003d76" , "end" : "#003d76"}'>
+    <div class="in_box">
+        <a href="#" class="img">
+                        <img src="./reRsrc/images/sample1.jpg" alt="kofac50atanniversary한국과학창의재단50주년"/>
+                    </a>
+        <a href="#;" class="tbcc_close tbccCloseBtn" title="상단배너닫기"></a>
+    </div>
+</div>
+<!-- 상단배너 : E -->
+<div class="st_inf nanum">
+    <div class="in_box clearfix">
+        <a href="#;" class="stif_btn">자원관리자 신청</a>
+        <ul class="stif_lst stInfAppendEl">
+            <li class="stInfAppendLst"><a href="#" class="txt">크레존 소개</a></li>
+            <li><a href="#" class="txt">로그인</a></li>
+            <li><a href="#" class="txt">회원가입</a></li>
+            <li class="stInfAppendLst"><a href="#" class="txt">이벤트</a></li>
+            <li class="stInfAppendLst"><a href="#" class="txt">고객센터</a></li>
+            <li class="stInfAppendLst"><a href="#" class="txt">자료실</a></li>
+            <li><a href="#" class="txt">교직원등록</a></li>
+        </ul>
+    </div>
+</div>
+<div class="st_sch">
+    <div class="in_box">
+        <a href="#;" class="nmm_menu_btn mmMenuBtn" title="메뉴열림닫힘"></a>
+        <a href="/" class="nm_logo" title="크레존로고"></a>
+        <!-- 통합검색 부분 : S -->
+        <div class="stch_inner mmStchArea">
+            <div class="sch_fild">
+                <input type="text" class="sch_input" title="검색어입력" placeholder="검색어를 입력해주세요.">
+                <a href="#;" class="sch_btn" title="검색하기"></a>
+            </div>
+            <div class="sch_pers nanum">
+                <span class="tit">인기검색어</span>
+                <ol class="scpers_lst">
+                    <li data-number="1"><a href="#" class="txt">학부모창의교실</a></li>
+                    <li data-number="2"><a href="#" class="txt">해외창의</a></li>
+                    <li data-number="3"><a href="#" class="txt">수업모델</a></li>
+                    <li data-number="4"><a href="#" class="txt">현장학습</a></li>
+                    <li data-number="5"><a href="#" class="txt">체험활동</a></li>
+                </ol>
+            </div>
+            <a href="#" class="mm_sch_close mmSchCloseBtn" title="통합검색 닫기"></a>
+            <ul class="sch_rt_lst">
+                <li class="tp tp01">
+                    <a href="#" class="txt">교과지원 자료 검색</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 통합검색 부분 : E -->
+        <!-- <a href="#;" class="gnb_togg_btn gnbToggleBtn" title="메뉴열림닫힘"></a> -->
+        <span class="stch_img">
+                        <span class="hidetxt">과학을 담아 미래로 창의를 펼쳐 현실로</span>
+        </span>
+        <a href="#;" class="nmm_totals_btn mmSchOpenBtn" title="통합검색 활성화 버튼"></a>
+    </div>
+</div>
+<div class="gnb_area">
+    <div class="in_box">
+        <ul class="gnb_dp01 gnbDepthLst01">
+            <!-- <li class="tp tp01">
+                            <a href="#" class="txt">학부모창의교실</a>
+                            <ul class="gnb_dp02 nanum gnbDepthLst02">
+                                <li><a href="#" class="txt">프로그램 개요</a>
+                                    <ul class="gnb_dp03 gnbDepthLst03">
+                                        <li><a href="#" class="txt">프로그램 개요</a></li>
+                                        <li><a href="#" class="txt">프로그램 개요</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#" class="txt">프로그램 내용</a></li>
+                                <li><a href="#" class="txt">창의교실 전체보기</a></li>
+                            </ul>
+                        </li> -->
+        </ul>
+        <div class="gnb_bl_dm gnbBlGround">
+            <a href="#;" class="gnb_close gnbCloseBtn" title="메뉴닫기"></a>
+        </div>
+    </div>
+</div>
+<!-- mm_gnb_area : S -->
+<div class="mm_gnb_wrap mmGnbWrap">
+    <div class="mm_gnb_area_inbx mmGnbAreaInbx">
+        <!-- mmgnb_top : S -->
+        <div class="mmgnb_top">
+            <div class="cl2">
+                <div class="mmgnbt_in">
+                    <a href="#" class="txt log">로그아웃</a>
+                    <a href="#" class="txt mycrezone">My크레존</a>
+                </div>
+            </div>
+            <div class="cl2">
+                <div class="mmgnbt_in">
+                    <a href="#" class="txt ico_book">교과지원 자료 검색</a>
+                </div>
+            </div>
+        </div>
+        <!-- mmgnb_top : E -->
+        <div class="mm_gnb_area">
+            <ul class="gnb_dp01 mmGnbDepthLst01">
+                <!-- 상단 gnb list append  -->
+            </ul>
+            <div class="mm_gnbbt">
+                <a href="#" class="ln_txt">교직원 등록</a>
+                <a href="#" class="ln_txt blk">교직원 등록</a>
+            </div>
+        </div>
+    </div>
+    <div class="gl_dimm glDimm"></div>
+</div>
+<!-- mm_gnb_area : E -->

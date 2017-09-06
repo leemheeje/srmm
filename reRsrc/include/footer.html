@@ -1,0 +1,105 @@
+<script type="text/javascript">
+$(document).ready(function() {
+    /* 풋터 전용 JS '관련사이트' : S*/
+    var selectFun = {
+        prt: $('.stSiteSelectFun'),
+        btn: $('.stSiteSelectBtn'),
+        init: function() {
+            this.select = this.prt.find('select');
+            this.setValue();
+            this.getValue();
+            this.bind();
+        },
+        setValue: function($this) {
+            var $this = $this ? $this : this.select;
+            var selected = $this.find('option:selected').val();
+            return selected ? selected : '';
+        },
+        getValue: function($this) {
+            this.btn.prop('href', this.setValue($this));
+        },
+        bind: function() {
+            var _this = this;
+            this.select.change(function() {
+                _this.getValue($(this));
+            });
+        }
+    };
+    selectFun.init();
+    /* 풋터 전용 JS '관련사이트' : E*/
+});
+</script>
+<div class="nm_foot_top">
+    <div class="in_box">
+        <ul class="lst">
+            <li>
+                <a href="#" class="img">
+                                <img src="./reRsrc/images/footer/top_img01.png" alt="교육부" />
+                            </a>
+            </li>
+            <li>
+                <a href="#" class="img">
+                                <img src="./reRsrc/images/footer/top_img02.png" alt="한국과학창의재단" />
+                            </a>
+            </li>
+            <li>
+                <a href="#" class="img">
+                                <img src="./reRsrc/images/footer/top_img03.png" alt="EDUNETT-CLEAR" />
+                            </a>
+            </li>
+            <li>
+                <a href="#" class="img">
+                                <img src="./reRsrc/images/footer/top_img04.png" alt="과학기술인재진로지원센터" />
+                            </a>
+            </li>
+            <li>
+                <a href="#" class="img">
+                                <img src="./reRsrc/images/footer/top_img05.png" alt="YTNSCIENCE" />
+                            </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="nm_foot_bt">
+    <div class="in_box">
+        <div class="mm_st_inf">
+            <ul class="lst stInfAppendTarget"></ul>
+        </div>
+    </div>
+    <div class="in_box clearfix">
+        <div class="nmfb_lt nanum">
+            <ul class="lst">
+                <li><a href="#" class="txt">개인정보처리방침</a></li>
+                <li><a href="#" class="txt">이메일 무단 수집 거부</a></li>
+                <li><a href="#" class="txt">꿈길(진로체험지원전산망)</a></li>
+            </ul>
+            <div class="txts">
+                (06097) 서울특별시 강남구 선릉로 602 (삼성동, 한국과학창의재단)
+                <a href="mailto:crezone@kofac.re.kr" class="nmfb_mail">crezone@kofac.re.kr</a>
+                <a href="tel:02-559-3929" class="nmfb_tel">02-559-3929</a>
+                <br/>Copyright©2012 KOFAC All Rights Reserved.
+            </div>
+        </div>
+        <div class="nmfb_rt">
+            <div class="st_sit stSiteSelectFun">
+                <label for="stSiteSelect" class="hidetxt">관련사이트 선택해주세요.</label>
+                <select id="stSiteSelect" class="cstSelect">
+                    <option value="//www.daum.net">asdfasfsadf</option>
+                    <option value="//www.naver.com" selected>fda</option>
+                    <option value="//ㅇㅇㅇㅇㅇㅇㅇㅇㅇ">ㅁㅁㄴㅇ라ㅓㅏㅣㅁㄴㅇ라</option>
+                </select>
+                <!-- <a href="#" class="st_sit_btn stSiteSelectBtn" target="_blank" title="새창열림">
+                                <span class="hidetxt">관련사이트</span>
+                                이동
+                            </a> -->
+            </div>
+            <ul class="sns_lst">
+                <li class="tp tp01"><a href="#" class="img" title="페이스북"></a></li>
+                <li class="tp tp02"><a href="#" class="img" title="트위터"></a></li>
+                <li class="tp tp03"><a href="#" class="img" title="네이버블로그"></a></li>
+                <li class="tp tp04"><a href="#" class="img" title="유투브"></a></li>
+            </ul>
+        </div>
+    </div>
+    <a href="#" class="nm_top_btn nmTopMoveBtn" title="페이지 상단 이동"></a>
+</div>
