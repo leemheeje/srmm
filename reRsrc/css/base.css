@@ -1,6 +1,6 @@
 @charset "utf-8";
-@import url("http://cdn.jsdelivr.net/font-nanum/1.0/nanumgothic/nanumgothic.css");
-@import url("http://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css");
+@import url("//cdn.jsdelivr.net/font-nanum/1.0/nanumgothic/nanumgothic.css");
+@import url("//cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css");
 
 /* Reset */
 .nm_wrap *{box-sizing: border-box; font-family: 'Nanum Barun Gothic', sans-serif; line-height: normal; padding: 0; margin: 0; border: none;}
