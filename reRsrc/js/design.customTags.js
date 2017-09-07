@@ -11,7 +11,6 @@ $.fn.extend({
             ['iphone', user.indexOf('iPhone') != -1],
             ['mobile', user.indexOf('Mobile') != -1]
         ];
-        console.log(user)
         if (!$this.find('html').is('[class^="ie"]')) {
             for (var i = 0; i < userArray.length; i++) {
                 if (userArray[i][1]) {
