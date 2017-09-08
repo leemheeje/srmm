@@ -1,7 +1,7 @@
 if (location.host.indexOf(':8000') != -1) document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
 /*
  * 제작자  : 싸이웍스 - 임희재프로
- * 버전    : v.03 
+ * 버전    : v.04 
  */
 /*
  * smartresize 기반의 resize개념

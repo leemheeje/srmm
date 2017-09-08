@@ -137,7 +137,7 @@ var MENU = [
             ["전체 프로그램", "http://www.crezone.net/?ebook_cat=%eb%a9%80%ed%8b%…%b8%eb%94%94%ec%96%b4-%ec%9e%90%eb%a3%8c%ec%8b%a4"]
         ]
     ],
-    [
+    /*[
         ["고객센터", "http://www.crezone.net/?page_id=173"],
         [
             ["크레존 소개", "http://www.crezone.net/?page_id=173"],
@@ -148,5 +148,5 @@ var MENU = [
             ["이벤트", "http://www.crezone.net/?eventcat=%EC%A7%84%ED%96%89%EC%A4%91%EC%9D%B8%EC%9D%B4%EB%B2%A4%ED%8A%B8"],
             ["사이트맵", "http://www.crezone.net/sitemap.php"],
         ]
-    ],
+    ],*/
 ];

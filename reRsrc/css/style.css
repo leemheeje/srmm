@@ -1,3 +1,4 @@
+@charset "utf-8";
 @import url("./base.css");
 @import url("./plugin/slick.css");
 html,body{height: 100%;}
@@ -58,8 +59,7 @@ body.pcScrollOff{overflow-y: hidden;}
 .nm_header .gnb_area .gnb_dp01.lstLeng05>li{width: 20%;}
 .nm_header .gnb_area .gnb_dp01.lstLeng06>li{width: 16.666%;}
 .nm_header .gnb_area .gnb_dp01.lstLeng07>li{width: 14.285%;}
-/*.nm_header .gnb_area .gnb_dp01>li>.txt{font-size: 20px; color: #fff; display: block; text-align: center; font-weight: 400; height: 48px; line-height: 48px;}*/
-.nm_header .gnb_area .gnb_dp01>li>.txt{font-size: 17px; color: #fff; display: block; text-align: center; font-weight: 400; height: 48px; line-height: 48px;}
+.nm_header .gnb_area .gnb_dp01>li>.txt{font-size: 20px; color: #fff; display: block; text-align: center; font-weight: 400; height: 48px; line-height: 48px;}
 .nm_header .gnb_area .gnb_dp01>li>.txt:hover{text-decoration: none;}
 .nm_header .gnb_area .gnb_dp01>li.tp.tp01>.txt{background: #ed910e; height: 53px; margin-top: -5px; padding-top: 5px;}
 .nm_header .gnb_area .gnb_dp01>li.tp.tp01>.txt:after{content: ''; width: 5px; height: 7px; background: url(../images/common/gnb_tp01_bg.png) no-repeat left top; position: absolute; left: -5px; top: -6px;}
@@ -180,10 +180,10 @@ body.pcScrollOff{overflow-y: hidden;}
 .nm_contents .nm_crb .lst > li .box:hover{text-decoration: none;}
 .nm_contents .nm_crb .lst > li .box .img{width: 100%; height: 258px; display: block;}
 .nm_contents .nm_crb .lst > li .box .img img{width: 100%;}
-.nm_contents .nm_crb .lst > li .box .txt{color: #fff; background: rgba(58,58,58,.65); padding: 16px 15px; position: absolute; left: 0; bottom: 0; width: 100%;}
-.nm_contents .nm_crb .lst > li .box .txt dt{font-size: 18px; letter-spacing: -.1px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; margin-bottom: 13px;}
-.nm_contents .nm_crb .lst > li .box .txt dd .txt,
-.nm_contents .nm_crb .lst > li .box .txt dd .mult_init_txt{font-size: 14px; letter-spacing: -.5px; font-weight: 400; line-height: 1.3; min-height: 36px;}
+.nm_contents .nm_crb .lst > li .box .txts{color: #fff; background: rgba(58,58,58,.65); padding: 16px 15px; position: absolute; left: 0; bottom: 0; width: 100%;}
+.nm_contents .nm_crb .lst > li .box .txts dt{font-size: 18px; letter-spacing: -.1px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; margin-bottom: 13px;}
+.nm_contents .nm_crb .lst > li .box .txts dd .txt,
+.nm_contents .nm_crb .lst > li .box .txts dd .mult_init_txt{font-size: 14px; letter-spacing: -.5px; font-weight: 400; line-height: 1.3; min-height: 36px;}
 .nm_contents .nm_cdnot{font-size: 0;}
 .nm_contents .nm_cdnot .nmcdn_col2{display: inline-block; width: 50%; vertical-align: top;}
 .nm_contents .nm_cdnot .nmcdn_col2 .nmcdn_in_box{font-size: 20px; border: 1px solid #d6d6d6; color: #3a3a3a; position: relative;}
@@ -523,10 +523,10 @@ body.pcScrollOff{overflow-y: hidden;}
 .schr_area .ptn_area .btns_group .btns.gry:hover,
 .schr_area .ptn_area .btns_group .btns.gry.active{background: #28bfa4; border-color: #28bfa4; color: #fff;}
 /* RESPONSIVE */
-@media only screen and (min-width : 900px){
+@media only screen and (min-width : 980px){
 	.mm_gnb_wrap{display: none !important;}
 }
-@media only screen and (max-width : 900px){
+@media only screen and (max-width : 980px){
 	.nm_contents .nm_ncps .tab_divs .slide_imgs .imgs .txt{display: none;}
 	.nm_contents .nm_ncps .tab_divs .slide_imgs .imgs .mult_init_txt{overflow: hidden; text-overflow: ellipsis; display: -webkit-box !important; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-wrap: break-word;}
 	.nm_footer .nm_foot_bt .nmfb_rt .st_sit .st_sit_btn{position: absolute; right: -999em;}
@@ -660,12 +660,12 @@ body.pcScrollOff{overflow-y: hidden;}
 	.nm_contents .nm_crb .lst > li+li{margin-top: 6px;}
 	.nm_contents .nm_crb .lst > li .box{position: relative; padding-left: 244px;}
 	.nm_contents .nm_crb .lst > li .box .img{width: 234px; height: 117px; position: absolute; left: 0; top: 0; overflow: hidden;}
-	.nm_contents .nm_crb .lst > li .box .txt{position: static; background: none; padding: 0; }
-	.nm_contents .nm_crb .lst > li .box .txt dt{color: #3a3a3a; font-size: 20px; padding-top: 18px;}
-	.nm_contents .nm_crb .lst > li .box .txt dd .txt,
-	.nm_contents .nm_crb .lst > li .box .txt dd .mult_init_txt{color: #656565; font-size: 16px;}
-	.nm_contents .nm_crb .lst > li .box .txt dd .txt{display: none;}
-	.nm_contents .nm_crb .lst > li .box .txt dd .mult_init_txt{overflow: hidden; text-overflow: ellipsis; display: -webkit-box !important; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-wrap: break-word; min-height: 0;}
+	.nm_contents .nm_crb .lst > li .box .txts{position: static; background: none; padding: 0; }
+	.nm_contents .nm_crb .lst > li .box .txts dt{color: #3a3a3a; font-size: 20px; padding-top: 18px;}
+	.nm_contents .nm_crb .lst > li .box .txts dd .txt,
+	.nm_contents .nm_crb .lst > li .box .txts dd .mult_init_txt{color: #656565; font-size: 16px;}
+	.nm_contents .nm_crb .lst > li .box .txts dd .txt{display: none;}
+	.nm_contents .nm_crb .lst > li .box .txts dd .mult_init_txt{overflow: hidden; text-overflow: ellipsis; display: -webkit-box !important; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-wrap: break-word; min-height: 0;}
 	.nm_contents .nm_cdnot{margin-top: 0;}
 	.nm_contents .nm_cdnot .nmcdn_card .cdnot_tit{border-bottom: none; padding: 0 5px;}
 	.nm_contents .nm_cdnot .nmcdn_imge .cdnot_tit{display: none;}
@@ -685,9 +685,7 @@ body.pcScrollOff{overflow-y: hidden;}
 	.nm_contents .nm_cdnot .nmcdn_col2 .nmcdn_imge .contr .slick-dots{width: 100%; text-align: center; right: 0; top: auto; bottom: 5px;}
 
 }
-@media only screen and (max-width : 900px){
 
-}
 @media only screen and (max-width : 480px){
 	.nm_contents .nm_ncps .tab_divs .slide_imgs .imgs .mult_init_txt{font-size: 11px;}
 	.nm_container .nm_top_banner .nm_ban_imgs .imgs .txts .tit{font-size: 11px; margin-bottom: 7px;}
@@ -720,9 +718,9 @@ body.pcScrollOff{overflow-y: hidden;}
 	.nm_contents .nm_crb .lst > li{min-height: 102px;}
 	.nm_contents .nm_crb .lst > li .box{padding-left: 170px;}
 	.nm_contents .nm_crb .lst > li .box .img{width: 160px; height: 80px;}
-	.nm_contents .nm_crb .lst > li .box .txt dt{font-size: 15px; padding-top: 10px;}
-	.nm_contents .nm_crb .lst > li .box .txt dd .txt{font-size: 12px;}
-	.nm_contents .nm_crb .lst > li .box .txt dd .mult_init_txt{font-size: 12px;}
+	.nm_contents .nm_crb .lst > li .box .txts dt{font-size: 15px; padding-top: 10px;}
+	.nm_contents .nm_crb .lst > li .box .txts dd .txt{font-size: 12px;}
+	.nm_contents .nm_crb .lst > li .box .txts dd .mult_init_txt{font-size: 12px;}
 	.nm_contents .nm_cdnot .nmcdn_col2 .nmcdn_in_box{font-size: 17px;}
 	.nm_contents .nm_cdnot .cdnot_cont .cdnot_noti{padding: 10px; margin-top: 0;}
 	.nm_contents .nm_cdnot .cdnot_cont .cdnot_noti li .txt{font-size: 13px;}
