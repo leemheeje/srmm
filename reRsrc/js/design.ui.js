@@ -208,8 +208,13 @@ var gnbMenuActFun = {
                 _this.show(true);
             },
             'mouseleave': function() {
-                _this.show(false);
+                //_this.show(false);
             },
+        });
+        $('.nm_container').off().on({
+            'mouseenter': function() {
+                _this.show(false);
+            }
         });
     },
     show: function(bool, obj) {

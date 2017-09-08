@@ -84,6 +84,66 @@
                         return false;
                     });
                 })();
+                var cnnSchrFun = {
+                    inquData: {
+                        init: function() {},
+                    },
+                    pcpTnTag: {
+                        btn: '.pcpTnTagBtn',
+                        img: '.pcpTnTagImg',
+                        target: '.pcpTnTagDiv',
+                        parent: '.pcpTnTagFun',
+                        lst: {
+                            btn: '.pcpTnTagLst',
+                            img: '.img',
+                            txt: '.txt',
+                            num: '.num',
+                        },
+                        currentImgTxt: [],
+                        init: function() {
+                            this.set();
+                            this.bind();
+                        },
+                        clsFormat: function(str) {
+                            return str.replace('.', '');
+                        },
+                        set: function() {
+                            var _this = this;
+                            $(this.lst.btn).each(function() {
+                                var $this = $(this);
+                                var $img = $this.find(_this.lst.img);
+                                var $data = $this.data('list');
+                                if ($img.is('.active') && typeof $data === 'object') {
+                                    _this.currentImgTxt = [$data.txt, $data.img];
+                                }
+                            });
+                            this.get();
+                        },
+                        get: function() {
+                            $(this.parent).find(this.img).removeAttr('class').addClass('img ' + this.currentImgTxt[1] + ' ' + this.clsFormat(this.img));
+                        },
+                        bind: function() {
+                            var _this = this;
+                            $(this.lst.btn).off().on({
+                                'click': function() {
+                                    $(this).closest(_this.parent).find(_this.lst.img).removeClass('active');
+                                    $(this).find(_this.lst.img).addClass('active');
+                                    _this.set();
+                                },
+                            });
+                            $(this.btn).off().on({
+                                'click' : function(){
+                                    $(this).toggleClass('active');
+                                    $(_this.target).slideToggle(0);
+                                },
+                            });
+                        },
+                        toggClass: function() {
+
+                        },
+                    },
+                };
+                cnnSchrFun.pcpTnTag.init();
             });
             </script>
             <!-- 학부모창의교실 전용 스크립트 : E -->
@@ -92,6 +152,84 @@
                 <!-- 학부모창의교실 전용 마크업 : S -->
                 <div class="schr_area">
                     <div class="schr_in_box">
+                        <!-- 공유 부분 : S -->
+                        <div class="ptn_area">
+                            <div class="in">
+                                <a href="#" class="icq_btn" title="공유목록 보기"></a>
+                                <ul class="icq_lst">
+                                    <li class="tp tp01">
+                                        <a href="#" class="txt">1025</a>
+                                    </li>
+                                    <li class="tp tp02">
+                                        <div class="pcpt_tag pcpTnTagFun">
+                                            <a href="#" class="txt btns gry pcpTnTagBtn">소감태그 <span class="BOLD">205</span></a>
+                                            <!-- 활성화 클래스네임 active -->
+                                            <span class="img img01 pcpTnTagImg">
+                                                <span class="hidetxt">좋아요</span>
+                                            </span>
+                                            <div class="pcpt_lst pcpTnTagDiv">
+                                                <ul class="lst">
+                                                    <li>
+                                                        <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "좋아요" , "img" : "img01"}'>
+                                                            <div class="plst_in">
+                                                                <span class="img img01 active"></span>
+                                                                <div class="txt">좋아요</div>
+                                                                <span class="num">41</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "재미있어요" , "img" : "img02"}'>
+                                                            <div class="plst_in">
+                                                                <span class="img img02"></span>
+                                                                <div class="txt">재미있어요</div>
+                                                                <span class="num">2</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "유익해요" , "img" : "img03"}'>
+                                                            <div class="plst_in">
+                                                                <span class="img img03"></span>
+                                                                <div class="txt">유익해요</div>
+                                                                <span class="num">7</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "감동! 멋져요~" , "img" : "img04"}'>
+                                                            <div class="plst_in">
+                                                                <span class="img img04"></span>
+                                                                <div class="txt">감동! 멋져요~</div>
+                                                                <span class="num">143</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "알차네요" , "img" : "img05"}'>
+                                                            <div class="plst_in">
+                                                                <span class="img img05"></span>
+                                                                <div class="txt">알차네요</div>
+                                                                <span class="num">11</span>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="tp tp03">
+                                        <a href="#" class="txt btns gry">참여결과</a>
+                                    </li>
+                                </ul>
+                                <div class="btns_group">
+                                    <a href="#" class="btns gry active">초 등</a>
+                                    <a href="#" class="btns gry">중 학</a>
+                                    <a href="#" class="btns gry">고 교</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 공유 부분 : E -->
                         <!-- 공감 댓글 : S -->
                         <div class="schr_rep">
                             <div class="schrr_hd nanum">
@@ -115,7 +253,7 @@
                                 </div>
                                 <div class="schrr_md_bt">
                                     <div class="byt_chk">
-                                        <span class="num" >0</span>
+                                        <span class="num">0</span>
                                         <span class="txt">/400자</span>
                                     </div>
                                     <div class="btns_group">
@@ -160,10 +298,63 @@
                                         </div>
                                     </li>
                                 </ul>
+                                <a href="#;" class="ach_cmm_more">
+                                    <span class="txt">더 보기</span>
+                                </a>
                             </div>
                             <!-- 댓글 리스트 : E -->
                         </div>
                         <!-- 공감 댓글 : E -->
+                        <!-- 다른프로그램 볼까요? : S -->
+                        <div class="schr_oth MT60">
+                            <div class="schrr_hd nanum">
+                                <div class="tit">다른프로그램 볼까요?</div>
+                            </div>
+                            <ul class="schrot_lst">
+                                <li class="rls">
+                                    <div class="in">
+                                        <a href="#" class="img" title="수족관으로 떠나자">
+                                            <img src="./reRsrc/images/sample15.png" alt="">
+                                        </a>
+                                        <div class="tit">수족관으로 떠나자</div>
+                                        <div class="inq_area">
+                                            <ul class="lst">
+                                                <li class="tp tp01">
+                                                    <a href="#;" class="txt">21444</a>
+                                                </li>
+                                                <li class="tp tp02">
+                                                    <span class="txt">11447</span>
+                                                </li>
+                                            </ul>
+                                            <span class="btns gre sm radius">초</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="rls">
+                                    <div class="in">
+                                        <a href="#" class="img" title="수족관으로 떠나자">
+                                            <img src="./reRsrc/images/sample15.png" alt="">
+                                        </a>
+                                        <div class="tit">수족관으로 떠나자</div>
+                                        <div class="inq_area">
+                                            <ul class="lst">
+                                                <li class="tp tp01">
+                                                    <a href="#;" class="txt">21444</a>
+                                                </li>
+                                                <li class="tp tp02">
+                                                    <a href="#;" class="txt">11447</a>
+                                                </li>
+                                            </ul>
+                                            <span class="btns gre sm radius">초</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <a href="#;" class="ach_cmm_more">
+                                <span class="txt">더 보기</span>
+                            </a>
+                        </div>
+                        <!-- 다른프로그램 볼까요? : E -->
                     </div>
                 </div>
                 <!-- 학부모창의교실 전용 마크업 : E -->

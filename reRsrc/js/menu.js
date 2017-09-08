@@ -1,6 +1,6 @@
-var MENU = [ 
+var MENU = [
     [
-        ["창의교육존", "http://www.crezone.net/?page_id=3633"],
+        ["창의교육", "http://www.crezone.net/?page_id=3633"],
         [
             ["창의교육 수업모델", "/?page_id=3633", [
                 ["창의ㆍ인성교육 수업모델 프로그램 개요", "http://www.crezone.net/?page_id=3633"],
@@ -24,33 +24,35 @@ var MENU = [
                 ["공지사항", "http://www.crezone.net/?page_id=447628&m=notice"],
                 ["자료실", "http://www.crezone.net/?page_id=447628&m=pds&M3=pds"],
                 ["커뮤니티 목록", "http://www.crezone.net/?page_id=447628&m=RCL&search_year=2017"],
-                ["(B) 연구회 개설신청", "http://www.crezone.net/cr-includes/circles_E.php?n=44"],
+                /*["(B) 연구회 개설신청", "http://www.crezone.net/cr-includes/circles_E.php?n=44"],
                 ["(B) 연구회 가입자용 매뉴얼", ""],
-                ["(B) 연구회 개설자용 매뉴얼", ""],
+                ["(B) 연구회 개설자용 매뉴얼", ""],*/
             ]],
             ["창의교육 선도 교원양성대학", "http://www.crezone.net/?page_id=490309", [
                 ["소개", "http://www.crezone.net/?page_id=424573"],
                 ["공지사항", "http://www.crezone.net/?page_id=424573&m=notice"],
                 ["자료실", "http://www.crezone.net/?page_id=424573&m=referenceroom&M3=referenceroom"],
                 ["커뮤니티 목록", "http://www.crezone.net/?page_id=424573&m=RCL&search_year=2017"],
-                ["(B) 연구회 개설신청", "http://www.crezone.net/cr-includes/circles_E.php?n=41"],
-                ["(B) 연구회 가입자용 매뉴얼", ""],
-                ["(B) 연구회 개설자용 매뉴얼", ""],
+                /* ["(B) 연구회 개설신청", "http://www.crezone.net/cr-includes/circles_E.php?n=41"],
+                 ["(B) 연구회 가입자용 매뉴얼", ""],
+                 ["(B) 연구회 개설자용 매뉴얼", ""],*/
             ]],
             ["창의교육 백문 백답", "http://www.crezone.net/?page_id=447628", [
-                ["(B) 백문백답 다운로드", "http: //www.crezone.net/wp-content/uploads/2016/10/나.교육과정_재구성25건.pdf"],
+                /*["(B) 백문백답 다운로드", "http: //www.crezone.net/wp-content/uploads/2016/10/나.교육과정_재구성25건.pdf"],*/
                 ["수업‧ 평가방법 개선", "http: //www.crezone.net/?page_id=126176&ctype=L&R=Y&C=1"],
                 ["교육과정 재구성‧ 운영", "http: //www.crezone.net/?page_id=126176&ctype=L&R=Y&C=2"],
                 ["체험학습 기획‧ 운영", "http: //www.crezone.net/?page_id=126176&ctype=L&R=Y&C=3"],
                 ["동아리 지도", "http: //www.crezone.net/?page_id=126176&ctype=L&R=Y&C=4"],
                 ["학교경영‧ 행정", "http: //www.crezone.net/?page_id=126176&ctype=L&R=Y&C=5"],
             ]],
-            ["창의 인성 수업연구회", "http://www.crezone.net/?page_id=424573", [
-                ["메뉴명없음", "http://www.crezone.net/?page_id=496939"],
-                ["(B) 연구회 개설신청", " http://www.crezone.net/cr-includes/circles_E.php?n=33"],
-                ["(B) 연구회 가입자용 매뉴얼", ""],
-                ["(B) 연구회 개설자용 매뉴얼", ""],
-            ]],
+            ["창의 인성 수업연구회", "http://www.crezone.net/?page_id=496939"
+                /*, [
+                                ["메뉴명없음", "http://www.crezone.net/?page_id=496939"],
+                                ["(B) 연구회 개설신청", " http://www.crezone.net/cr-includes/circles_E.php?n=33"],
+                                ["(B) 연구회 가입자용 매뉴얼", ""],
+                                ["(B) 연구회 개설자용 매뉴얼", ""],
+                            ]*/
+            ],
         ]
     ],
     [
@@ -65,7 +67,7 @@ var MENU = [
                 ["관공서", "http://www.crezone.net/?resourcecat=%ea%b4%80%ea%b3%b5%ec%84%9c"],
                 ["안전/의료/복지시설", "http://www.crezone.net/?resourcecat=%ec%95%88%ec%a0%84-%ec%9d%98%eb%a3%8c-%eb%b3%b5%ec%a7%80%ec%8b%9c%ec%84%a4"],
                 ["연구시설", "http://www.crezone.net/?resourcecat=%ec%97%b0%ea%b5%ac%ec%8b%9c%ec%84%a4"],
-                ["(B) 전국교육청  창의체험 자원지도", "http://www.crezone.net/?resourcecat=%EC%B2%B4%ED%97%98%EC%8B%9C%EC%84%A4"],
+                /*["(B) 전국교육청  창의체험 자원지도", "http://www.crezone.net/?resourcecat=%EC%B2%B4%ED%97%98%EC%8B%9C%EC%84%A4"],*/
             ]],
             ["창의체험 프로그램", "http://www.crezone.net/?programcat=%EC%B0%BD%EC%9D%98%EC%A0%81%EC%B2%B4%ED%97%98%ED%99%9C%EB%8F%99", [
                 ["창의적 체험활동", ""],
@@ -81,13 +83,15 @@ var MENU = [
                 ["범교과 100대 주제 수업모델", "http://www.crezone.net/?crmodelcat=%eb%b2%94%ea%b5%90%ea%b3%bc-100%eb%8c%80-%ec%a3%bc%ec%a0%9c-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8"],
             ]],
             ["이달의 추천 큐레이션", "http://www.crezone.net/?page_id=424070&n=1&m=9"],
-            ["창의적 체험활동 교사연구회", "http://www.crezone.net/?issuecat=9%ec%9b%94", [
-                ["메뉴명없음", "http://www.crezone.net/?page_id=289452"],
-                ["(B) 연구회 개설신청", "http: //www.crezone.net/cr-includes/circles_E.php?n=37"],
-                ["(B) 연구회 가입자용 매뉴얼", ""],
-                ["(B) 연구회 개설자용 매뉴얼", ""],
+            ["창의적 체험활동 교사연구회", "http://www.crezone.net/?page_id=289452"
+                /*, [
+                                ["메뉴명없음", "http://www.crezone.net/?page_id=289452"],
+                                ["(B) 연구회 개설신청", "http: //www.crezone.net/cr-includes/circles_E.php?n=37"],
+                                ["(B) 연구회 가입자용 매뉴얼", ""],
+                                ["(B) 연구회 개설자용 매뉴얼", ""],
 
-            ]],
+                            ]*/
+            ],
         ]
     ],
     [
@@ -105,11 +109,13 @@ var MENU = [
         ["지속가능발전교육", "http://www.crezone.net/?page_id=125102"],
         [
             ["지속가능발전교육 수업모델", "링크없음"],
-            ["지속가능발전교육 실천교사 연구회", "http://www.crezone.net/?page_id=125052", [
-                ["(B) 연구회 개설신청", "http://www.crezone.net/cr-includes/circles_E.php?n=37"],
-                ["(B) 연구회 가입자용 매뉴얼", ""],
-                ["(B) 연구회 개설자용 매뉴얼", ""],
-            ]],
+            ["지속가능발전교육 실천교사 연구회", "http://www.crezone.net/cr-includes/circles_E.php?n=37",
+                /*[
+                               ["(B) 연구회 개설신청", "http://www.crezone.net/cr-includes/circles_E.php?n=37"],
+                               ["(B) 연구회 가입자용 매뉴얼", ""],
+                               ["(B) 연구회 개설자용 매뉴얼", ""],
+                           ]*/
+            ],
         ]
     ],
     [
@@ -129,6 +135,18 @@ var MENU = [
             ["프로그램 개요", "http://www.crezone.net/?page_id=163"],
             ["프로그램 내용", "http://www.crezone.net/?ebook_cat=%eb%a9%80%ed%8b%…%b8%eb%94%94%ec%96%b4-%ec%9e%90%eb%a3%8c%ec%8b%a4"],
             ["전체 프로그램", "http://www.crezone.net/?ebook_cat=%eb%a9%80%ed%8b%…%b8%eb%94%94%ec%96%b4-%ec%9e%90%eb%a3%8c%ec%8b%a4"]
+        ]
+    ],
+    [
+        ["고객센터", "http://www.crezone.net/?page_id=173"],
+        [
+            ["크레존 소개", "http://www.crezone.net/?page_id=173"],
+            ["공지사항", "http://www.crezone.net/?page_id=452"],
+            ["1:1 문의하기", "http://www.crezone.net/?page_id=458"],
+            ["문의내역 확인", "http://www.crezone.net/?page_id=758"],
+            ["자주 묻는 질문", "http://www.crezone.net/?page_id=170"],
+            ["이벤트", "http://www.crezone.net/?eventcat=%EC%A7%84%ED%96%89%EC%A4%91%EC%9D%B8%EC%9D%B4%EB%B2%A4%ED%8A%B8"],
+            ["사이트맵", "http://www.crezone.net/sitemap.php"],
         ]
     ],
 ];

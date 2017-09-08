@@ -89,7 +89,6 @@
                     var $dataLen = $this.data('len');
                     $this.multiEllip({
                         len: $dataLen,
-                        space: true,
                     });
                 });
                 //이미지 중앙 클리핑
@@ -107,7 +106,7 @@
                     ],
                 });
                 //메인페이지 슬라이드 관련객체.
-                var mainPageSlideObj = {
+                mainPageSlideObj = {
                     draggable: true,
                     dots: true,
                     speed: 500,
@@ -299,25 +298,27 @@
                                                 <span class="img">
                                                     <img src="./reRsrc/images/sample8.png" alt="" />
                                                 </span>
-                                                <span class="txt">[경기] 만화상상놀이터N</span>
+                                                <span class="txt multiEllip" data-len="22">
+                                                    [경기] 만화상상놀이터N[경기] 만화상상놀이터N[경기] 만화상상놀이터N[경기] 만화상상놀이터N[경기] 만화상상놀이터N
+                                                </span>
                                             </a>
                                             <a href="#" class="imgs nanum">
                                                 <span class="img">
                                                     <img src="./reRsrc/images/sample8.png" alt="" />
                                                 </span>
-                                                <span class="txt">[경기] 만화상상놀이터N</span>
+                                                <span class="txt multiEllip" data-len="22">[경기] 만화상상놀이터N</span>
                                             </a>
                                             <a href="#" class="imgs nanum">
                                                 <span class="img">
                                                     <img src="./reRsrc/images/sample8.png" alt="" />
                                                 </span>
-                                                <span class="txt">[경기] 만화상상놀이터N</span>
+                                                <span class="txt multiEllip" data-len="22">[경기] 만화상상놀이터N</span>
                                             </a>
                                             <a href="#" class="imgs nanum">
                                                 <span class="img">
                                                     <img src="./reRsrc/images/sample8.png" alt="" />
                                                 </span>
-                                                <span class="txt">[경기] 만화상상놀이터N</span>
+                                                <span class="txt multiEllip" data-len="22">[경기] 만화상상놀이터N</span>
                                             </a>
                                         </div>
                                         <a href="#" class="tab_divs_more" title="창의체험 프로그램 더보기"></a>
@@ -406,7 +407,9 @@
                                     </span>
                                     <dl class="txt nanum">
                                         <dt>해외창의 이야기</dt>
-                                        <dd class="multiEllip" data-len="45">미국창의교육 : 캘리포니아 초등교육 사례를 중심으로</dd>
+                                        <dd>
+                                            <span class="txt multiEllip" data-len="45">미국창의교육 : 캘리포니아 초등교육 사례를 중심으로</span>
+                                        </dd>
                                     </dl>
                                 </a>
                             </li>
@@ -417,7 +420,9 @@
                                     </span>
                                     <dl class="txt nanum">
                                         <dt>행복학교 이야기</dt>
-                                        <dd class="multiEllip" data-len="45">미국창의교육 : 캘리포니아 초등교육 사례를 중심으로</dd>
+                                        <dd>
+                                            <span class="txt multiEllip" data-len="45">미국창의교육 : 캘리포니아 초등교육 사례를 중심으로</span>
+                                        </dd>
                                     </dl>
                                 </a>
                             </li>
@@ -428,7 +433,9 @@
                                     </span>
                                     <dl class="txt nanum">
                                         <dt>창의교육 이야기</dt>
-                                        <dd class="multiEllip" data-len="45">미국창의교육 : 캘리포니아 초등교육 사례를 중심으로</dd>
+                                        <dd>
+                                            <span class="txt multiEllip" data-len="45">미국창의교육 : 캘리포니아 초등교육 사례를 중심으로</span>
+                                        </dd>
                                     </dl>
                                 </a>
                             </li>

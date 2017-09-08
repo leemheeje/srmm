@@ -34,28 +34,28 @@ if (location.host.indexOf(':8000') != -1) document.write('<script src="http://' 
         include: function(bool) {
             if (bool) {
                 var include = [
-                        ['header', {
-                            target: '.nm_header',
-                            url: './reRsrc/include/header.html',
-                            get: 'on'
-                        }],
-                        ['footer', {
-                            target: '.nm_footer',
-                            url: './reRsrc/include/footer.html',
-                            get: 'on'
-                        }],
-                        /*
-                        ['asideNav', {
-                            target: '.aside_area',
-                            url: '/include/asideNav.html',
-                            get: 'on'
-                        }],
+                    ['header', {
+                        target: '.nm_header',
+                        url: './reRsrc/include/header.html',
+                        get: 'on'
+                    }],
+                    ['footer', {
+                        target: '.nm_footer',
+                        url: './reRsrc/include/footer.html',
+                        get: 'on'
+                    }],
+                    /*
+                    ['asideNav', {
+                        target: '.aside_area',
+                        url: '/include/asideNav.html',
+                        get: 'on'
+                    }],
                         
-                        ['toolbar', {
-                            target: '.toolbar',
-                            url: '/include/toolbar.html',
-                            get: 'on'
-                        }]*/
+                    ['toolbar', {
+                        target: '.toolbar',
+                        url: '/include/toolbar.html',
+                        get: 'on'
+                    }]*/
                 ];
                 var appendHtml = function(target) {
                     $getUrl.done(function(data) {
@@ -81,11 +81,13 @@ if (location.host.indexOf(':8000') != -1) document.write('<script src="http://' 
                 len: 0,
                 ellips: '...',
                 space: false,
+                initTxtAppend: true,
             };
 
             function MultiEllip($this) {
                 this.el = $this;
                 this.txt = '';
+                this.initTxt = '';
                 this.obj = $.extend(true, defaults, opt);
                 this.init();
             };
@@ -97,10 +99,18 @@ if (location.host.indexOf(':8000') != -1) document.write('<script src="http://' 
                     var _this = this;
                     this.el.each(function() {
                         var $thistxt = $(this).text();
+                        _this.initTxt = $thistxt;
+                        if (_this.obj.initTxtAppend) {
+                            _this.append();
+                        }
                         _this.slc($thistxt);
                     });
                 },
+                append: function() {
+                    this.el.after('<span class="mult_init_txt multInitTxt" style="display: none;">' + this.initTxt + '</span>');
+                },
                 slc: function(txt) {
+                    var txt = txt.replace(/(^\s*)|(\s*$)/g, '');
                     var len = this.obj.space ? txt.replace(/ /gi, '').length : txt.length;
                     if (len > this.obj.len) {
                         this.txt = txt.slice(0, this.obj.len);
