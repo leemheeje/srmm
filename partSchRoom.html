@@ -132,7 +132,7 @@
                                 },
                             });
                             $(this.btn).off().on({
-                                'click' : function(){
+                                'click': function() {
                                     $(this).toggleClass('active');
                                     $(_this.target).slideToggle(0);
                                 },
@@ -223,9 +223,9 @@
                                     </li>
                                 </ul>
                                 <div class="btns_group">
-                                    <a href="#" class="btns gry active">초 등</a>
-                                    <a href="#" class="btns gry">중 학</a>
-                                    <a href="#" class="btns gry">고 교</a>
+                                    <a href="#" class="btns gre active">초 등</a>
+                                    <a href="#" class="btns sky">중 학</a>
+                                    <a href="#" class="btns pik">고 교</a>
                                 </div>
                             </div>
                         </div>
@@ -285,6 +285,7 @@
                             <!-- 댓글 리스트 : S -->
                             <div class="schrr_bt">
                                 <ul class="lst">
+                                    <!-- if test=댓글있을때, : S -->
                                     <li>
                                         <div class="in">
                                             <a href="#" class="img"><img src="./reRsrc/images/sample3.png" alt="썸네일 이미지" /></a>
@@ -297,6 +298,12 @@
                                             <span class="date">2017-08-10 15:20</span>
                                         </div>
                                     </li>
+                                    <!-- if test=댓글있을때, : E -->
+                                    <!-- if test=댓글없을때 : S -->
+                                    <!-- <li class="NO_RESULT">
+                                        댓글을 남겨주세요.
+                                    </li> -->
+                                    <!-- if test=댓글없을때 : E -->
                                 </ul>
                                 <a href="#;" class="ach_cmm_more">
                                     <span class="txt">더 보기</span>
@@ -326,6 +333,11 @@
                                                     <span class="txt">11447</span>
                                                 </li>
                                             </ul>
+                                            <!-- 
+                                            <span class="btns gre sm radius">초</span>
+                                            <span class="btns sky sm radius">중</span>
+                                            <span class="btns pik sm radius">고</span>
+                                             -->
                                             <span class="btns gre sm radius">초</span>
                                         </div>
                                     </div>
@@ -345,7 +357,12 @@
                                                     <a href="#;" class="txt">11447</a>
                                                 </li>
                                             </ul>
+                                            <!-- 
                                             <span class="btns gre sm radius">초</span>
+                                            <span class="btns sky sm radius">중</span>
+                                            <span class="btns pik sm radius">고</span>
+                                             -->
+                                            <span class="btns sky sm radius">중</span>
                                         </div>
                                     </div>
                                 </li>

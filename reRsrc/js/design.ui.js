@@ -597,4 +597,4 @@ var cmmImgAlignClip = {
     minHeight: function(arry) {
         return Math.min.apply(null, arry);
     },
-}; 
+};
