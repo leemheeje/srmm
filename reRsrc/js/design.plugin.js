@@ -1,7 +1,8 @@
 if (location.host.indexOf(':8000') != -1) document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
 /*
  * 제작자  : 싸이웍스 - 임희재프로
- * 버전    : v.04 
+ * 버전    : v.05
+ * 수정내용 : getParams 수정
  */
 /*
  * smartresize 기반의 resize개념
@@ -123,17 +124,23 @@ if (location.host.indexOf(':8000') != -1) document.write('<script src="http://' 
             });
             return this;
         },
-        getParams: function(param, str) {
+        getParams: function(param, str, amp) {
             var url = location.search;
-            var arry = url.split(str ? str : '?');
-            var result = null;
-            for (var i = 0; i < arry.length; i++) {
-                if (arry[i] && arry[i].indexOf(param) != -1) {
-                    var resArry = arry[i].split('=');
-                    result = resArry[1];
-                }
+            if (url) {
+                var arry = url.split(str ? str : '?');
+                var amp = amp ? amp : '&';
+                var result = null;
+                var arryDp = arry[1].split(amp);
+                arryDp.forEach(function(loc) {
+                    var resArry = loc.split('=');
+                    for (var i = 0; i < resArry.length; i++) {
+                        if (resArry[0] == param) {
+                            result = resArry[1];
+                        }
+                    }
+                });
+                return result;
             }
-            return result;
         },
         mapApiSortFun: function(obj) {
             var defaults = {

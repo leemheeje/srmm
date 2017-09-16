@@ -176,7 +176,7 @@
                 });
             })(jQuery);
             (function($) {
-                var len = $this.find('.gnbDepthLst01 > li').length;
+                var len = $this.find('.gnbDepthLst01 > li:visible').length;
                 $this.find('.gnbDepthLst01').addClass('lstLeng0' + len);
             })(jQuery);
             $this.find('.dataBgColor').each(function() {
