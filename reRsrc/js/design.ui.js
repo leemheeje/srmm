@@ -581,7 +581,6 @@ var cmmDialogFun = {
         var _this = this;
         jQuery(this.btn).off().on({
             'click': function() {
-                console.log(_this)
                 _this.act(true);
                 return false;
             },
@@ -624,7 +623,7 @@ var cmmDialogFun = {
         }
     },
     align: function() {
-        return jQuery(document).height() - (jQuery(document).height() - jQuery(window).scrollTop());
+        return 0 //jQuery(document).height() - (jQuery(document).height() - jQuery(window).scrollTop());
     },
     callb: function() {},
     animateCallback: function(obj) {

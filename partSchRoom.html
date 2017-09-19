@@ -91,6 +91,12 @@
                         return false;
                     });
                 })();
+                var topBanToggBtn = (function() {
+                    $('.topBanToggBtn').click(function() {
+                        $('.topBanToggDiv').slideToggle(schRoomAnimateCallb()).toggleClass('active');
+                        return false;
+                    });
+                })();
                 //카드뉴스 슬라이드 부분 
                 $('.ptncmSlideBox').uiSwiper({
                     slideObj: {
@@ -194,7 +200,6 @@
                             if ($('html').is('.ie')) {
                                 $clipboardBtn.click(function() {
                                     clipboardData.setData('text', $clipboardUrl.val());
-                                    alert('')
                                 });
                             } else {
                                 $clipboardBtn.hide();
@@ -239,6 +244,10 @@
                 };
                 cnnSchrFun.pcpTnTag.init();
                 cnnSchrFun.ditFavtAddBtn.init('.ditFavtAddBtn');
+                //참여결과 레이어팝
+                $('.pcpTnResultBtn').click(function() {
+                    cmmDialogFun.init('.pcpTnResultPop').show();
+                }).click();
             });
             </script>
             <!-- 학부모창의교실 전용 스크립트 : E -->
@@ -246,75 +255,79 @@
             <div class="nm_contents">
                 <!-- 학부모창의교실 전용 마크업 : S -->
                 <div class="schr_area">
-                    <!-- 창의길잡이 탑 : S -->
-                    <div class="schr_ar_hd">
-                        <div class="schr_in_box nanum">
-                            <div class="schr_top_ban">
+                    <div class="topBanToggDiv">
+                        <!-- 창의길잡이 탑 : S -->
+                        <div class="schr_ar_hd">
+                            <div class="schr_in_box nanum">
+                                <div class="schr_top_ban">
+                                    <div class="tit">
+                                        <span class="hidetxt">크레존학부모창의길잡이</span>
+                                    </div>
+                                    <div class="stit">
+                                        <span class="poi">자녀의 창의 교육</span>을 시작해보세요.
+                                        <div>창의적 사고와 문제해결 능력을 키워줍니다.</div>
+                                    </div>
+                                </div>
+                                <a href="#;" class="top_ban_togg_btn topBanToggBtn" title="탑배너및노하우팁닫기"></a>
+                            </div>
+                        </div>
+                        <!-- 창의길잡이 탑 : E -->
+                        <!-- 노하우 TIP! : S -->
+                        <div class="schr_ar_md nanum guideTipToggDiv">
+                            <div class="schr_in_box">
                                 <div class="tit">
-                                    <span class="hidetxt">크레존학부모창의길잡이</span>
+                                    자녀의 창의행동력 높이는
+                                    <span class="poi">노하우 TIP!</span>
                                 </div>
-                                <div class="stit">
-                                    <span class="poi">자녀의 창의 교육</span>을 시작해보세요.
-                                    <div>창의적 사고와 문제해결 능력을 키워줍니다.</div>
-                                </div>
-                                <a href="#;" class="scgar_hd_btn guideTipToggBtn" title="길잡이TIP"></a>
+                                <ul class="stp_lst">
+                                    <li class="tp tp01">
+                                        <div class="stpl_in">
+                                            <span class="ico"></span>
+                                            <dl class="txts">
+                                                <dt>step 1</dt>
+                                                <dd>창의길잡이
+                                                    <div>프로그램 확인</div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </li>
+                                    <li class="tp tp02">
+                                        <div class="stpl_in">
+                                            <span class="ico"></span>
+                                            <dl class="txts">
+                                                <dt>step 2</dt>
+                                                <dd>가이드 TIP &
+                                                    <div>매뉴얼 체크</div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </li>
+                                    <li class="tp tp03">
+                                        <div class="stpl_in">
+                                            <span class="ico"></span>
+                                            <dl class="txts">
+                                                <dt>step 3</dt>
+                                                <dd>자녀와 함께
+                                                    <div>창의활동 play!</div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </li>
+                                    <li class="tp tp04">
+                                        <div class="stpl_in">
+                                            <span class="ico"></span>
+                                            <dl class="txts">
+                                                <dt>step 4</dt>
+                                                <dd>창의활동 후
+                                                    <div>공감 나누기</div>
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                    <!-- 창의길잡이 탑 : E -->
-                    <div class="schr_ar_md nanum guideTipToggDiv">
-                        <div class="schr_in_box">
-                            <div class="tit">
-                                자녀의 창의행동력 높이는
-                                <span class="poi">노하우 TIP!</span>
-                            </div>
-                            <ul class="stp_lst">
-                                <li class="tp tp01">
-                                    <div class="stpl_in">
-                                        <span class="ico"></span>
-                                        <dl class="txts">
-                                            <dt>step 1</dt>
-                                            <dd>창의길잡이
-                                                <div>프로그램 확인</div>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </li>
-                                <li class="tp tp02">
-                                    <div class="stpl_in">
-                                        <span class="ico"></span>
-                                        <dl class="txts">
-                                            <dt>step 2</dt>
-                                            <dd>가이드 TIP &
-                                                <div>매뉴얼 체크</div>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </li>
-                                <li class="tp tp03">
-                                    <div class="stpl_in">
-                                        <span class="ico"></span>
-                                        <dl class="txts">
-                                            <dt>step 3</dt>
-                                            <dd>자녀와 함께
-                                                <div>창의활동 play!</div>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </li>
-                                <li class="tp tp04">
-                                    <div class="stpl_in">
-                                        <span class="ico"></span>
-                                        <dl class="txts">
-                                            <dt>step 4</dt>
-                                            <dd>창의활동 후
-                                                <div>공감 나누기</div>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        <!-- 노하우 TIP! : E -->
                     </div>
                     <div class="ptncm_area">
                         <div class="schr_in_box">
@@ -360,6 +373,9 @@
                                     <div class="ptncm_asd nanum">
                                         <span class="tit">다운로드</span>
                                         <ol class="lst">
+                                            <li>
+                                                <a href="#" class="txt">카드뉴스</a>
+                                            </li>
                                             <li>
                                                 <a href="#" class="txt">창의길잡이 TIP</a>
                                             </li>
@@ -486,7 +502,7 @@
                                                 </div>
                                             </li>
                                             <li class="tp tp03">
-                                                <a href="#" class="txt btns gry">참여결과</a>
+                                                <a href="#" class="txt btns gry pcpTnResultBtn">참여결과</a>
                                             </li>
                                         </ul>
                                         <div class="btns_group">
@@ -670,7 +686,7 @@
                                             <div class="tp_tx">Chapter.1</div>
                                             <div class="tit">
                                                 <div class="tit_in">
-                                                    현장과학교사 30인 추천 과학관에서 할 일 TOP 5
+                                                    현장과학교사 30인 추천 과학관에서 할 일<br/>TOP 5
                                                 </div>
                                             </div>
                                             <div class="inq_area">
@@ -687,7 +703,10 @@
                                                 <span class="btns sky sm radius">중</span>
                                                 <span class="btns pik sm radius">고</span>
                                                  -->
-                                                <span class="btns gre sm radius">초</span>
+                                                <div class="label_group">
+                                                    <span class="btns sky sm radius">중</span>
+                                                    <span class="btns gre sm radius">초</span>
+                                                </div>
                                             </div>
                                             <div class="btns_group">
                                                 <a href="#" class="schrot_btns">카드뉴스</a>
@@ -722,7 +741,9 @@
                                                 <span class="btns sky sm radius">중</span>
                                                 <span class="btns pik sm radius">고</span>
                                                  -->
-                                                <span class="btns gre sm radius">초</span>
+                                                <div class="label_group">
+                                                    <span class="btns pik sm radius">고</span>
+                                                </div>
                                             </div>
                                             <div class="btns_group">
                                                 <a href="#" class="schrot_btns">카드뉴스</a>
@@ -750,6 +771,26 @@
         </div>
         <!-- nm_footer : E -->
     </div>
+    <!-- 참여결과 레이어팝 : S  -->
+    <div class="layerpop pcpTnResultPop">
+        <div class="layp_box ptp_tn_result_pop nanum layerPopInner">
+            <div class="layp_in" style="width: 100%; max-width: 600px;">
+                <div class="layp_top">
+                    <span class="tit">소감태크 참여결과</span>
+                </div>
+                <div class="layp_cont">
+                    
+                </div>
+                <div class="layp_fot">
+                    <a href="#" class="layp_btns blue">확&nbsp;인</a>
+                    <a href="#" class="layp_btns gray layerPopCloseBtn">취&nbsp;소</a>
+                </div>
+                <a href="#" class="layp_close layerPopCloseBtn" title="퀵메뉴 팝업닫기"></a>
+            </div>
+        </div>
+        <div class="gl_dimm glDimm"></div>
+    </div>
+    <!-- 참여결과 레이어팝 : E  -->
 </body>
 
 </html>
