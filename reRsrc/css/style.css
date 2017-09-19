@@ -714,7 +714,7 @@ body.pcScrollOff{overflow-y: hidden;}
 	.schr_area .schrot_lst .rls .in .tp_tx,
 	.schr_area .schrot_lst .rls .in .tit{text-align: left; padding: 0;}
 	.schr_area .schrot_lst .rls .in .tp_tx{font-size: 11px; margin-top: 7px;}
-	.schr_area .schrot_lst .rls .in .tit{margin-top: 2px; font-size: 10px; height: auto; min-height: 28px;}
+	.schr_area .schrot_lst .rls .in .tit{margin-top: 2px; font-size: 12px; height: auto; min-height: 32px;}
 	.schr_area .schrot_lst .rls .in .inq_area{padding-right: 45px;}
 	.schr_area .schrot_lst .rls .in .inq_area .label_group{bottom: 6px;}
 	.schr_area .schrot_lst .rls .in .btns_group .schrot_btns{height: 30px; line-height: 30px; font-size: 12px;}
