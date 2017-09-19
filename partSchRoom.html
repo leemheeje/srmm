@@ -246,8 +246,10 @@
                 cnnSchrFun.ditFavtAddBtn.init('.ditFavtAddBtn');
                 //참여결과 레이어팝
                 $('.pcpTnResultBtn').click(function() {
-                    cmmDialogFun.init('.pcpTnResultPop').show();
-                }).click();
+                    //cmmDialogFun.init('.pcpTnResultPop').show();
+                    cmmDialogFun.init('.pcpTnResultStep02Pop').show();
+                    return false;
+                });
             });
             </script>
             <!-- 학부모창의교실 전용 스크립트 : E -->
@@ -341,7 +343,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <ul class="ptncm_tab cmmShowHideTabsUl">
+                                <ul class="cmm_tabs cmmShowHideTabsUl">
                                     <li class="tp tp01 ">
                                         <a href="#" class="txt">
                                             <span class="ic">카드뉴스</span>
@@ -699,6 +701,7 @@
                                                     </li>
                                                 </ul>
                                                 <!-- 
+                                                <span class="btns gre sm radius">유</span>
                                                 <span class="btns gre sm radius">초</span>
                                                 <span class="btns sky sm radius">중</span>
                                                 <span class="btns pik sm radius">고</span>
@@ -737,6 +740,7 @@
                                                     </li>
                                                 </ul>
                                                 <!-- 
+                                                <span class="btns gre sm radius">유</span>
                                                 <span class="btns gre sm radius">초</span>
                                                 <span class="btns sky sm radius">중</span>
                                                 <span class="btns pik sm radius">고</span>
@@ -773,17 +777,39 @@
     </div>
     <!-- 참여결과 레이어팝 : S  -->
     <div class="layerpop pcpTnResultPop">
-        <div class="layp_box ptp_tn_result_pop nanum layerPopInner">
+        <div class="layp_box layerPopInner">
             <div class="layp_in" style="width: 100%; max-width: 600px;">
                 <div class="layp_top">
                     <span class="tit">소감태크 참여결과</span>
                 </div>
                 <div class="layp_cont">
-                    
+                    <div class="pop_result_pop">
+                        <div class="tit">
+                            총
+                            <span class="poi">192,357</span>개의 소감태그 참여
+                        </div>
+                        <ul class="lst">
+                            <li class="tp tp01">
+                                <a href="#" class="txt">너무 좋아요</a>
+                            </li>
+                            <li class="tp tp02">
+                                <a href="#" class="txt">와우~! 재미있어요!</a>
+                            </li>
+                            <li class="tp tp03">
+                                <a href="#" class="txt">유익해서 추천하고 싶어요!</a>
+                            </li>
+                            <li class="tp tp04">
+                                <a href="#" class="txt">감동! 멋지네요.</a>
+                            </li>
+                            <li class="tp tp05">
+                                <a href="#" class="txt">정말 알찬 정보에요.</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="layp_fot">
-                    <a href="#" class="layp_btns blue">확&nbsp;인</a>
-                    <a href="#" class="layp_btns gray layerPopCloseBtn">취&nbsp;소</a>
+                    <!-- <a href="#" class="layp_btns blue">확&nbsp;인</a>
+                    <a href="#" class="layp_btns gray layerPopCloseBtn">취&nbsp;소</a> -->
                 </div>
                 <a href="#" class="layp_close layerPopCloseBtn" title="퀵메뉴 팝업닫기"></a>
             </div>
@@ -791,6 +817,104 @@
         <div class="gl_dimm glDimm"></div>
     </div>
     <!-- 참여결과 레이어팝 : E  -->
+    <!-- 참여결과STEP02 레이어팝 : S  -->
+    <div class="layerpop pcpTnResultStep02Pop">
+        <div class="layp_box layerPopInner">
+            <div class="layp_in" style="width: 100%; max-width: 600px;">
+                <div class="layp_top">
+                    <span class="tit">소감태그별 랭킹</span>
+                </div>
+                <div class="layp_cont">
+                    <div class="pop_result_pop resu_lst">
+                        <div class="tit">
+                           너무 좋아요
+                        </div>
+                        <ul class="lst">
+                            <!-- 리스트 -->
+                            <li class="tp tp01">
+                                <div class="res_in">
+                                    <a href="#" class="img">
+                                        <img src="./reRsrc/images/sample13.png" alt="">
+                                    </a>
+                                    <div class="rgt">
+                                        <dl class="tit">
+                                            <dt>Chapter.1</dt>
+                                            <dd>창조적 직업인 추천 나만의 독서법TOP 5</dd>
+                                        </dl>
+                                        <div class="btm">10000</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="tp tp02">
+                                <div class="res_in">
+                                    <a href="#" class="img">
+                                        <img src="./reRsrc/images/sample13.png" alt="">
+                                    </a>
+                                    <div class="rgt">
+                                        <dl class="tit">
+                                            <dt>Chapter.1</dt>
+                                            <dd>창조적 직업인 추천 나만의 독서법TOP 5</dd>
+                                        </dl>
+                                        <div class="btm">조회 10000</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="tp tp03">
+                                <div class="res_in">
+                                    <a href="#" class="img">
+                                        <img src="./reRsrc/images/sample13.png" alt="">
+                                    </a>
+                                    <div class="rgt">
+                                        <dl class="tit">
+                                            <dt>Chapter.1</dt>
+                                            <dd>창조적 직업인 추천 나만의 독서법TOP 5</dd>
+                                        </dl>
+                                        <div class="btm">조회 10000</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="tp tp04">
+                                <div class="res_in">
+                                    <a href="#" class="img">
+                                        <img src="./reRsrc/images/sample13.png" alt="">
+                                    </a>
+                                    <div class="rgt">
+                                        <dl class="tit">
+                                            <dt>Chapter.1</dt>
+                                            <dd>창조적 직업인 추천 나만의 독서법TOP 5</dd>
+                                        </dl>
+                                        <div class="btm">조회 10000</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="tp tp05">
+                                <div class="res_in">
+                                    <a href="#" class="img">
+                                        <img src="./reRsrc/images/sample13.png" alt="">
+                                    </a>
+                                    <div class="rgt">
+                                        <dl class="tit">
+                                            <dt>Chapter.1</dt>
+                                            <dd>창조적 직업인 추천 나만의 독서법TOP 5</dd>
+                                        </dl>
+                                        <div class="btm">조회 10000</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- 리스트 -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="layp_fot">
+                    <!-- <a href="#" class="layp_btns blue">확&nbsp;인</a>
+                    <a href="#" class="layp_btns gray layerPopCloseBtn">취&nbsp;소</a> -->
+                </div>
+                <a href="#" class="layp_close layerPopCloseBtn" title="퀵메뉴 팝업닫기"></a>
+            </div>
+        </div>
+        <div class="gl_dimm glDimm"></div>
+    </div>
+    <!-- 참여결과STEP02 레이어팝 : E  -->
 </body>
 
 </html>

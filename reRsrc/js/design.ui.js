@@ -42,7 +42,7 @@ var gnbMenuActFun = {
         this.mobileSet();
         this.mobileSch();
     },
-    setCookieLoad : function(){
+    setCookieLoad: function() {
         this.setCookieName = 'menuidx';
         this.getCookieElement = '.menuIdx';
         this.setCookie = $.cookie(this.setCookieName);
@@ -101,25 +101,25 @@ var gnbMenuActFun = {
             jQuery(target).find('li .txt').each(function() {
                 var $this = $(this);
                 var $thisHref = null;
-                switch(_this.crrtParamValue){
-                    case '424573' : //창의교육 > 창의교육선도 교원양성대학
-                    case '447628' : //창의교육 > 창의교육 거점센터 
-                    var params = jQuery(window).getParams('m');
-                    $thisHref = params ? $this.attr('href').indexOf(_this.crrtTargetHref+'&m='+params) != -1  : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
-                    break;
+                switch (_this.crrtParamValue) {
+                    case '424573': //창의교육 > 창의교육선도 교원양성대학
+                    case '447628': //창의교육 > 창의교육 거점센터 
+                        var params = jQuery(window).getParams('m');
+                        $thisHref = params ? $this.attr('href').indexOf(_this.crrtTargetHref + '&m=' + params) != -1 : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
+                        break;
                     case '126176': //창의교육 > 창의교육 백문백답
-                    var params = jQuery(window).getParams('C');
-                    $thisHref = params ? $this.attr('href').indexOf(_this.crrtTargetHref) != -1 && $this.attr('href').indexOf('&C='+params) != -1  : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
-                    break;
+                        var params = jQuery(window).getParams('C');
+                        $thisHref = params ? $this.attr('href').indexOf(_this.crrtTargetHref) != -1 && $this.attr('href').indexOf('&C=' + params) != -1 : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
+                        break;
                     case '%EA%B3%84%EA%B8%B0%EA%B5%90%EC%9C%A1-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8':
                     case '%EC%98%81%EB%82%A8%EA%B6%8C-%EC%B0%BD%EC%9D%98%EC%B2%B4%ED%97%98-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8':
                     case '%EC%B0%BD%EC%9D%98%EC%9D%B8%EC%84%B1%EA%B5%90%EC%9C%A1-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8':
                     case '%EB%A9%80%ED%8B%B0%EB%AF%B8%EB%94%94%EC%96%B4-%EC%9E%90%EB%A3%8C%EC%8B%A4':
-                            var params = jQuery(window).getParams('term_slug');
-                            $thisHref = $this.attr('href').indexOf(_this.crrtParamValue.toLowerCase()) != -1 || $this.attr('href').indexOf(_this.crrtParamValue.toUpperCase()) != -1;
-                            break;
-                    default : 
-                    $thisHref = bool ? $this.attr('href').indexOf(_this.crrtTargetHref) != -1 : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
+                        var params = jQuery(window).getParams('term_slug');
+                        $thisHref = $this.attr('href').indexOf(_this.crrtParamValue.toLowerCase()) != -1 || $this.attr('href').indexOf(_this.crrtParamValue.toUpperCase()) != -1;
+                        break;
+                    default:
+                        $thisHref = bool ? $this.attr('href').indexOf(_this.crrtTargetHref) != -1 : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
                 }
 
                 if ($thisHref) {
@@ -572,8 +572,10 @@ var cmmDialogFun = {
                 };
             },
             hide: function() {
-                console.log(_this.el)
                 _this.act(false, jQuery(_this.el).find(_this.closeBtn));
+                if (typeof callb === 'function') {
+                    callb();
+                };
             },
         };
     },
@@ -623,7 +625,7 @@ var cmmDialogFun = {
         }
     },
     align: function() {
-        return 0 //jQuery(document).height() - (jQuery(document).height() - jQuery(window).scrollTop());
+        return jQuery(document).height() - (jQuery(document).height() - jQuery(window).scrollTop());
     },
     callb: function() {},
     animateCallback: function(obj) {
