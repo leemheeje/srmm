@@ -147,26 +147,10 @@
                         }),
                     });
                 });
-                //메인 공통탭
-                $(this).find('.cmmShowHideTabs').each(function() {
-                    var tabInSlideOn = $(this).closest('.nm_ncps').length ? true : false;
-                    $(this).cmmShowHideTabs({
-                        tabUl: '.cmmShowHideTabsUl',
-                        tabDivs: '.cmmShowHideTabsDiv',
-                        tabInSlide: tabInSlideOn,
-                        callb: function(p, z, o) {
-                            if (tabInSlideOn) {
-                                $('.nm_ncps').find('.contr').hide();
-                                $('.nm_ncps').find('.tab_divs_in:eq(' + z + ') .contr').show();
-                                $('.nm_ncps').find('.tab_divs_more').hide();
-                                $('.nm_ncps').find('.tab_divs_in:eq(' + z + ') .tab_divs_more').show();
-                            }
-                        },
-                    });
-                });
                 //레이어팝
-                cmmDialogFun.init('.layerQuickMenu', '.layerQuickBtn');
-
+                $('.layerQuickBtn').click(function(){
+                    cmmDialogFun.init('.layerQuickMenu').show();
+                });
                 function imgsResize() {
                     $('.mmChangeImg').each(function() {
                         var $thisimg = null;

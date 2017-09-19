@@ -56,6 +56,9 @@ $(document).ready(function() {
             ],
         },
     });
+    $('.layerEmailClctBtn').click(function() {
+        cmmDialogFun.init('.layerEmailClct').show();
+    });
     /* 풋터 전용 JS '관련사이트' : E*/
 });
 </script>
@@ -89,9 +92,15 @@ $(document).ready(function() {
     <div class="in_box clearfix">
         <div class="nmfb_lt nanum">
             <ul class="lst">
-                <li><a href="http://login.teachforkorea.go.kr/register/login02_cl02.jsp" target="_blank" title="새창열림" class="txt">개인정보처리방침</a></li>
-                <li><a href="#" class="txt">이메일 무단 수집 거부</a></li>
-                <li><a href="http://www.ggoomgil.go.kr/" target="_blank" title="새창열림" class="txt">꿈길(진로체험지원전산망)</a></li>
+                <li>
+                    <a href="http://login.teachforkorea.go.kr/register/login02_cl02.jsp" target="_blank" title="새창열림" class="txt">개인정보처리방침</a>
+                </li>
+                <li>
+                    <a href="#" class="txt layerEmailClctBtn">이메일 무단 수집 거부</a>
+                </li>
+                <li>
+                    <a href="http://www.ggoomgil.go.kr/" target="_blank" title="새창열림" class="txt">꿈길(진로체험지원전산망)</a>
+                </li>
             </ul>
             <div class="txts">
                 (06097) 서울특별시 강남구 선릉로 602 (삼성동, 한국과학창의재단)
@@ -145,4 +154,24 @@ $(document).ready(function() {
         </div>
     </div>
     <a href="#" class="nm_top_btn nmTopMoveBtn" title="페이지 상단 이동"></a>
+</div>
+<div class="layerpop layerEmailClct">
+    <div class="layp_box layerPopInner">
+        <div class="layp_in" style="max-width: 500px;">
+            <div class="layp_top">
+                <span class="tit">이메일 무단 수집거부</span>
+            </div>
+            <div class="layp_cont">
+                <!--  -->
+                <div style="font-size: 16px; line-height: 1.5;">본 웹사이트에 게시된 이메일 주소가 전자우편 수집프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부하며, 이를 위반시 <b>정보통신망법에 의해 형사 </b>처벌됩니다.</div>
+                <div style="margin-top: 20px; font-size: 14px">게시일 : 2017년 9월 25일</div>
+                <!--  -->
+            </div>
+            <div class="layp_fot">
+                <a href="#" class="layp_btns blue layerPopCloseBtn">확&nbsp;인</a>
+            </div>
+            <a href="#" class="layp_close layerPopCloseBtn" title="퀵메뉴 팝업닫기"></a>
+        </div>
+    </div>
+    <div class="gl_dimm glDimm"></div>
 </div>

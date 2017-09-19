@@ -77,10 +77,32 @@
             <script type="text/javascript">
             jQuery(document).ready(function($) {
                 //댓글 필드부분의 파일올리기 토글;
+                var schRoomAnimateCallb = function(obj) {
+                    return $.extend(false, {
+                        'duration': 500,
+                        'easing': 'easeInOutExpo',
+                        complete: function() {},
+                    }, obj);
+                };
                 var fileUpload = (function() {
                     $('.fileUploadToggBtn').click(function() {
                         $(this).toggleClass('gry');
-                        $('.fileUploadToggDiv').slideToggle();
+                        $('.fileUploadToggDiv').slideToggle(schRoomAnimateCallb());
+                        return false;
+                    });
+                })();
+                //카드뉴스 슬라이드 부분 
+                $('.ptncmSlideBox').uiSwiper({
+                    slideObj: {
+                        draggable: true,
+                        dots: false,
+                        speed: 500,
+                    }
+                });
+                var guideTipTogg = (function() {
+                    $('.guideTipToggBtn').click(function() {
+                        $(this).toggleClass('active');
+                        $('.guideTipToggDiv').slideToggle(schRoomAnimateCallb());
                         return false;
                     });
                 })();
@@ -124,7 +146,7 @@
                                 img: '.img',
                                 txt: '.txt',
                                 num: '.num',
-                                maxNum : [],
+                                maxNum: [],
                             },
                             clip: {
                                 url: location.origin + location.pathname,
@@ -224,137 +246,263 @@
             <div class="nm_contents">
                 <!-- 학부모창의교실 전용 마크업 : S -->
                 <div class="schr_area">
-                    <div class="schr_in_box">
-                        <!-- 공유 부분 : S -->
-                        <div class="ptn_area">
-                            <div class="in">
-                                <div class="inq_btn_lst pcpTnTagFun">
-                                    <a href="#" class="icq_btn pcpTnTagBtn" title="공유목록 보기"></a>
-                                    <div class="pcpt_lst pcpTnTagDiv">
-                                        <div class="tit">공유</div>
-                                        <ul class="cmm_sns_lst">
-                                            <li>
-                                                <a href="#" class="tp tp01" title="카카오톡"></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="tp tp02" title="카카오스토리"></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="tp tp03" title="네이버블로그"></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="tp tp04" title="페이스북"></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="tp tp05" title="트위터"></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="tp tp06" title="인스타그램"></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="tp tp07" title="구글플러스"></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="tp tp08" title="크레존"></a>
-                                            </li>
-                                        </ul>
-                                        <input type="hidden" name="" value="" id="clipboardUrl" />
-                                        <a href="#;" class="pcpt_link_btn clipboardBtn">
-                                            <span class="txt">링크복사</span>
-                                        </a>
-                                        <div class="clipb_fild clipbFild">
-                                            <input type="text" value="" id="clipbFildInput" />
-                                            <label for="clipbFildInput">
-                                                Ctrl + c 를 눌러 복사해주세요.
-                                            </label>
-                                        </div>
-                                        <a href="#;" class="pcpt_lst_close pcpTnTagCloseBtn" title="공유목록팝업 닫기"></a>
-                                    </div>
+                    <!-- 창의길잡이 탑 : S -->
+                    <div class="schr_ar_hd">
+                        <div class="schr_in_box nanum">
+                            <div class="schr_top_ban">
+                                <div class="tit">
+                                    <span class="hidetxt">크레존학부모창의길잡이</span>
                                 </div>
-                                <ul class="icq_lst">
-                                    <li class="tp tp01">
-                                        <a href="#" class="txt">1025</a>
-                                    </li>
-                                    <li class="tp tp02">
-                                        <div class="pcpt_tag pcpTnTagFun">
-                                            <a href="#" class="txt btns gry pcpTnTagBtn">소감태그
-                                                <span class="BOLD">205</span>
-                                            </a>
-                                            <!-- 활성화 클래스네임 active -->
-                                            <span class="img img01 pcpTnTagImg">
-                                                <span class="hidetxt">좋아요</span>
-                                            </span>
-                                            <div class="pcpt_lst pcpTnTagDiv">
-                                                <ul class="lst">
-                                                    <li>
-                                                        <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "좋아요" , "img" : "img01"}'>
-                                                            <div class="plst_in">
-                                                                <span class="img img01 active"></span>
-                                                                <div class="txt">좋아요</div>
-                                                                <span class="num">41</span>
-                                                            </div>
-                                                        </a>
-                                                        <input type="radio" name="fav01">
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "재미있어요" , "img" : "img02"}'>
-                                                            <div class="plst_in">
-                                                                <span class="img img02"></span>
-                                                                <div class="txt">재미있어요</div>
-                                                                <span class="num">2</span>
-                                                            </div>
-                                                        </a>
-                                                        <input type="radio" name="fav01">
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "유익해요" , "img" : "img03"}'>
-                                                            <div class="plst_in">
-                                                                <span class="img img03"></span>
-                                                                <div class="txt">유익해요</div>
-                                                                <span class="num">7</span>
-                                                            </div>
-                                                        </a>
-                                                        <input type="radio" name="fav01">
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "감동! 멋져요~" , "img" : "img04"}'>
-                                                            <div class="plst_in">
-                                                                <span class="img img04"></span>
-                                                                <div class="txt">감동! 멋져요~</div>
-                                                                <span class="num">143</span>
-                                                            </div>
-                                                        </a>
-                                                        <input type="radio" name="fav01">
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "알차네요" , "img" : "img05"}'>
-                                                            <div class="plst_in">
-                                                                <span class="img img05"></span>
-                                                                <div class="txt">알차네요</div>
-                                                                <span class="num">11</span>
-                                                            </div>
-                                                        </a>
-                                                        <input type="radio" name="fav01">
-                                                    </li>
-                                                </ul>
-                                                <a href="#;" class="pcpt_lst_close pcpTnTagCloseBtn" title="소감태그팝업 닫기"></a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="tp tp03">
-                                        <a href="#" class="txt btns gry">참여결과</a>
-                                    </li>
-                                </ul>
-                                <div class="btns_group">
-                                    <a href="#" class="btns gre active">초 등</a>
-                                    <a href="#" class="btns sky">중 학</a>
-                                    <a href="#" class="btns pik">고 교</a>
+                                <div class="stit">
+                                    <span class="poi">자녀의 창의 교육</span>을 시작해보세요.
+                                    <div>창의적 사고와 문제해결 능력을 키워줍니다.</div>
                                 </div>
+                                <a href="#;" class="scgar_hd_btn guideTipToggBtn" title="길잡이TIP"></a>
                             </div>
                         </div>
-                        <!-- 공유 부분 : E -->
-                        <!-- 공감 댓글 : S -->
-                        <div class="schr_rep">
+                    </div>
+                    <!-- 창의길잡이 탑 : E -->
+                    <div class="schr_ar_md nanum guideTipToggDiv">
+                        <div class="schr_in_box">
+                            <div class="tit">
+                                자녀의 창의행동력 높이는
+                                <span class="poi">노하우 TIP!</span>
+                            </div>
+                            <ul class="stp_lst">
+                                <li class="tp tp01">
+                                    <div class="stpl_in">
+                                        <span class="ico"></span>
+                                        <dl class="txts">
+                                            <dt>step 1</dt>
+                                            <dd>창의길잡이
+                                                <div>프로그램 확인</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li class="tp tp02">
+                                    <div class="stpl_in">
+                                        <span class="ico"></span>
+                                        <dl class="txts">
+                                            <dt>step 2</dt>
+                                            <dd>가이드 TIP &
+                                                <div>매뉴얼 체크</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li class="tp tp03">
+                                    <div class="stpl_in">
+                                        <span class="ico"></span>
+                                        <dl class="txts">
+                                            <dt>step 3</dt>
+                                            <dd>자녀와 함께
+                                                <div>창의활동 play!</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                                <li class="tp tp04">
+                                    <div class="stpl_in">
+                                        <span class="ico"></span>
+                                        <dl class="txts">
+                                            <dt>step 4</dt>
+                                            <dd>창의활동 후
+                                                <div>공감 나누기</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="ptncm_area">
+                        <div class="schr_in_box">
+                            <div class="ptncm_inbx cmmShowHideTabs">
+                                <div class="ptncm_hd nanum">
+                                    <span class="chpt">Chapter 1</span>
+                                    <div class="tit">
+                                        <div class="tit_in">
+                                            <span class="poi">자기 눈으로 관찰하고 표현하기</span>
+                                            <div>동물그리기편</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="ptncm_tab cmmShowHideTabsUl">
+                                    <li class="tp tp01 ">
+                                        <a href="#" class="txt">
+                                            <span class="ic">카드뉴스</span>
+                                        </a>
+                                    </li>
+                                    <li class="tp tp02">
+                                        <a href="#" class="txt">
+                                            <span class="ic">동영상</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- 카드뉴스 & 동영상 영역: S -->
+                                <div class="ptncm_cont">
+                                    <div class="ptncm_cont_inner cmmShowHideTabsDiv">
+                                        <div class="on_img">
+                                            <div class="on_img_slide ptncmSlideBox">
+                                                <a href="#" class="img">
+                                                    <img src="./reRsrc/images/sample16.png" alt="">
+                                                </a>
+                                                <a href="#" class="img">
+                                                    <img src="./reRsrc/images/sample16.png" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="movie">
+                                            <iframe src="https://www.youtube.com/embed/54SMgddJdFI"></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="ptncm_asd nanum">
+                                        <span class="tit">다운로드</span>
+                                        <ol class="lst">
+                                            <li>
+                                                <a href="#" class="txt">창의길잡이 TIP</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="txt">매뉴얼 다운로드</a>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <!-- 카드뉴스 & 동영상 영역: E -->
+                                <!-- 공유 부분 : S -->
+                                <div class="ptn_area">
+                                    <div class="in">
+                                        <div class="inq_btn_lst pcpTnTagFun">
+                                            <a href="#" class="icq_btn pcpTnTagBtn" title="공유목록 보기">공유</a>
+                                            <div class="pcpt_lst pcpTnTagDiv">
+                                                <ul class="cmm_sns_lst">
+                                                    <li>
+                                                        <a href="#" class="tp tp01" title="카카오톡"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tp tp02" title="카카오스토리"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tp tp03" title="네이버블로그"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tp tp04" title="페이스북"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tp tp05" title="트위터"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tp tp06" title="인스타그램"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tp tp07" title="구글플러스"></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="tp tp08" title="크레존"></a>
+                                                    </li>
+                                                </ul>
+                                                <input type="hidden" name="" value="" id="clipboardUrl" />
+                                                <a href="#;" class="pcpt_link_btn clipboardBtn">
+                                                    <span class="txt">링크복사</span>
+                                                </a>
+                                                <div class="clipb_fild clipbFild">
+                                                    <input type="text" value="" id="clipbFildInput" />
+                                                    <label for="clipbFildInput">
+                                                        Ctrl + c 를 눌러 복사해주세요.
+                                                    </label>
+                                                </div>
+                                                <a href="#;" class="pcpt_lst_close pcpTnTagCloseBtn" title="공유목록팝업 닫기"></a>
+                                            </div>
+                                        </div>
+                                        <ul class="icq_lst">
+                                            <li class="tp tp01">
+                                                <span class="txt">1025</span>
+                                            </li>
+                                            <li class="tp tp02">
+                                                <div class="pcpt_tag pcpTnTagFun">
+                                                    <a href="#" class="txt btns gry pcpTnTagBtn">소감태그
+                                                        <span class="BOLD">205</span>
+                                                    </a>
+                                                    <!-- 활성화 클래스네임 active -->
+                                                    <span class="img img01 pcpTnTagImg">
+                                                        <span class="hidetxt">좋아요</span>
+                                                    </span>
+                                                    <div class="pcpt_lst pcpTnTagDiv">
+                                                        <ul class="lst">
+                                                            <li>
+                                                                <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "좋아요" , "img" : "img01"}'>
+                                                                    <div class="plst_in">
+                                                                        <span class="img img01 active"></span>
+                                                                        <div class="txt">좋아요</div>
+                                                                        <span class="num">41</span>
+                                                                    </div>
+                                                                </a>
+                                                                <input type="radio" name="fav01">
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "재미있어요" , "img" : "img02"}'>
+                                                                    <div class="plst_in">
+                                                                        <span class="img img02"></span>
+                                                                        <div class="txt">재미있어요</div>
+                                                                        <span class="num">2</span>
+                                                                    </div>
+                                                                </a>
+                                                                <input type="radio" name="fav01">
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "유익해요" , "img" : "img03"}'>
+                                                                    <div class="plst_in">
+                                                                        <span class="img img03"></span>
+                                                                        <div class="txt">유익해요</div>
+                                                                        <span class="num">7</span>
+                                                                    </div>
+                                                                </a>
+                                                                <input type="radio" name="fav01">
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "감동! 멋져요~" , "img" : "img04"}'>
+                                                                    <div class="plst_in">
+                                                                        <span class="img img04"></span>
+                                                                        <div class="txt">감동! 멋져요~</div>
+                                                                        <span class="num">143</span>
+                                                                    </div>
+                                                                </a>
+                                                                <input type="radio" name="fav01">
+                                                            </li>
+                                                            <li>
+                                                                <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "알차네요" , "img" : "img05"}'>
+                                                                    <div class="plst_in">
+                                                                        <span class="img img05"></span>
+                                                                        <div class="txt">알차네요</div>
+                                                                        <span class="num">11</span>
+                                                                    </div>
+                                                                </a>
+                                                                <input type="radio" name="fav01">
+                                                            </li>
+                                                        </ul>
+                                                        <a href="#;" class="pcpt_lst_close pcpTnTagCloseBtn" title="소감태그팝업 닫기"></a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="tp tp03">
+                                                <a href="#" class="txt btns gry">참여결과</a>
+                                            </li>
+                                        </ul>
+                                        <div class="btns_group">
+                                            <a href="#" class="btns gre active">초 등</a>
+                                            <a href="#" class="btns sky">중 학</a>
+                                            <a href="#" class="btns pik">고 교</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 공유 부분 : E -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 공감 댓글 : S -->
+                    <div class="schr_rep">
+                        <div class="schr_in_box">
                             <div class="schrr_hd nanum">
                                 <div class="tit">부모공감 댓글</div>
                                 <div class="stit">진심을 담은 응원과 격려 및 나만의 창의체험팁 등을 자유롭게 나누어보세요.</div>
@@ -389,79 +537,6 @@
                                             <a href="#" class="tp tp07" title="구글플러스"></a>
                                         </li>
                                     </ul>
-                                    <!-- 소감태그 부분만 추가 : S -->
-                                    <ul class="icq_lst">
-                                        <li class="tp tp02">
-                                            <div class="pcpt_tag pcpTnTagFun">
-                                                <a href="#" class="txt btns gry pcpTnTagBtn">소감태그
-                                                    <span class="BOLD">205</span>
-                                                </a>
-                                                <!-- 활성화 클래스네임 active -->
-                                                <span class="img img01 pcpTnTagImg">
-                                                    <span class="hidetxt">좋아요</span>
-                                                </span>
-                                                <div class="pcpt_lst pcpTnTagDiv">
-                                                    <ul class="lst">
-                                                        <li>
-                                                            <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "좋아요" , "img" : "img01"}'>
-                                                                <div class="plst_in">
-                                                                    <span class="img img01 active"></span>
-                                                                    <div class="txt">좋아요</div>
-                                                                    <span class="num">41</span>
-                                                                </div>
-                                                            </a>
-                                                            <input type="radio" name="fav01">
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "재미있어요" , "img" : "img02"}'>
-                                                                <div class="plst_in">
-                                                                    <span class="img img02"></span>
-                                                                    <div class="txt">재미있어요</div>
-                                                                    <span class="num">2</span>
-                                                                </div>
-                                                            </a>
-                                                            <input type="radio" name="fav01">
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "유익해요" , "img" : "img03"}'>
-                                                                <div class="plst_in">
-                                                                    <span class="img img03"></span>
-                                                                    <div class="txt">유익해요</div>
-                                                                    <span class="num">7</span>
-                                                                </div>
-                                                            </a>
-                                                            <input type="radio" name="fav01">
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "감동! 멋져요~" , "img" : "img04"}'>
-                                                                <div class="plst_in">
-                                                                    <span class="img img04"></span>
-                                                                    <div class="txt">감동! 멋져요~</div>
-                                                                    <span class="num">143</span>
-                                                                </div>
-                                                            </a>
-                                                            <input type="radio" name="fav01">
-                                                        </li>
-                                                        <li>
-                                                            <a href="#" class="box pcpTnTagLst" data-list='{"txt" : "알차네요" , "img" : "img05"}'>
-                                                                <div class="plst_in">
-                                                                    <span class="img img05"></span>
-                                                                    <div class="txt">알차네요</div>
-                                                                    <span class="num">11</span>
-                                                                </div>
-                                                            </a>
-                                                            <input type="radio" name="fav01">
-                                                        </li>
-                                                    </ul>
-                                                    <a href="#;" class="pcpt_lst_close pcpTnTagCloseBtn" title="소감태그팝업 닫기"></a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="tp tp03">
-                                            <a href="#" class="txt btns gry">참여결과</a>
-                                        </li>
-                                    </ul>
-                                    <!-- 소감태그 부분만 추가 : E -->
                                     <span class="rp_len">3000</span>
                                 </div>
                                 <!-- if test=로그온 : S -->
@@ -578,8 +653,10 @@
                             <!-- 댓글 리스트 : E -->
                         </div>
                         <!-- 공감 댓글 : E -->
-                        <!-- 다른프로그램 볼까요? : S -->
-                        <div class="schr_oth MT60">
+                    </div>
+                    <!-- 다른프로그램 볼까요? : S -->
+                    <div class="schr_oth MT60">
+                        <div class="schr_in_box">
                             <div class="schrr_hd nanum">
                                 <div class="tit">다른프로그램 볼까요?</div>
                             </div>
@@ -589,22 +666,33 @@
                                         <a href="#" class="img" title="수족관으로 떠나자">
                                             <img src="./reRsrc/images/sample15.png" alt="">
                                         </a>
-                                        <div class="tit">수족관으로 떠나자</div>
-                                        <div class="inq_area">
-                                            <ul class="lst">
-                                                <li class="tp tp01">
-                                                    <a href="#;" class="txt">21444</a>
-                                                </li>
-                                                <li class="tp tp02">
-                                                    <span class="txt">11447</span>
-                                                </li>
-                                            </ul>
-                                            <!-- 
-                                            <span class="btns gre sm radius">초</span>
-                                            <span class="btns sky sm radius">중</span>
-                                            <span class="btns pik sm radius">고</span>
-                                             -->
-                                            <span class="btns gre sm radius">초</span>
+                                        <div class="schrot_bt">
+                                            <div class="tp_tx">Chapter.1</div>
+                                            <div class="tit">
+                                                <div class="tit_in">
+                                                    현장과학교사 30인 추천 과학관에서 할 일 TOP 5
+                                                </div>
+                                            </div>
+                                            <div class="inq_area">
+                                                <ul class="lst">
+                                                    <li class="tp tp01">
+                                                        <a href="#;" class="txt">21444</a>
+                                                    </li>
+                                                    <li class="tp tp02">
+                                                        <span class="txt">11447</span>
+                                                    </li>
+                                                </ul>
+                                                <!-- 
+                                                <span class="btns gre sm radius">초</span>
+                                                <span class="btns sky sm radius">중</span>
+                                                <span class="btns pik sm radius">고</span>
+                                                 -->
+                                                <span class="btns gre sm radius">초</span>
+                                            </div>
+                                            <div class="btns_group">
+                                                <a href="#" class="schrot_btns">카드뉴스</a>
+                                                <a href="#" class="schrot_btns">동영상</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -613,22 +701,33 @@
                                         <a href="#" class="img" title="수족관으로 떠나자">
                                             <img src="./reRsrc/images/sample15.png" alt="">
                                         </a>
-                                        <div class="tit">수족관으로 떠나자</div>
-                                        <div class="inq_area">
-                                            <ul class="lst">
-                                                <li class="tp tp01">
-                                                    <a href="#;" class="txt">21444</a>
-                                                </li>
-                                                <li class="tp tp02">
-                                                    <a href="#;" class="txt">11447</a>
-                                                </li>
-                                            </ul>
-                                            <!-- 
-                                            <span class="btns gre sm radius">초</span>
-                                            <span class="btns sky sm radius">중</span>
-                                            <span class="btns pik sm radius">고</span>
-                                             -->
-                                            <span class="btns sky sm radius">중</span>
+                                        <div class="schrot_bt">
+                                            <div class="tp_tx">Chapter.1</div>
+                                            <div class="tit">
+                                                <div class="tit_in">
+                                                    현장과학교사 30인 추천 과학관에서 할 일 TOP 5
+                                                </div>
+                                            </div>
+                                            <div class="inq_area">
+                                                <ul class="lst">
+                                                    <li class="tp tp01">
+                                                        <a href="#;" class="txt">21444</a>
+                                                    </li>
+                                                    <li class="tp tp02">
+                                                        <span class="txt">11447</span>
+                                                    </li>
+                                                </ul>
+                                                <!-- 
+                                                <span class="btns gre sm radius">초</span>
+                                                <span class="btns sky sm radius">중</span>
+                                                <span class="btns pik sm radius">고</span>
+                                                 -->
+                                                <span class="btns gre sm radius">초</span>
+                                            </div>
+                                            <div class="btns_group">
+                                                <a href="#" class="schrot_btns">카드뉴스</a>
+                                                <a href="#" class="schrot_btns">동영상</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -637,8 +736,8 @@
                                 <span class="txt">더 보기</span>
                             </a>
                         </div>
-                        <!-- 다른프로그램 볼까요? : E -->
                     </div>
+                    <!-- 다른프로그램 볼까요? : E -->
                 </div>
                 <!-- 학부모창의교실 전용 마크업 : E -->
             </div>

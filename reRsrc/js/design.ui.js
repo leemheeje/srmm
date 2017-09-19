@@ -20,7 +20,7 @@ var gnbMenuActFun = {
         paddingTopBottom: 10,
     },
     cssVal: {
-        blGroundPadBottom: 20, //디자인적 수치. 하단패딩추가
+        blGroundPadBottom: 20, // 디자인적 수치. 하단패딩추가
         dept02PadTop: 17,
     },
     subPageName: 'h1.page-title.entry-title',
@@ -32,7 +32,9 @@ var gnbMenuActFun = {
     crrtParamValue: null,
     crrtTargetHref: null,
     init: function() {
+        var _this = this;
         this.targEl = this.dept02 + ' ' + this.blGround;
+        //this.setCookieLoad();   
         this.crrtMemuFun();
         this.set();
         this.bind();
@@ -40,7 +42,37 @@ var gnbMenuActFun = {
         this.mobileSet();
         this.mobileSch();
     },
-    //내일해야함 파라미터파악하고, 후에 패턴분석해서 정의
+    setCookieLoad : function(){
+        this.setCookieName = 'menuidx';
+        this.getCookieElement = '.menuIdx';
+        this.setCookie = $.cookie(this.setCookieName);
+        this.setCookieBind();
+        this.menuIdxArry = null;
+        if (this.setCookie) {
+            this.getCookiePars(this.setCookie);
+        } else {
+            this.crrtMemuFun();
+        }
+    },
+    setCookieBind: function() {
+        var _this = this;
+        jQuery(this.getCookieElement).off().on({
+            'click': function() {
+                var $this = jQuery(this);
+                var $data = $this.data(_this.setCookieName);
+                $.cookie(_this.setCookieName, $data);
+            },
+        });
+    },
+    getCookiePars: function(data) {
+        var _this = this;
+        this.menuIdxArry = data.split(',');
+        jQuery(this.el).find('li').removeClass('active');
+        jQuery(this.el).find('>li:eq(' + this.menuIdxArry[0] + ')').addClass('active');
+        jQuery(this.el).find('>li:eq(' + this.menuIdxArry[0] + ')').find(this.dept02).find('>li:eq(' + this.menuIdxArry[1] + ')').addClass('active');
+        jQuery(this.el).find('>li:eq(' + this.menuIdxArry[0] + ')').find(this.dept02).find('>li:eq(' + this.menuIdxArry[1] + ')').find(this.dept03).find('>li:eq(' + this.menuIdxArry[2] + ')').addClass('active');
+        $.cookie(_this.setCookieName, '', { expires: -1 });
+    },
     crrtMemuFun: function() {
         var _this = this;
         this.paramName.forEach(function(name) {
@@ -54,7 +86,6 @@ var gnbMenuActFun = {
         } else {
             this.crrtMemuActive(true);
         }
-        console.log(this.crrtTargetHref)
     },
     getLocParam: function(bool, name) {
         if (jQuery(window).getParams(name)) {
@@ -69,37 +100,29 @@ var gnbMenuActFun = {
         targetMenu.forEach(function(target) {
             jQuery(target).find('li .txt').each(function() {
                 var $this = $(this);
-                var $thisHref = bool ? $this.attr('href') == _this.crrtTargetHref : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
+                var $thisHref = null;
+                switch(_this.crrtParamValue){
+                    case '424573' : //창의교육 > 창의교육선도 교원양성대학
+                    case '447628' : //창의교육 > 창의교육 거점센터 
+                    var params = jQuery(window).getParams('m');
+                    $thisHref = params ? $this.attr('href').indexOf(_this.crrtTargetHref+'&m='+params) != -1  : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
+                    break;
+                    case '126176': //창의교육 > 창의교육 백문백답
+                    var params = jQuery(window).getParams('C');
+                    $thisHref = params ? $this.attr('href').indexOf(_this.crrtTargetHref) != -1 && $this.attr('href').indexOf('&C='+params) != -1  : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
+                    break;
+                    case '%EA%B3%84%EA%B8%B0%EA%B5%90%EC%9C%A1-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8':
+                    case '%EC%98%81%EB%82%A8%EA%B6%8C-%EC%B0%BD%EC%9D%98%EC%B2%B4%ED%97%98-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8':
+                    case '%EC%B0%BD%EC%9D%98%EC%9D%B8%EC%84%B1%EA%B5%90%EC%9C%A1-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8':
+                    case '%EB%A9%80%ED%8B%B0%EB%AF%B8%EB%94%94%EC%96%B4-%EC%9E%90%EB%A3%8C%EC%8B%A4':
+                            var params = jQuery(window).getParams('term_slug');
+                            $thisHref = $this.attr('href').indexOf(_this.crrtParamValue.toLowerCase()) != -1 || $this.attr('href').indexOf(_this.crrtParamValue.toUpperCase()) != -1;
+                            break;
+                    default : 
+                    $thisHref = bool ? $this.attr('href').indexOf(_this.crrtTargetHref) != -1 : $this.attr('href').indexOf(_this.crrtTargetHref) != -1;
+                }
+
                 if ($thisHref) {
-                    jQuery(target).find('li').removeClass('active');
-                    $this.closest('li').addClass('active');
-                    $this.closest('li').parent().parent().addClass('active');
-                    $this.closest('li').parent().parent().parent().parent().addClass('active');
-                }
-            });
-        });
-    },
-    crrtMemuActive2: function() {
-        var _this = this;
-        var params = _this.locSearch;
-        var io = params.indexOf('&');
-        var loc = io != -1 ? params.slice(0, io) : params;
-        var arry = [this.el, this.mmGnbDepthLst01];
-        this.crrtMenuName = jQuery(this.subPageName).text();
-        arry.forEach(function(target) {
-            jQuery(target).find('li .txt').each(function() {
-                var $this = jQuery(this);
-                var $thisTxt = $this.text();
-                var $thisHref = $this.attr('href');
-                var gubun = '/' + loc == $thisHref;
-                if ($this.data('anthref')) {
-                    if ('/' + loc == $this.data('anthref')[0]) {
-                        gubun = true;
-                    }
-                }
-                if (gubun) {
-                    console.log('loc            =========   /' + loc)
-                    console.log('$thisHref =========   ' + $thisHref)
                     jQuery(target).find('li').removeClass('active');
                     $this.closest('li').addClass('active');
                     $this.closest('li').parent().parent().addClass('active');
@@ -287,7 +310,7 @@ var gnbMenuActFun = {
                 _this.show(true);
             },
             'mouseleave': function() {
-                //_this.show(false);
+                // _this.show(false);
             },
         });
         jQuery('.nm_container').off().on({
@@ -482,7 +505,7 @@ var asideMenuFun = {
         var _this = this;
         if (dv) { // pc
             $target.closest('li').toggleClass('active');
-        } else { //mob
+        } else { // mob
             if (showhide === 'close') {
                 jQuery(this.mobile.lst).hide();
                 return;
@@ -490,10 +513,10 @@ var asideMenuFun = {
             jQuery(this.mobile.lst).show().find(this.findSet).each(function() {
                 var $this = jQuery(this);
                 var $thisLi = $this.closest('li');
-                if ($target[0].className.indexOf(_this.classFormat(_this.vNames.dp01)) != -1) { //mobile dp01
+                if ($target[0].className.indexOf(_this.classFormat(_this.vNames.dp01)) != -1) { // mobile dp01
                     $this.show();
                     $thisLi.find(_this.gnb.dp02).hide();
-                } else if ($target[0].className.indexOf(_this.classFormat(_this.vNames.dp02)) != -1) { //mobile dp02
+                } else if ($target[0].className.indexOf(_this.classFormat(_this.vNames.dp02)) != -1) { // mobile dp02
                     $this.hide();
                     $thisLi.find(_this.gnb.dp02).hide();
                     if ($thisLi.is('.active')) {
@@ -549,6 +572,7 @@ var cmmDialogFun = {
                 };
             },
             hide: function() {
+                console.log(_this.el)
                 _this.act(false, jQuery(_this.el).find(_this.closeBtn));
             },
         };
@@ -557,6 +581,7 @@ var cmmDialogFun = {
         var _this = this;
         jQuery(this.btn).off().on({
             'click': function() {
+                console.log(_this)
                 _this.act(true);
                 return false;
             },
@@ -659,7 +684,7 @@ var cmmImgAlignClip = {
             } else {
                 jQuery(this).css({
                     'margin-top': 0,
-                    //'height' : $thisParent.height() + 1
+                    // 'height' : $thisParent.height() + 1
                 });
             }
         });
