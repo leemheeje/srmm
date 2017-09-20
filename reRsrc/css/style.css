@@ -971,6 +971,14 @@ body.pcScrollOff{overflow-y: hidden;}
 	.nm_contents .nm_cdnot .nmcdn_col2 .nmcdn_card .contr .uislide_prev{left: -10px; background-image: url(../images/respons/arror_white_left.png); border-top-right-radius: 5px; border-bottom-right-radius: 5px;}
 	.nm_contents .nm_cdnot .nmcdn_col2 .nmcdn_card .contr .uislide_next{right: -10px; background-image: url(../images/respons/arror_white_right.png); border-top-left-radius: 5px; border-bottom-left-radius: 5px;}
 	.nm_contents .nm_cdnot .nmcdn_col2 .nmcdn_imge .contr .slick-dots{width: 100%; text-align: center; right: 0; top: auto; bottom: 5px;}
+	.layerpop .pop_result_pop .lst li .txt{font-size: 14px; padding-left: 37px;}
+	.layerpop .pop_result_pop .tit{font-size: 15px;}
+	.layerpop .pop_result_pop .lst li .txt:after, 
+	.layerpop .pop_result_pop.resu_lst .lst li .res_in:after{width: 25px; height: 25px; font-size: 14px; line-height: 25px; margin-top: -12px;}
+	.layerpop .pop_result_pop.resu_lst .lst li .res_in .rgt .tit dt,
+	.layerpop .pop_result_pop.resu_lst .lst li .res_in .rgt .tit dd{font-size: 14px;}
+	.layerpop .pop_result_pop.resu_lst .lst li .res_in .rgt .btm{padding-left: 25px; background-size: 20px; font-size: 15px;}
+	.layerpop .pop_result_pop.resu_lst .lst li .res_in:after{top: 5px;}
 
 }
 
