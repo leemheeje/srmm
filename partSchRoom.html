@@ -96,6 +96,11 @@
                         $('.topBanToggDiv').slideToggle(schRoomAnimateCallb()).toggleClass('active');
                         return false;
                     });
+                    $('.topBanToggBtn02').click(function() {
+                        $(this).toggleClass('actve');
+                        $('.stp_lst').slideToggle(schRoomAnimateCallb());
+                        return false;
+                    });
                 })();
                 //카드뉴스 슬라이드 부분 
                 $('.ptncmSlideBox').uiSwiper({
@@ -504,7 +509,7 @@
                                             </ul>
                                             <div class="btns_group">
                                                 <a href="#" class="btns wht">STEP형</a>
-                                                <a href="#" class="btns gre active">초 등</a>
+                                                <a href="#" class="btns gre active">초<i class="tn"> 등</i></a>
                                             </div>
                                         </div>
                                     </div>
