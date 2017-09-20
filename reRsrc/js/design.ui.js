@@ -597,6 +597,7 @@ var cmmDialogFun = {
     act: function(bool, $this) {
         var _this = this;
         if (bool) {
+            console.log(_this.align())
             jQuery('body').addClass('pcScrollOff');
             jQuery(this.el).find(this.glDimm).show().stop().animate({
                 'opacity': 1
@@ -625,7 +626,7 @@ var cmmDialogFun = {
         }
     },
     align: function() {
-        return jQuery(document).height() - (jQuery(document).height() - jQuery(window).scrollTop());
+        return 0;//jQuery(document).height() - (jQuery(document).height() - jQuery(window).scrollTop());
     },
     callb: function() {},
     animateCallback: function(obj) {
