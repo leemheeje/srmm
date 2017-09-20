@@ -685,7 +685,7 @@ body.pcScrollOff{overflow-y: hidden;}
 .schr_area .icq_lst .tp .pcpt_tag a.img.img05:hover,
 .schr_area .icq_lst .tp .pcpt_tag .pcpt_lst .lst li .box:hover .plst_in .img.img05{background-image: url(../images/schroom/pcpt05_active.png);}
 
-.schr_area .ptn_area .btns_group{position: absolute; right: 0; top: 50%; margin-top: -10px;}
+.schr_area .ptn_area .btns_group{position: absolute; right: 0; top: 0;}
 .schr_area .ptn_area .btns_group .btns{background: #b8b8b8 !important; border-color: #b8b8b8 !important; height: 34px; line-height: 34px; font-size: 16px; min-width: 70px; padding: 0 10px;}
 .schr_area .ptn_area .btns_group .btns.gre.active,
 .schr_area .ptn_area .btns_group .btns.gre:hover{background: #28bfa4 !important; border-color: #28bfa4 !important; color: #fff;}
@@ -707,8 +707,8 @@ body.pcScrollOff{overflow-y: hidden;}
 	.cmm_sns_lst li.active:after{width: 9px; height: 8px; margin-left: -5px; top: -5px;}
 	.schr_area .schr_rep .schrr_bt .lst li .rt_bx .dmx .dm_fv{font-size: 12px; background-size: 14px; padding-left: 20px; min-width: 50px;}
 	.schr_area .schr_rep .schrr_bt .lst li .txts .tit{font-size: 14px;}
-	.schr_area .schr_rep .schrr_bt .lst li .txts .txt{font-size: 12px;}
-	.schr_area .schr_rep .schrr_bt .lst li .img{width: 39px; height: 39px;}
+	.schr_area .schr_rep .schrr_bt .lst li .txts .txt{font-size: 12px; min-height: 32px;}
+	.schr_area .schr_rep .schrr_bt .lst li .img{width: 39px; height: 39px; top: 5px; margin-top: 0;}
 	.schr_area .ach_cmm_more{width: 75px; text-align: center; margin-left: auto; margin-right: auto; font-size: 12px; height: 25px; line-height: 25px; color: #818181;}
 	.schr_area .btns.sm{width: 20px; min-width: 0; height: 20px; line-height: 20px;}
 	.schr_area .schrot_lst{margin: 0;}
@@ -729,10 +729,11 @@ body.pcScrollOff{overflow-y: hidden;}
 	.schr_area .schr_rep .schrr_bt{margin-top: 35px;}
 	.schr_area .ach_cmm_more{margin-top: 20px;}
 	.schr_area .ach_cmm_more .txt{padding-right: 0; background-image: none; }
+	.schr_area .schr_rep .schrr_bt .lst li{padding: 15px 6px;}
 	.schr_area .schr_rep .schrr_bt .lst li .rt_bx{top: 0;}
 	.schr_area .schr_rep .schrr_bt .lst li .rt_bx .date{display: none;}
 	.schr_area .schr_rep .schrr_bt .lst li .rt_bx .dmx{margin-top: 0;}
-	.schr_area .schr_rep .schrr_bt .lst li .in{padding-right: 0; padding-left: 55px;}
+	.schr_area .schr_rep .schrr_bt .lst li .in{padding-right: 0; padding-left: 46px;}
 	.schr_area .ptncm_area .ptncm_inbx .ptncm_hd .tit{min-height: auto; line-height: 1.4; margin: 9px 0 8px;}
 	.schr_area .ptncm_area .ptncm_inbx .ptncm_hd .tit .tit_in{font-size: 17px;}
 	.schr_area .ptncm_area .ptncm_inbx .ptncm_hd .chpt{font-size: 12px; min-width: 77px; height: 29px; line-height: 29px;}
@@ -746,6 +747,7 @@ body.pcScrollOff{overflow-y: hidden;}
 	.cmm_tabs .tp .txt{font-size: 14px;}
 	.schr_area .inq_btn_lst{width: 27px;}
 	.schr_area .icq_lst .tp .btns.gry{height: auto; line-height: normal; padding: 3px 5px; min-width: 0;}
+	.schr_area .ptn_area .btns_group{top: 50%; margin-top: -10px;}
 	.schr_area .ptn_area .btns_group .btns{height: 20px; line-height: 20px; min-width: 0; font-size: 11px;}
 	.schr_area .icq_lst .tp .pcpt_tag .pcpt_lst .lst{padding: 10px 0 7px;}
 	.schr_area .icq_lst .tp .pcpt_tag .pcpt_lst .lst li .box .plst_in .txt{font-size: 9px;}
