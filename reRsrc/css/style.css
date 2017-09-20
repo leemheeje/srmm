@@ -662,8 +662,8 @@ body.pcScrollOff{overflow-y: hidden;}
 .schr_area .icq_lst .tp .pcpt_tag .pcpt_lst .lst li .box .plst_in .img{margin-left: 0; width: 33px; height: 33px;}
 .schr_area .icq_lst .tp .pcpt_tag .pcpt_lst .lst li .box .plst_in .txt{font-size: 12px; color: #808080; margin: 7px 0 10px;}
 .schr_area .icq_lst .tp .pcpt_tag .pcpt_lst .lst li .box .plst_in .num{font-size: 18px; font-weight: 600; color: #515151;}
-.schr_area .icq_lst .tp .pcpt_tag .img{width: 27px; height: 27px; display: inline-block; vertical-align: middle; margin-left: 5px; background: url() no-repeat left top; background-size: 100% auto; }
-.schr_area .icq_lst .tp .pcpt_tag .img.pcpTnTagImg{opacity: .5;}
+.schr_area .icq_lst .tp .pcpt_tag .img{width: 27px; height: 27px; display: inline-block; vertical-align: middle; margin-left: 5px; background: url() no-repeat left top; background-size: 100% auto;}
+.schr_area .icq_lst .tp .pcpt_tag .img.pcpTnTagImg{opacity: .5; display: none;}
 .schr_area .icq_lst .tp .pcpt_tag .img.img01{background-image: url(../images/schroom/pcpt01.png);}
 .schr_area .icq_lst .tp .pcpt_tag .img.img02{background-image: url(../images/schroom/pcpt02.png);}
 .schr_area .icq_lst .tp .pcpt_tag .img.img03{background-image: url(../images/schroom/pcpt03.png);}
@@ -685,7 +685,7 @@ body.pcScrollOff{overflow-y: hidden;}
 .schr_area .icq_lst .tp .pcpt_tag a.img.img05:hover,
 .schr_area .icq_lst .tp .pcpt_tag .pcpt_lst .lst li .box:hover .plst_in .img.img05{background-image: url(../images/schroom/pcpt05_active.png);}
 
-.schr_area .ptn_area .btns_group{position: absolute; right: 0; top: 0;}
+.schr_area .ptn_area .btns_group{position: absolute; right: 0; top: 50%; margin-top: -10px;}
 .schr_area .ptn_area .btns_group .btns{background: #b8b8b8 !important; border-color: #b8b8b8 !important; height: 34px; line-height: 34px; font-size: 16px; min-width: 70px; padding: 0 10px;}
 .schr_area .ptn_area .btns_group .btns.gre.active,
 .schr_area .ptn_area .btns_group .btns.gre:hover{background: #28bfa4 !important; border-color: #28bfa4 !important; color: #fff;}
@@ -693,6 +693,7 @@ body.pcScrollOff{overflow-y: hidden;}
 .schr_area .ptn_area .btns_group .btns.sky:hover{background: #59d0e9 !important; border-color: #59d0e9 !important; color: #fff;}
 .schr_area .ptn_area .btns_group .btns.pik.active,
 .schr_area .ptn_area .btns_group .btns.pik:hover{background: #fb9696 !important; border-color: #fb9696 !important; color: #fff;}
+.schr_area .ptn_area .btns_group .btns.wht{background: #fff !important; border-color: #a1a1a1 !important;}
 .schr_area .schr_rep .schrr_md .schrr_md_hd .icq_lst{padding-left: 0; position: absolute; right: 100px; top: 6px;}
 .schr_area .schr_rep .schrr_md .schrr_md_hd .icq_lst .tp .pcpt_tag .pcpt_lst{display: none;}
 .NO_RESULT{text-align: center; color: #a5a5a5; padding: 15px 0;}
@@ -702,20 +703,24 @@ body.pcScrollOff{overflow-y: hidden;}
 	.schr_area{margin-top: -47px;}
 }
 @media only screen and (max-width : 980px){
+	.schr_area .schr_rep .schrr_md .schrr_md_md .textarea{font-size: 12px;}
+	.cmm_sns_lst li.active:after{width: 9px; height: 8px; margin-left: -5px; top: -5px;}
 	.schr_area .schr_rep .schrr_bt .lst li .rt_bx .dmx .dm_fv{font-size: 12px; background-size: 14px; padding-left: 20px; min-width: 50px;}
 	.schr_area .schr_rep .schrr_bt .lst li .txts .tit{font-size: 14px;}
 	.schr_area .schr_rep .schrr_bt .lst li .txts .txt{font-size: 12px;}
 	.schr_area .schr_rep .schrr_bt .lst li .img{width: 39px; height: 39px;}
 	.schr_area .ach_cmm_more{width: 75px; text-align: center; margin-left: auto; margin-right: auto; font-size: 12px; height: 25px; line-height: 25px; color: #818181;}
 	.schr_area .btns.sm{width: 20px; min-width: 0; height: 20px; line-height: 20px;}
+	.schr_area .schrot_lst{margin: 0;}
+	.schr_area .schrot_lst .rls{padding: 5px 0;}
 	.schr_area .schrot_lst .rls{width: 100%; }
 	.schr_area .schrot_lst .rls .in{position: relative; padding-left: 50%;}
 	.schr_area .schrot_lst .rls .in .img{width: 50%; position: absolute; left: 0; top: 0; height: 100%;}
 	.schr_area .schrot_lst .rls .in .schrot_bt{padding: 0 10px;}
 	.schr_area .schrot_lst .rls .in .tp_tx,
 	.schr_area .schrot_lst .rls .in .tit{text-align: left; padding: 0;}
-	.schr_area .schrot_lst .rls .in .tp_tx{font-size: 11px; margin-top: 7px;}
-	.schr_area .schrot_lst .rls .in .tit{margin-top: 2px; font-size: 12px; height: auto; min-height: 32px;}
+	.schr_area .schrot_lst .rls .in .tp_tx{font-size: 12px; margin-top: 7px;}
+	.schr_area .schrot_lst .rls .in .tit{margin-top: 2px; font-size: 13px; height: auto; min-height: 32px;}
 	.schr_area .schrot_lst .rls .in .inq_area{padding-right: 45px;}
 	.schr_area .schrot_lst .rls .in .inq_area .label_group{bottom: 6px;}
 	.schr_area .schrot_lst .rls .in .btns_group .schrot_btns{height: 30px; line-height: 30px; font-size: 12px;}
@@ -732,16 +737,16 @@ body.pcScrollOff{overflow-y: hidden;}
 	.schr_area .ptncm_area .ptncm_inbx .ptncm_hd .tit .tit_in{font-size: 17px;}
 	.schr_area .ptncm_area .ptncm_inbx .ptncm_hd .chpt{font-size: 12px; min-width: 77px; height: 29px; line-height: 29px;}
 	.schr_area .ptncm_area .schr_in_box{padding: 35px 10px;}
-	.schr_area .ptn_area{padding-top: 8px; padding-bottom: 8px;}
-	.schr_area .ptn_area .in{padding-left: 25px; padding-right: 80px;}
+	.schr_area .ptn_area{padding-top: 8px; padding-bottom: 8px; padding-right: 10px;}
+	.schr_area .ptn_area .in{padding-left: 27px; padding-right: 110px;}
 	.schr_area .btns{height: 25px; line-height: 25px; padding: 0 15px; min-width: 0; font-size: 11px;}
 	.schr_area .icq_lst .tp .pcpt_tag .img{width: 14px; height: 14px;}
 	.schr_area .schr_oth{margin-top: 0;}
 	.schr_area .schr_oth .schr_in_box{padding-top: 30px; border: none;}
 	.cmm_tabs .tp .txt{font-size: 14px;}
-	.schr_area .inq_btn_lst{width: 25px;}
-	.schr_area .icq_lst .tp .btns.gry{height: 16px; line-height: 16px; padding: 0 5px; min-width: 0;}
-	.schr_area .ptn_area .btns_group .btns{height: 20px; line-height: 20px; min-width: 0; display: none;}
+	.schr_area .inq_btn_lst{width: 27px;}
+	.schr_area .icq_lst .tp .btns.gry{height: auto; line-height: normal; padding: 3px 5px; min-width: 0;}
+	.schr_area .ptn_area .btns_group .btns{height: 20px; line-height: 20px; min-width: 0; font-size: 11px;}
 	.schr_area .icq_lst .tp .pcpt_tag .pcpt_lst .lst{padding: 10px 0 7px;}
 	.schr_area .icq_lst .tp .pcpt_tag .pcpt_lst .lst li .box .plst_in .txt{font-size: 9px;}
 	.schr_area .icq_lst .tp .pcpt_tag .pcpt_lst .lst li .box .plst_in .img{width: 17px; height: 17px;}
@@ -772,17 +777,18 @@ body.pcScrollOff{overflow-y: hidden;}
 	.schr_area .ptncm_area .ptncm_inbx .ptncm_asd .lst li .txt{font-size: 12px; padding: 10px 10px;}
 	.schr_area .ptncm_area .ptncm_inbx .ptncm_asd .lst li .txt:after{content: none;}
 	.schr_area .ptncm_area .ptncm_inbx .ptncm_cont .on_img .contr{display: none;}
-	.schr_area .icq_btn{text-indent: -999em; padding-left: 0; background-size: 10px auto; background-position: center center;}
+	.schr_area .icq_btn{text-indent: -999em; padding-left: 0; background-size: 12px auto; background-position: center center;}
 	.schr_area .icq_lst{padding-left: 0;}
-	.schr_area .icq_lst .tp .txt{font-size: 10px;}
+	.schr_area .icq_lst .tp .txt{font-size: 11px;}
 	.schr_area .icq_lst .tp{margin-left: 5px;}
-	.schr_area .icq_lst .tp.tp01 .txt{font-size: 10px;}
-	.schr_area .icq_lst .tp.tp01{background-size: 15px auto; padding-left: 19px; background-position: left center;}
+	.schr_area .icq_lst .tp.tp01 .txt{font-size: 11px;}
+	.schr_area .icq_lst .tp.tp01{background-size: 17px auto; padding-left: 21px; background-position: left center;}
 	.schr_area .ptncm_area .ptncm_inbx .ptncm_cont{height: auto;}
 	.cmm_tabs .tp .txt .ic{padding-left: 23px;}
 	.cmm_tabs .tp .txt .ic:after{background-size: 15px auto;}
 	.schr_area .schr_ar_md .schr_in_box{border: none; margin: 0 10px; background: #fff; position: relative;}
 	.schr_area .schr_ar_md .top_ban_togg_btn{position: absolute; right: 0; top: 0; width: 40px; height: 40px; background: no-repeat url(../images/schroom/top_ban_togg_btn02.png) center center; background-size: 15px auto;}
+	.schr_area .schr_ar_md .stp_lst{margin: 0 -5px;}
 	.schr_area .schr_ar_md .stp_lst .tp{padding: 0 5px;}
 	.schr_area .schr_ar_md .stp_lst .tp .stpl_in{width: 100%; height: auto; border: 1px solid #ff9c27; border-radius: 0; padding-bottom: 12px;}
 	.schr_area .schr_ar_md .tit{font-size: 13px; padding-top: 13px; padding-bottom: 13px;}
