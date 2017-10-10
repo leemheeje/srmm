@@ -194,13 +194,13 @@
 
             function imgResize() {
                 if ($(this).width() <= 900) {
-                    $this.find('.nm_contents .nm_ncps .nm_cck .th_box .th_box_in .img').each(function() {
+                    $this.find('.nm_contents .nm_ncps .nm_cck .th_box .th_box_in .int_con').each(function() {
                         $(this).css({
                             'height': $(this).width() * 0.58
                         });
                     });
                 } else {
-                    $this.find('.nm_contents .nm_ncps .nm_cck .th_box .th_box_in .img').each(function() {
+                    $this.find('.nm_contents .nm_ncps .nm_cck .th_box .th_box_in .int_con').each(function() {
                         $(this).css({
                             'height': 167
                         });

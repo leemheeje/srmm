@@ -10,6 +10,7 @@ var gnbMenuActFun = {
     mmGnbDepthLst01: '.mmGnbDepthLst01',
     mmGnbDepthLst02: '.mmGnbDepthLst02',
     mmGnbDepthLst03: '.mmGnbDepthLst03',
+    mmGnbCloseBtn: '.mmGnbCloseBtn',
     glDimm: '.glDimm',
     dept03ToggBtn: '.gnbDepthLst02>.inDp03 > .txt',
     blGround: '.gnbBlGround',
@@ -25,7 +26,7 @@ var gnbMenuActFun = {
     },
     subPageName: 'h1.page-title.entry-title',
     crrtMenuName: '',
-    paramName: ['page_id', 'crfile_cat', 'resourcecat', 'programcat', 'crmodelcat', 'ebook_cat'],
+    paramName: ['page_id', 'crfile_cat', 'resourcecat', 'programcat', 'crmodelcat', 'ebook_cat', 'eventcat'],
     ifParamName: ['term_slug'],
     locSearch: location.search,
     crrtParamName: null,
@@ -88,15 +89,29 @@ var gnbMenuActFun = {
         }
     },
     getLocParam: function(bool, name) {
+		var _this =this;
         if (jQuery(window).getParams(name)) {
+			var page_id = jQuery(window).getParams('page_id');
             this.crrtParamName = name;
             this.crrtParamValue = jQuery(window).getParams(name);
+            var str;
+            if (!page_id) {
+                str = decodeURI(this.crrtParamValue);
+                this.crrtParamValue = str;
+            }
             this.crrtTargetHref = bool ? '/?' + this.crrtParamName + '=' + this.crrtParamValue : this.crrtParamValue;
+			/*
+			this.crrtParamName = name;
+            this.crrtParamValue = jQuery(window).getParams(name);
+            this.crrtTargetHref = bool ? '/?' + this.crrtParamName + '=' + this.crrtParamValue : this.crrtParamValue;
+			*/
         }
     },
     crrtMemuActive: function(bool) {
         var _this = this;
         var targetMenu = [this.el, this.mmGnbDepthLst01];
+
+		console.log(_this.crrtParamValue)
         targetMenu.forEach(function(target) {
             jQuery(target).find('li .txt').each(function() {
                 var $this = $(this);
@@ -115,6 +130,30 @@ var gnbMenuActFun = {
                     case '%EC%98%81%EB%82%A8%EA%B6%8C-%EC%B0%BD%EC%9D%98%EC%B2%B4%ED%97%98-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8':
                     case '%EC%B0%BD%EC%9D%98%EC%9D%B8%EC%84%B1%EA%B5%90%EC%9C%A1-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8':
                     case '%EB%A9%80%ED%8B%B0%EB%AF%B8%EB%94%94%EC%96%B4-%EC%9E%90%EB%A3%8C%EC%8B%A4':
+					//창의적 체험활동
+					case '역사체험-창의적체험활동' :
+					case '과학기술-창의적체험활동' :
+					case '인문사회-창의적체험활동' :
+					case '예체능-창의적체험활동' :
+					case '보건-창의적체험활동' :
+					case '녹색-창의적체험활동' :
+					case '기타-창의적체험활동' :
+					//창의적 진로직업체험
+					case '역사체험-진로직업체험' :
+					case '과학기술-진로직업체험' :
+					case '인문사회-진로직업체험' :
+					case '예체능-진로직업체험' :
+					case '보건-진로직업체험' :
+					case '녹색-진로직업체험' :
+					case '기타-진로직업체험' :
+					//창의적 교과학습지원
+					case '역사-교과학습지원':
+					case '국어-교과학습지원':
+					case '영어-교과학습지원':
+					case '수학-교과학습지원':
+					case '과학-교과학습지원':
+					case '예체능-교과학습지원':
+					case '사회-교과학습지원':
                         var params = jQuery(window).getParams('term_slug');
                         $thisHref = $this.attr('href').indexOf(_this.crrtParamValue.toLowerCase()) != -1 || $this.attr('href').indexOf(_this.crrtParamValue.toUpperCase()) != -1;
                         break;
@@ -127,6 +166,7 @@ var gnbMenuActFun = {
                     $this.closest('li').addClass('active');
                     $this.closest('li').parent().parent().addClass('active');
                     $this.closest('li').parent().parent().parent().parent().addClass('active');
+                    $this.closest('li').parent().parent().parent().parent().parent().parent().addClass('active');
                 }
             });
         });
@@ -135,8 +175,10 @@ var gnbMenuActFun = {
         var _this = this;
         jQuery(window).smartresize(function() {
             /* 검색바 속성 초기화 */
-            jQuery(_this.schObj.btn).removeClass('active');
-            jQuery(_this.schObj.el).removeAttr('style');
+            if ($(this).width() > 980) {
+                jQuery(_this.schObj.btn).removeClass('active');
+                jQuery(_this.schObj.el).removeAttr('style');
+            }
         });
         jQuery(this.schObj.btn).off().on({
             'click': function() {
@@ -203,6 +245,11 @@ var gnbMenuActFun = {
             },
         });
         jQuery(this.mmGnbWrap).find(this.glDimm).off().on({
+            'touchmove touchstart click': function() {
+                _this.mobileNavMove(false);
+            },
+        });
+        jQuery(this.mmGnbWrap).find(this.mmGnbCloseBtn).off().on({
             'touchmove touchstart click': function() {
                 _this.mobileNavMove(false);
             },
@@ -343,7 +390,12 @@ var gnbMenuActFun = {
         var _this = this;
         jQuery(this.dept03ToggBtn).off().on({
             'click': function() {
-                jQuery(this).closest('li').toggleClass('active');
+                if (!jQuery(this).closest('li').is('.active')) {
+                    jQuery(_this.dept02).find('>li').removeClass('active');
+                    jQuery(this).closest('li').addClass('active');
+                } else {
+                    jQuery(_this.dept02).find('>li').removeClass('active');
+                }
                 _this.show(true);
                 return false;
             },
@@ -356,6 +408,7 @@ var asideMenuFun = {
         wrap: '.asideMenu',
         dp01: '.asideMenuDepth01',
         dp02: '.asideMenuDepth02',
+        dp03: '.asideMenuDepth03',
     },
     mobile: {
         wrap: '.mmAsideMenu',
@@ -369,14 +422,17 @@ var asideMenuFun = {
         dp01: '.gnbDepthLst01',
         dp02: '.gnbDepthLst02',
         dp03: '.gnbDepthLst03',
+        dp04: '.gnbDepthLst04',
     },
     findSet: '>li>.txt',
     dpActiveTxt: {
         dp01: '',
         dp02: '',
         dp03: '',
+        dp04: '',
     },
     init: function() {
+        this.get().getHistoryAsideBtn();
         this.get().getPc();
         this.get().getMobile();
         this.dpActiveTxtFun();
@@ -415,9 +471,19 @@ var asideMenuFun = {
             var $gnbHtml = jQuery(_this.gnb.dp01).html();
             jQuery(_this.mobile.lst).html($gnbHtml);
         };
+        var getHistoryAsideBtn = function() {
+            var tar = ['#templatic_text-31', '#templatic_text-11', '#templatic_text-14']; //,'[id^="directory_mile_range_widget"]'
+            for (var i = 0; i < tar.length; i++) {
+                if (jQuery(tar[i]).length) {
+                    jQuery('.asideMenuDepth02').after(jQuery(tar[i]));
+                }
+            }
+
+        };
         return {
             getPc: getPc,
             getMobile: getMobile,
+            getHistoryAsideBtn: getHistoryAsideBtn,
         };
     },
     mobVirNameBox: function() {
@@ -626,7 +692,7 @@ var cmmDialogFun = {
         }
     },
     align: function() {
-        return 0;//jQuery(document).height() - (jQuery(document).height() - jQuery(window).scrollTop());
+        return 0; //jQuery(document).height() - (jQuery(document).height() - jQuery(window).scrollTop());
     },
     callb: function() {},
     animateCallback: function(obj) {

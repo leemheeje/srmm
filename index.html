@@ -79,7 +79,7 @@
         </div>
         <!-- nm_header : E -->
         <!-- nm_container : S -->
-        <div id="nmContainer" class="nm_container">
+        <div id="nmContainer" class="nm_container main_container">
             <!-- 메인전용 함수출력 : S -->
             <script type="text/javascript">
             $(document).ready(function() {
@@ -148,13 +148,14 @@
                     });
                 });
                 //레이어팝
-                $('.layerQuickBtn').click(function(){
+                $('.layerQuickBtn').click(function() {
                     cmmDialogFun.init('.layerQuickMenu').show();
                 });
+
                 function imgsResize() {
                     $('.mmChangeImg').each(function() {
                         var $thisimg = null;
-                        if ($(window).width() <= 900) {
+                        if($(window).width() <= 900) {
                             $thisimg = $(this).attr('mobileImg');
                         } else {
                             $thisimg = $(this).attr('loadImg');
@@ -219,40 +220,40 @@
                         <ul class="nmcu_lst">
                             <li class="tp tp01">
                                 <a href="#" class="box">
-                                    <div class="nmcu_bx_in">
+                                    <div class="nmcu_bx_in" style="background-image: url(./reRsrc/images/common/nmcu_bx_in_tp01.png)">
                                         <dl class="lst">
                                             <dt>교사연구회커뮤니티</dt>
-                                            <dd>지속가능발전교육 교사연구회 창의 체험활동 교사 연구회 창의 인성 수업 연구회</dd>
+                                            <dd style="background-image: url(./reRsrc/images/common/nmcu_bx_in_tp01.png)">지속가능발전교육 교사연구회 창의 체험활동 교사 연구회 창의 인성 수업 연구회</dd>
                                         </dl>
                                     </div>
                                 </a>
                             </li>
                             <li class="tp tp02">
                                 <a href="#" class="box">
-                                    <div class="nmcu_bx_in">
+                                    <div class="nmcu_bx_in" style="background-image: url(./reRsrc/images/common/nmcu_bx_in_tp01.png)">
                                         <dl class="lst">
-                                            <dt>창의교육 교원연수</dt>
-                                            <dd>창의적 인재 양성을 위한 교원 직무 연수 신청</dd>
+                                            <dt>지속가능발전교육 수업모델</dt>
+                                            <dd style="background-image: url(./reRsrc/images/common/nmcu_bx_in_tp01.png)">창의적 인재 양성을 위한 교원 직무 연수 신청</dd>
                                         </dl>
                                     </div>
                                 </a>
                             </li>
                             <li class="tp tp03">
                                 <a href="#" class="box">
-                                    <div class="nmcu_bx_in">
+                                    <div class="nmcu_bx_in" style="background-image: url(./reRsrc/images/common/nmcu_bx_in_tp01.png)">
                                         <dl class="lst">
                                             <dt>창의교육 백문백답</dt>
-                                            <dd>창의인성교육 관련 궁금증 온라인 컨설팅</dd>
+                                            <dd style="background-image: url(./reRsrc/images/common/nmcu_bx_in_tp01.png)">창의인성교육 관련 궁금증 온라인 컨설팅</dd>
                                         </dl>
                                     </div>
                                 </a>
                             </li>
                             <li class="tp tp04">
                                 <a href="#" class="box">
-                                    <div class="nmcu_bx_in">
+                                    <div class="nmcu_bx_in" style="background-image: url(./reRsrc/images/common/nmcu_bx_in_tp01.png)">
                                         <dl class="lst">
                                             <dt>자율동아리</dt>
-                                            <dd>학교 자율동아리를 통해 나를 표현하고 즐기자</dd>
+                                            <dd style="background-image: url(./reRsrc/images/common/nmcu_bx_in_tp01.png)">학교 자율동아리를 통해 나를 표현하고 즐기자</dd>
                                         </dl>
                                     </div>
                                 </a>
@@ -313,7 +314,7 @@
                                                 <span class="img">
                                                     <img src="./reRsrc/images/sample8.png" alt="" />
                                                 </span>
-                                               <span class="txt multiEllip" data-len="22">[경기] 창의교육 수업자료</span>
+                                                <span class="txt multiEllip" data-len="22">[경기] 창의교육 수업자료</span>
                                             </a>
                                             <a href="#" class="imgs nanum">
                                                 <span class="img">
@@ -348,10 +349,14 @@
                                         <div class="tit">창의체험큐레이션</div>
                                         <a href="#" class="th_box">
                                             <div class="th_box_in nanum">
-                                                <span class="img">
-                                                    <img src="./reRsrc/images/sample4.png" alt="">
-                                                </span>
-                                                <p class="txt multiEllip" data-len="35">다채로운 경험을 쌓는 자원과 프로그램 으로 유익하고 활동하기 </p>
+                                                <div class="int_con">
+                                                    <span class="img">
+                                                        <img src="./reRsrc/images/sample4.png" alt="">
+                                                    </span>
+                                                </div>
+                                                <div class="txts">
+                                                    <p class="txt multiEllip" data-len="35">다채로운 경험을 쌓는 자원과 프로그램 으로 유익하고 활동하기 </p>
+                                                </div>
                                             </div>
                                         </a>
                                     </div>
@@ -361,10 +366,14 @@
                                         <div class="tit">학부모창의 길잡이</div>
                                         <a href="#" class="th_box">
                                             <div class="th_box_in nanum">
-                                                <span class="img">
-                                                    <img src="./reRsrc/images/sample5.png" alt="">
-                                                </span>
-                                                <p class="txt multiEllip" data-len="35">[동물그리기 편] 자기눈으로 관찰하고 표현하기</p>
+                                                <div class="int_con">
+                                                    <div class="movie">
+                                                        <iframe src="https://www.youtube.com/embed/0WK1Wwhkbn8"></iframe>
+                                                    </div>
+                                                </div>
+                                                <div class="txts">
+                                                    <p class="txt multiEllip" data-len="35">[동물그리기 편] 자기눈으로 관찰하고 표현하기</p>
+                                                </div>
                                             </div>
                                         </a>
                                     </div>
@@ -387,7 +396,7 @@
                             <li>
                                 <a href="#" class="box">
                                     <span class="img">
-                                        <img src="./reRsrc/images/sample6.png" alt=""/>
+                                        <img src="./reRsrc/images/sample6.png" alt="" />
                                     </span>
                                     <dl class="txts nanum">
                                         <dt>해외창의 이야기</dt>
@@ -400,7 +409,7 @@
                             <li>
                                 <a href="#" class="box">
                                     <span class="img">
-                                        <img src="./reRsrc/images/sample13.png" alt=""/>
+                                        <img src="./reRsrc/images/sample13.png" alt="" />
                                     </span>
                                     <dl class="txts nanum">
                                         <dt>행복학교 이야기</dt>
@@ -413,7 +422,7 @@
                             <li>
                                 <a href="#" class="box">
                                     <span class="img">
-                                        <img src="./reRsrc/images/sample14.png" alt=""/>
+                                        <img src="./reRsrc/images/sample14.png" alt="" />
                                     </span>
                                     <dl class="txts nanum">
                                         <dt>창의교육 이야기</dt>
@@ -437,13 +446,19 @@
                                     </div>
                                     <div class="cdnot_cont nmcdnCardSlideBanner">
                                         <div class="slide_bx">
-                                            <a href="#" class="img"><img src="./reRsrc/images/sample7.png" alt="" /></a>
+                                            <a href="#" class="img">
+                                                <img src="./reRsrc/images/sample7.png" alt="" />
+                                            </a>
                                         </div>
                                         <div class="slide_bx">
-                                            <a href="#" class="img"><img src="./reRsrc/images/sample7.png" alt="" /></a>
+                                            <a href="#" class="img">
+                                                <img src="./reRsrc/images/sample7.png" alt="" />
+                                            </a>
                                         </div>
                                         <div class="slide_bx">
-                                            <a href="#" class="img"><img src="./reRsrc/images/sample7.png" alt="" /></a>
+                                            <a href="#" class="img">
+                                                <img src="./reRsrc/images/sample7.png" alt="" />
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -475,8 +490,12 @@
                                 <div class="cdnot_tit">
                                     <div class="tit">
                                         <ul class="lst cmmShowHideTabsUl">
-                                            <li><a href="#" class="txt">공지사항</a></li>
-                                            <li><a href="#" class="txt">자료실</a></li>
+                                            <li>
+                                                <a href="#" class="txt">공지사항</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="txt">자료실</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -521,9 +540,9 @@
                                             <ul class="cdnot_noti">
                                                 <li>
                                                     <a href="#" class="txt">
-                                                    자료실
-                                                    <span class="date">2017-08-01</span>
-                                                </a>
+                                                        자료실
+                                                        <span class="date">2017-08-01</span>
+                                                    </a>
                                                 </li>
                                             </ul>
                                             <a href="#" class="cdnot_noti_more" title="자료실 더보기"></a>
