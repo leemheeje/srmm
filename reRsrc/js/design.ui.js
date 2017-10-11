@@ -26,7 +26,7 @@ var gnbMenuActFun = {
 	},
 	subPageName: 'h1.page-title.entry-title',
 	crrtMenuName: '',
-	paramName: ['page_id', 'crfile_cat', 'resourcecat', 'programcat', 'crmodelcat', 'ebook_cat', 'eventcat'],
+	paramName: ['page_id', 'crfile_cat', 'resourcecat', 'programcat', 'crmodelcat', 'ebook_cat', 'eventcat', 'issuecat'],
 	ifParamName: ['term_slug'],
 	locSearch: location.search,
 	crrtParamName: null,
@@ -63,12 +63,71 @@ var gnbMenuActFun = {
 			this.crrtParamName = name;
 			this.crrtParamValue = jQuery(window).getParams(name);
 			var str;
+			if(page_id == 424070) { //이달의 추천큐레이션 부분
+				this.issuCalMenuFun(false);
+			}
 			if(!page_id) {
 				str = decodeURI(this.crrtParamValue);
 				this.crrtParamValue = str;
+				if(name == 'issuecat') { //이슈캘린더 부분
+					this.issuCalMenuFun(true);
+				}
 			}
 			this.crrtTargetHref = bool ? '/?' + this.crrtParamName + '=' + this.crrtParamValue : this.crrtParamValue;
 		}
+	},
+	issuCalMenuFun: function(bool) {
+		this.issuCalGlBool = bool;
+		this.crrtParamValue = 424070; //이달의 추천 큐레이션
+		this.crrtParamName = 'page_id';
+		this.issuCalTabsSet();
+	},
+	issuCalTabsSet: function() {
+		var _this = this;
+		this.issuCalTab = {
+			target: _this.issuCalGlBool ? '#sub_listing_categories' : '.wpb_row',
+			appendLst: '.issCalTabs',
+			html: '',
+			tit: '이슈캘린더',
+			month: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+		};
+		this.issuCalTabsHtml();
+		$(this.issuCalTab.target).before(this.issuCalTab.html);
+		if(!_this.issuCalGlBool) {
+			$(this.issuCalTab.appendLst).css('margin-bottom', 36);
+		}
+	},
+	issuCalTabsHtml: function() {
+		var _this = this;
+		var paramsValue = _this.issuCalGlBool ? 'issuecat' : 'm';
+		var paramsAttr = null;
+		var params = decodeURI(jQuery(window).getParams(paramsValue));
+		_this.issuCalTab.html += '<ul class="cmm_tabs iss_cal_tabs ' + _this.clsFormat(_this.issuCalTab.appendLst) + '">';
+		this.issuCalTab.month.forEach(function(str, idx) {
+			if(!_this.issuCalGlBool) {
+				str = str.replace('월', '');
+				paramsAttr = 'page_id=424070&n=1&m';
+			}else{
+				paramsAttr = 'issuecat';
+			}
+			if(str == params) {
+				_this.issuCalTab.html += '<li class="tp tp' + idx + ' active">';
+			} else {
+				_this.issuCalTab.html += '<li class="tp tp' + idx + '">';
+			}
+			_this.issuCalTab.html += '<a href="/?'+paramsAttr+'=' + str + '" class="txt">' + _this.issuCalTab.month[idx] + '</a>';
+			_this.issuCalTab.html += '</li>';
+		});
+		_this.issuCalTab.html += '</ul>';
+		if(_this.issuCalGlBool) {
+			this.issuCalTitGet();
+		}
+	},
+	issuCalTitGet: function() {
+		var beforeMn = '.loop-title';
+		var beforeMnName = jQuery(beforeMn).text();
+		jQuery(beforeMn).text(this.issuCalTab.tit+'('+beforeMnName+')');
+		//this.issuCalTab.html += '<div class="iss_tit">' + this.issuCalTab.tit + '</div>';
 	},
 	crrtMemuActive: function(bool) {
 		var _this = this;
@@ -163,7 +222,7 @@ var gnbMenuActFun = {
 				'padding-bottom': _this.schObj.paddingTopBottom,
 			}, _this.animateCallback({
 				'complete': function() {
-					jQuery(this).addClass('active')
+					jQuery(this).addClass('active');
 				}
 			}));
 		} else {
@@ -174,8 +233,9 @@ var gnbMenuActFun = {
 			}, _this.animateCallback());
 		}
 	},
-	clsFormat: function(str) {
-		return str.replace('.', '');
+	clsFormat: function(str, fmt) {
+		var fmt = fmt ? fmt : '.';
+		return str.replace(fmt, '');
 	},
 	mobileSet: function() {
 		var _this = this;
@@ -625,7 +685,6 @@ var cmmDialogFun = {
 	act: function(bool, $this) {
 		var _this = this;
 		if(bool) {
-			console.log(_this.align())
 			jQuery('body').addClass('pcScrollOff');
 			jQuery(this.el).find(this.glDimm).show().stop().animate({
 				'opacity': 1
