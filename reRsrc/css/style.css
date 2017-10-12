@@ -80,8 +80,8 @@ body.pcScrollOff *{}
 .nm_header .gnb_area .gnb_dp02>li.active .gnb_dp03{display: block;}
 .nm_header .gnb_area .gnb_dp01>li+li .gnb_dp02:after{content: ''; width: 1px; height: 80%; height: calc(100% - 17px); top: 10%; top: calc(0% + 17px); position: absolute; left: 0; background: #e4e4e4;}
 .nm_header .gnb_area .gnb_dp03{background: #f3f3f3; padding: 8px 5px 8px 12px; display: none;}
-.nm_header .gnb_area .gnb_dp03>li{display: block; position: relative; padding: 5px 0; padding-left: 5px; }
-.nm_header .gnb_area .gnb_dp03>li:after{content: ''; width: 2px; height: 2px; border-radius: 50%; background: #5a5a5a; position: absolute; left: 0; top: 12px;}
+.nm_header .gnb_area .gnb_dp03>li{display: block; position: relative; padding: 5px 0; padding-left: 10px; }
+.nm_header .gnb_area .gnb_dp03>li:after{content: ''; width: 4px; height: 1px; border-radius: 0; background: #5a5a5a; position: absolute; left: 0; top: 12px;}
 .nm_header .gnb_area .gnb_dp03>li>.txt{font-size: 13px; color: #5a5a5a; letter-spacing: -.7px;}
 .nm_header .gnb_area .gnb_dp03>li>.txt:hover{text-decoration: none;}
 .nm_header .gnb_area .gnb_dp03>li.active>.txt{color: #1385c9;}
@@ -258,6 +258,7 @@ body.pcScrollOff *{}
 .nm_contents .cont_bx{width: 80%; display: block; padding-left: 45px;}
 .nm_contents .asd_mn .tit{background: #1485c9; color: #fff; text-align: center; display: block; padding: 0 10px; height: 80px; line-height: 80px;}
 .nm_contents .asd_mn .tit .inner{font-size: 24px; letter-spacing: -.7px; display: inline-block; vertical-align: middle; line-height: normal;}
+.nm_contents .asd_mn .tit .inner .em.new{display: none;}
 .nm_contents .asd_mn .gnb_dp02{background: #fff; border: 1px solid #dbdbdb; border-top: none;}
 .nm_contents .asd_mn .gnb_dp02 .txt:hover{text-decoration: none;}
 .nm_contents .asd_mn .gnb_dp02>li{display: block;}
@@ -280,14 +281,14 @@ body.pcScrollOff *{}
 .nm_contents .asd_mn .gnb_dp03>li>.txt:hover{color: #14629c;}
 .nm_contents .asd_mn .gnb_dp03>li.active>.txt:after,
 .nm_contents .asd_mn .gnb_dp03>li>.txt:hover:after{background: #14629c;}
-.nm_contents .asd_mn .gnb_dp03>li.inDp04>.txt:before{content: '>'; font-size: 10px; position: absolute; right: 8px; top: 50%; margin-top: -6px; color: #1485c9;}
+.nm_contents .asd_mn .gnb_dp03>li.inDp04>.txt:before{content: '>'; font-size: 10px; position: absolute; right: 11px; top: 50%; margin-top: -6px; color: #1485c9;}
 .nm_contents .asd_mn .gnb_dp03>li.active>.txt,
 .nm_contents .asd_mn .gnb_dp03>li>.txt:hover{color: #14629c;}
 .nm_contents .asd_mn .gnb_dp04{padding: 6px 0; padding-left: 23px; background: #eee; margin: 0 -13px; display: none;}
 .nm_contents .asd_mn .gnb_dp03>li.active .gnb_dp04{display: block;}
 .nm_contents .asd_mn .gnb_dp04>li{}
-.nm_contents .asd_mn .gnb_dp04>li>.txt{font-size: 14px; display: block; position: relative; padding: 4px 0; color: #888; }
-.nm_contents .asd_mn .gnb_dp04>li>.txt:after{content: none; }
+.nm_contents .asd_mn .gnb_dp04>li>.txt{font-size: 14px; display: block; position: relative; padding: 4px 0; padding-left: 10px; color: #888; }
+.nm_contents .asd_mn .gnb_dp04>li>.txt:after{content: ''; width: 2px; height: 2px; background: #888; position: absolute; left: 0; top: 50%; margin-top: -1px;}
 .nm_contents .asd_mn .gnb_dp04>li.active>.txt,
 .nm_contents .asd_mn .gnb_dp04>li>.txt:hover{color: #14629c; text-decoration: underline;}
 .nm_footer{clear: both; margin-top: 60px;}
@@ -315,9 +316,10 @@ body.pcScrollOff *{}
 .nm_contents .mm_asd_mn .masd_in .gnb_dp02>li.inDp03.active .gnb_dp03{display: block;}
 .nm_contents .mm_asd_mn .masd_in .gnb_dp03{background: #ececec; display: none;}
 .nm_contents .mm_asd_mn .masd_in .gnb_dp03>li>.txt{border-bottom: 1px solid #cacaca; display: block; padding: 10px 23px; padding-right: 10px; position: relative; color: #464646; font-size: 12px;}
-.nm_contents .mm_asd_mn .masd_in .gnb_dp03>li>.txt:after{content: ''; width: 3px; height: 1px; border-radius: 0; background: #464646; position: absolute; left: 15px; top: 50%; margin-top: -2px;}
+.nm_contents .mm_asd_mn .masd_in .gnb_dp03>li>.txt:after{content: ''; width: 4px; height: 1px; border-radius: 0; background: #464646; position: absolute; left: 15px; top: 50%;}
 .nm_contents .mm_asd_mn .masd_in .gnb_dp04{padding: 5px 0; display: none; background: #ddd;}
-.nm_contents .mm_asd_mn .masd_in .gnb_dp04>li>.txt{font-size: 11px; padding: 3px 23px; padding-right: 10px; display: block;}
+.nm_contents .mm_asd_mn .masd_in .gnb_dp04>li>.txt{font-size: 11px; padding: 3px 33px; padding-right: 10px; display: block; position: relative;}
+.nm_contents .mm_asd_mn .masd_in .gnb_dp04>li>.txt:after{content: ''; width: 2px; height: 2px; border-radius: 50%; background: #5a5a5a; position: absolute; left: 23px; top: 50%; margin-top: -1px;}
 .nm_contents .mm_asd_mn .masd_in .gnb_dp03>li.active .gnb_dp04{display: block;}
 .nm_contents .mm_asd_mn .masd_in .gnb_dp04>li.active>.txt,
 .nm_contents .mm_asd_mn .masd_in .gnb_dp01>li.active>.txt,
@@ -414,14 +416,16 @@ body.pcScrollOff *{}
 .mm_gnb_wrap .gnb_dp02>li.inDp03.active .gnb_dp03{display: block; margin-bottom: -1px;}
 .mm_gnb_wrap .gnb_dp03{background: #eaeaea; display: none;}
 .mm_gnb_wrap .gnb_dp03>li+li{border-top: 1px solid #c5c5c5;}
-.mm_gnb_wrap .gnb_dp03>li>.txt{font-size: 11px; padding: 10px 9px; display: block; position: relative; color: #6c6c6c; letter-spacing: -.5px;}
+.mm_gnb_wrap .gnb_dp03>li>.txt{font-size: 11px; padding: 10px 9px; padding-left: 19px; display: block; position: relative; color: #6c6c6c; letter-spacing: -.5px;}
+.mm_gnb_wrap .gnb_dp03>li>.txt:after{content: ''; width: 4px; height: 1px; border-radius: 0; background: #6c6c6c; position: absolute; left: 10px; top: 50%; margin-top: -1px;}
+.mm_gnb_wrap .gnb_dp03>li.active>.txt:after{background: #1385c9;}
 .mm_gnb_wrap .gnb_dp04{display: none; padding: 5px 0; background: #ddd;}
 .mm_gnb_wrap .gnb_dp03>li.active .gnb_dp04{display: block;}
-.mm_gnb_wrap .gnb_dp04>li>.txt{font-size: 11px; display: block; padding: 3px 10px;}
+.mm_gnb_wrap .gnb_dp04>li>.txt{font-size: 11px; display: block; padding: 3px 10px; padding-left: 30px; position: relative;}
+.mm_gnb_wrap .gnb_dp04>li>.txt:after{content: ''; width: 2px; height: 2px; border-radius: 50%; background: #666; position: absolute; left: 20px; top: 50%; margin-top: -1px;}
 .mm_gnb_wrap .gnb_dp04>li.active>.txt,
 .mm_gnb_wrap .gnb_dp03>li.active>.txt,
 .mm_gnb_wrap .gnb_dp02>li.active>.txt{color: #1385c9;}
-.mm_gnb_wrap .gnb_dp03>li>.txt:after{content: none; width: 2px; height: 2px; border-radius: 50%; background: #6c6c6c; position: absolute; left: 10px; top: 14px;}
 .gl_dimm{position: fixed; left: 0; top: 0; bottom: 0; width: 100%; z-index: 100; background: rgba(0,0,0,0.54); opacity: 0; display: none;}
 .layerpop{}
 .layerpop .layp_box{position: fixed; left: 0; top: 0;  width: 100%; height: 100%; text-align: center; z-index: 9999999; /*최대 인덱스*/ display: none; opacity: 0;}
@@ -920,6 +924,13 @@ body.pcScrollOff *{}
 .iss_cal_tabs .tp.tp9 .txt:hover,
 .iss_cal_tabs .tp.tp10 .txt:hover,
 .iss_cal_tabs .tp.tp11 .txt:hover{border-color: #ececec;}
+/* 백문백답*/
+.consulting-list .reply_d{ padding:  30px 0;  /*background: url(http://www.crezone.net/wp-content/themes/crezone/images/icon/ic-consulting-a-check.png) no-repeat;*/}
+.consulting-list .reply_de_tit{font-size: 14px; color: #222; line-height: 1.6; padding-left: 30px; padding-bottom: 30px; border-bottom: 1px solid #eee;}
+.consulting-list .reply_img_group{padding: 30px; padding-right: 0;}
+.consulting-list .reply_img_group .img{display: block; text-align: center;}
+.consulting-list .reply_img_group .img img{max-width: 100%; float: none;}
+.consulting-list .reply_tag_group{margin-top: 22px;}
 /* RESPONSIVE */
 @media only screen and (min-width : 980px){
 	.mm_gnb_wrap{display: none !important;}
@@ -1314,3 +1325,6 @@ body.pcScrollOff *{}
 .main_new_row3 .issue_calendar .issue_box li{padding: 0 30px !important;}
 
 .nm_header .gnb_area .gnb_dp04{display: none;}
+/*em.new+em.new{display: none;}*/
+em.new{width: 15px !important; height: 15px !important; line-height: 16px !important; background: none; position: relative; vertical-align: middle; margin-left: 5px !important;}
+em.new:after{content: 'N'; position: absolute; left: 0; top: 0; text-indent: 0; width: 100%; height: 100%; text-align: center; background: #ee3255; font-size: 10px; color: #fff; font-weight: 600; border-radius: 2px;}
