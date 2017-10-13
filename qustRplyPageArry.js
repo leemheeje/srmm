@@ -380,7 +380,7 @@ var rplyQustPageFun = {
 			_this.html += item[2];
 			_this.html += '</div>';
 			if(typeof item[3] === 'object') {
-				_this.html += '<div class="reply_img_group">';
+				_this.html += '<div href="<?php  echo $bakmunLink;?>/dkdkddk.pdf" class="reply_img_group">';
 				for(var i = 0; i < item[3].length; i++) {
 					_this.html += '<span class="img"><img src="' + item[3][i] + '" alt=""/></span>';
 				}
