@@ -1,180 +1,204 @@
 <script type="text/javascript">
 $(document).ready(function() {
-    gnbMenuActFun.init();
-    /* 풋터 전용 JS '관련사이트' : S*/
-    var selectFun = {
-        prt: $('.stSiteSelectFun'),
-        btn: $('.stSiteSelectBtn'),
-        init: function() {
-            this.select = this.prt.find('select');
-            this.setValue();
-            this.getValue();
-            this.bind();
-        },
-        setValue: function($this) {
-            var $this = $this ? $this : this.select;
-            var selected = $this.find('option:selected').val();
-            return selected ? selected : '';
-        },
-        getValue: function($this) {
-            this.btn.prop('href', this.setValue($this));
-        },
-        bind: function() {
-            var _this = this;
-            this.select.change(function() {
-                _this.getValue($(this));
-            });
-        }
-    };
-    //selectFun.init();
-    //관련사이트 배너
-    $(this).find('.nmFootSlideBanner').uiSwiper({
-        slideObj: {
-            draggable: true,
-            dots: true,
-            speed: 500,
-            autoplaySpeed: 500000,
-            slidesToShow: 6,
-            slidesToScroll: 1,
-            dots: false,
-            responsive: [{
-                    breakpoint: 980,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                        infinite: true,
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        infinite: true,
-                    }
-                },
-            ],
-        },
-    });
-    $('.layerEmailClctBtn').click(function() {
-        cmmDialogFun.init('.layerEmailClct').show();
-    });
-    /* 풋터 전용 JS '관련사이트' : E*/
+
+	/* 풋터 전용 JS '관련사이트' : S*/
+	var selectFun = {
+		prt: $('.stSiteSelectFun'),
+		btn: $('.stSiteSelectBtn'),
+		init: function() {
+			this.select = this.prt.find('select');
+			this.setValue();
+			this.getValue();
+			this.bind();
+		},
+		setValue: function($this) {
+			var $this = $this ? $this : this.select;
+			var selected = $this.find('option:selected').val();
+			return selected ? selected : '';
+		},
+		getValue: function($this) {
+			this.btn.prop('href', this.setValue($this));
+		},
+		bind: function() {
+			var _this = this;
+			this.select.change(function() {
+				_this.getValue($(this));
+			});
+		}
+	};
+	selectFun.init();
+	//관련사이트 배너
+	$(this).find('.nmFootSlideBanner').uiSwiper({
+		slideObj: {
+			draggable: true,
+			dots: true,
+			speed: 500,
+			autoplaySpeed: 500000,
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			infinite: true,
+			variableWidth: true,
+			dots: false,
+			responsive: [{
+					breakpoint: 980,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 1,
+						infinite: true,
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						infinite: true,
+					}
+				},
+			],
+		},
+	});
+	$('.layerEmailClctBtn').click(function() {
+		cmmDialogFun.init('.layerEmailClct').show();
+	});
+	/* 풋터 전용 JS '관련사이트' : E*/
 });
 </script>
 <div class="nm_foot_top">
-    <div class="in_box">
-        <div class="nmft_in nmFootSlideBanner">
-            <div class="items">
-                <img src="./reRsrc/images/footer/top_img01.png" alt="교육부" />
-            </div>
-            <div class="items">
-                <img src="./reRsrc/images/footer/top_img02.png" alt="한국과학창의재단" />
-            </div>
-            <div class="items">
-                <img src="./reRsrc/images/footer/top_img03.png" alt="EDUNETT-CLEAR" />
-            </div>
-            <div class="items">
-                <img src="./reRsrc/images/footer/top_img04.png" alt="과학기술인재진로지원센터" />
-            </div>
-            <div class="items">
-                <img src="./reRsrc/images/footer/top_img05.png" alt="YTNSCIENCE" />
-            </div>
-            <div class="items">
-                <img src="./reRsrc/images/footer/top_img06.png" alt="YTNSCIENCE" />
-            </div>
-        </div>
-    </div>
+	<div class="in_box">
+		<div class="nmft_in nmFootSlideBanner">
+			<div class="items tp tp01">
+				<a href="http://www.moe.go.kr/main.do" target="_blank" title="새창열림">
+					<img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img01.png" alt="교육부" />
+				</a>
+			</div>
+			<div class="items tp tp02">
+				<a href="https://www.kofac.re.kr/" target="_blank" title="새창열림">
+					<img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img02.png" alt="한국과학창의재단" />
+				</a>
+			</div>
+			<div class="items tp tp03">
+				<a href="http://www.edunet.net/" target="_blank" title="새창열림">
+					<img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img03.png" alt="EDUNETT-CLEAR" />
+				</a>
+			</div>
+			<div class="items tp tp04">
+				<a href="http://www.ggoomgil.go.kr" target="_blank" title="새창열림">
+					<img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img04.png" alt="자유학기제" />
+				</a>
+			</div>
+			<div class="items tp tp05">
+				<a href="http://career.go.kr" target="_blank" title="새창열림">
+					<img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img05.png" alt="진로정보망커리어넷" />
+				</a>
+			</div>
+			<div class="items tp tp06">
+				<a href="http://www.teachforkorea.go.kr/" target="_blank" title="새창열림">
+					<img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img06.png" alt="교육기구" />
+				</a>
+			</div>
+			<div class="items tp tp07">
+				<a href="http://www.unesco.or.kr" target="_blank" title="새창열림">
+					<img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img07.png" alt="유네스코한국위원회" />
+				</a>
+			</div>
+			<div class="items tp tp08">
+				<a href="http://ncsd.go.kr/app/index.do" target="_blank" title="새창열림">
+					<img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img08.png" alt="지속가능발전포털" />
+				</a>
+			</div>
+		</div>
+	</div>
 </div>
 <div class="nm_foot_bt">
-    <div class="in_box">
-        <div class="mm_st_inf">
-            <ul class="lst stInfAppendTarget"></ul>
-        </div>
-    </div>
-    <div class="in_box clearfix">
-        <div class="nmfb_lt nanum">
-            <ul class="lst">
-                <li>
-                    <a href="http://login.teachforkorea.go.kr/register/login02_cl02.jsp" target="_blank" title="새창열림" class="txt">개인정보처리방침</a>
-                </li>
-                <li>
-                    <a href="#" class="txt layerEmailClctBtn">이메일 무단 수집 거부</a>
-                </li>
-                <li>
-                    <a href="http://www.ggoomgil.go.kr/" target="_blank" title="새창열림" class="txt">꿈길(진로체험지원전산망)</a>
-                </li>
-            </ul>
-            <div class="txts">
-                (06097) 서울특별시 강남구 선릉로 602 (삼성동, 한국과학창의재단)
-                <a href="mailto:crezone@kofac.re.kr" class="nmfb_mail">crezone@kofac.re.kr</a>
-                <a href="tel:02-559-3929" class="nmfb_tel">02-559-3929</a>
-                <br/>Copyright©2012 KOFAC All Rights Reserved.
-            </div>
-        </div>
-        <div class="nmfb_rt">
-            <div class="st_sit stSiteSelectFun">
-                <label for="stSiteSelect" class="hidetxt">관련사이트 선택해주세요.</label>
-                <select id="stSiteSelect" class="cstSelect" onchange="location.href= ''+this.value+'' ">
-                    <option value="">선택해주세요</option>
-                    <option value="https://www.kofac.re.kr/">한국과학창의재단</option>
-                    <option value="http://www.scienceall.com/">사이언스올</option>
-                    <option value="http://www.sciencetimes.co.kr/">사이언스 타임즈</option>
-                    <option value="http://www.teachforkorea.go.kr/">교육기부</option>
-                    <option value="http://science.ytn.co.kr/">YTN 사이언스</option>
-                    <option value="http://www.moe.go.kr/main.do">교육부</option>
-                    <option value="http://www.sciencecareer.kr/">과학기술인재 진로지원센터</option>
-                    <option value="http://steam.kofac.re.kr/">융합인재교육(STEAM)</option>
-                    <option value="http://www.edunet.net/nedu/main/mainForm.do">티클리어</option>
-                </select>
-                <a href="#" class="st_sit_btn stSiteSelectBtn" target="_blank" title="새창열림">
-                    <span class="hidetxt">관련사이트</span>
-                    이동
-                </a>
-            </div>
-            <ul class="sns_lst">
-                <li class="tp tp01">
-                    <a href="https://www.facebook.com/kofac.festa" target="_blank" class="img" title="새창열림">
-                        <span class="hidetxt">페이스북</span>
-                    </a>
-                </li>
-                <li class="tp tp02">
-                    <a href="https://twitter.com/crezone_twt" target="_blank" class="img" title="새창열림">
-                        <span class="hidetxt">트위터</span>
-                    </a>
-                </li>
-                <li class="tp tp03">
-                    <a href="http://blog.naver.com/crezoneblog" target="_blank" class="img" title="새창열림">
-                        <span class="hidetxt">네이버블로그</span>
-                    </a>
-                </li>
-                <li class="tp tp04">
-                    <a href="https://www.youtube.com/watch?v=0WK1Wwhkbn8&feature=youtu.be" target="_blank" class="img" title="새창열림">
-                        <span class="hidetxt">유투브</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <a href="#" class="nm_top_btn nmTopMoveBtn" title="페이지 상단 이동"></a>
+	<div class="in_box">
+		<div class="mm_st_inf">
+			<ul class="lst stInfAppendTarget"></ul>
+		</div>
+	</div>
+	<div class="in_box clearfix">
+		<div class="nmfb_lt nanum">
+			<ul class="lst">
+				<li>
+					<a href="http://login.teachforkorea.go.kr/register/login02_cl02.jsp" target="_blank" title="새창열림" class="txt">개인정보처리방침</a>
+				</li>
+				<li>
+					<a href="#" class="txt layerEmailClctBtn">이메일 무단 수집 거부</a>
+				</li>
+				<li>
+					<a href="http://www.ggoomgil.go.kr/" target="_blank" title="새창열림" class="txt">꿈길(진로체험지원전산망)</a>
+				</li>
+			</ul>
+			<div class="txts">
+				(06097) 서울특별시 강남구 선릉로 602 (삼성동, 한국과학창의재단)
+				<a href="mailto:crezone@kofac.re.kr" class="nmfb_mail">crezone@kofac.re.kr</a>
+				<a href="tel:02-559-3929" class="nmfb_tel">02-559-3929</a>
+				<br/>Copyright©2012 KOFAC All Rights Reserved.
+			</div>
+		</div>
+		<div class="nmfb_rt">
+			<div class="st_sit stSiteSelectFun">
+				<label for="stSiteSelect" class="hidetxt">관련사이트 선택해주세요.</label>
+				<select id="stSiteSelect" class="cstSelect">
+					<option value="">선택해주세요</option>
+					<option value="https://www.kofac.re.kr/">한국과학창의재단</option>
+					<option value="http://www.scienceall.com/">사이언스올</option>
+					<option value="http://www.sciencetimes.co.kr/">사이언스 타임즈</option>
+					<option value="http://www.teachforkorea.go.kr/">교육기부</option>
+					<option value="http://science.ytn.co.kr/">YTN 사이언스</option>
+					<option value="http://www.moe.go.kr/main.do">교육부</option>
+					<option value="http://www.sciencecareer.kr/">과학기술인재 진로지원센터</option>
+					<option value="http://steam.kofac.re.kr/">융합인재교육(STEAM)</option>
+					<option value="http://www.edunet.net/nedu/main/mainForm.do">티클리어</option>
+				</select>
+				<a href="#" class="st_sit_btn stSiteSelectBtn" target="_blank" title="새창열림" style="display: inline-block;">
+					<span class="hidetxt">관련사이트</span>
+					이동
+				</a>
+			</div>
+			<ul class="sns_lst">
+				<li class="tp tp01">
+					<a href="https://www.facebook.com/kofac.festa" target="_blank" class="img" title="새창열림">
+						<span class="hidetxt">페이스북</span>
+					</a>
+				</li>
+				<li class="tp tp02">
+					<a href="https://twitter.com/crezone_twt" target="_blank" class="img" title="새창열림">
+						<span class="hidetxt">트위터</span>
+					</a>
+				</li>
+				<li class="tp tp03">
+					<a href="http://blog.naver.com/crezoneblog" target="_blank" class="img" title="새창열림">
+						<span class="hidetxt">네이버블로그</span>
+					</a>
+				</li>
+				<li class="tp tp04">
+					<a href="https://www.youtube.com/watch?v=0WK1Wwhkbn8&feature=youtu.be" target="_blank" class="img" title="새창열림">
+						<span class="hidetxt">유투브</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<a href="#" class="nm_top_btn nmTopMoveBtn" title="페이지 상단 이동"></a>
 </div>
 <div class="layerpop layerEmailClct">
-    <div class="layp_box layerPopInner">
-        <div class="layp_in" style="max-width: 500px;">
-            <div class="layp_top">
-                <span class="tit">이메일 무단 수집거부</span>
-            </div>
-            <div class="layp_cont">
-                <!--  -->
-                <div style="font-size: 16px; line-height: 1.5;">본 웹사이트에 게시된 이메일 주소가 전자우편 수집프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부하며, 이를 위반시 <b>정보통신망법에 의해 형사 </b>처벌됩니다.</div>
-                <div style="margin-top: 20px; font-size: 14px">게시일 : 2017년 9월 25일</div>
-                <!--  -->
-            </div>
-            <div class="layp_fot">
-                <a href="#" class="layp_btns blue layerPopCloseBtn">확&nbsp;인</a>
-            </div>
-            <a href="#" class="layp_close layerPopCloseBtn" title="퀵메뉴 팝업닫기"></a>
-        </div>
-    </div>
-    <div class="gl_dimm glDimm"></div>
+	<div class="layp_box layerPopInner">
+		<div class="layp_in" style="max-width: 500px;">
+			<div class="layp_top">
+				<span class="tit">이메일 무단 수집거부</span>
+			</div>
+			<div class="layp_cont">
+				<!--  -->
+				<div style="font-size: 16px; line-height: 1.5;">본 웹사이트에 게시된 이메일 주소가 전자우편 수집프로그램이나 그 밖의 기술적 장치를 이용하여 무단으로 수집되는 것을 거부하며, 이를 위반시 <b>정보통신망법에 의해 형사 </b>처벌됩니다.</div>
+				<div style="margin-top: 20px; font-size: 14px">게시일 : 2017년 9월 25일</div>
+				<!--  -->
+			</div>
+			<div class="layp_fot">
+				<a href="#" class="layp_btns blue layerPopCloseBtn">확&nbsp;인</a>
+			</div>
+			<a href="#" class="layp_close layerPopCloseBtn" title="퀵메뉴 팝업닫기"></a>
+		</div>
+	</div>
+	<div class="gl_dimm glDimm"></div>
 </div>

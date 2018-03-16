@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT">
+	<meta http-equiv="Expires" content="-1">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+	<meta name="naver-site-verification" content="589b5cd7c2b9bc2e034238d548e12603b4df4f90" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="./reRsrc/js/plugin/jquery-1.9.1.min.js"></script>
+	<script>
+	jQuery(document).ready(function() {
+		(function($) {
+			var limitMinute = 2;
+			var limitSecond = 59;
+			var timeCheck = null;
+			//인증번호 받기
+			$(".confirm_number .loadNum").on("click", function() {
+				timeCheck = setInterval(function() {
+					intervalTime();
+				}, 1000);
+
+				var ux = $(".input_wrap input[name='ux']").val();
+				// 문자전송 보내기 
+				var allData = { "mode": "S", "ux": ux };
+				var smsStatus;
+
+				$.ajax({
+					url: "/cr-includes/sms_send.php",
+					type: "post",
+					dataType: "json",
+					async: false,
+					data: allData,
+					success: function(data) {
+						if (data.status == "false") {
+							alert("관리자에게 전화번호를 알려주시길 바랍니다. \n 문의전화 : 02-559-3929");
+							smsStatus = false;
+							return false;
+						} else {
+							smsStatus = true;
+							return true;
+						}
+					},
+					error: function(data) {
+						alert("죄송합니다. 잠시 후 다시 시도해주세요.");
+						return false;
+					}
+				});
+				if (!smsStatus) {
+					$(this).text("관리자페이지 접속 불가 ");
+					$(this).closest('.confirm_number').find('.cnLoginBtn').show();
+					$(".reload_wrap").removeClass("displayNone");
+					$(this).off();
+					clearInterval(timeCheck);
+				} else {
+					$(this).closest('.confirm_number').find('.cnLoginBtn').hide();
+					$(this).removeClass("loadNum").addClass("submit");
+					$(this).text("확인");
+					$(".reload_wrap").removeClass("displayNone");
+					$(this).off();
+					checkedNum();
+				}
+
+				function intervalTime() {
+					$(".limit_minute").html("0" + limitMinute);
+
+					if (limitSecond < 10) {
+						$(".limit_second").html("0" + limitSecond);
+						if (limitSecond == 0) {
+							limitMinute--;
+							limitSecond = 60;
+						}
+					} else {
+						$(".limit_second").html(limitSecond);
+					}
+					limitSecond--;
+					if ($(".limit_minute").text() == "00" && $(".limit_second").text() == "00") {
+						alert("제한시간이 초과되었습니다.");
+						$(".confirm_number p").text("제한시간이 초과되었습니다.");
+						$(".confirm_number p").addClass("red");
+						clearInterval(timeCheck);
+					}
+				}
+			});
+
+			// 인증번호 재전송 // 초기화
+			$(".confirm_number .reload").on("click", function() {
+				clearInterval(timeCheck);
+				limitMinute = 2;
+				limitSecond = 59;
+				$(".confirm_number p").text("인증번호를 받지 못하셧나요?");
+				$(".confirm_number p").removeClass("red");
+				timeCheck = setInterval(intervalTime, 1000);
+
+				var ux = $(".input_wrap input[name='ux']").val();
+				// 문자전송 보내기 
+				var allData = { "mode": "S", "ux": ux };
+				var smsStatus;
+
+				$.ajax({
+					url: "/cr-includes/sms_send.php",
+					type: "post",
+					dataType: "json",
+					async: false,
+					data: allData,
+					success: function(data) {
+						if (data.status == "false") {
+							alert("관리자에게 전화번호를 알려주시길 바랍니다. \n 문의전화 : 02-559-3929");
+							smsStatus = false;
+							return false;
+						} else {
+							smsStatus = true;
+							return true;
+						}
+					},
+					error: function(data) {
+						alert("죄송합니다. 잠시 후 다시 시도해주세요.");
+						return false;
+					}
+				});
+
+
+
+				function intervalTime() {
+					$(".limit_minute").html("0" + limitMinute);
+
+					if (limitSecond < 10) {
+						$(".limit_second").html("0" + limitSecond);
+						if (limitSecond == 0) {
+							limitMinute--;
+							limitSecond = 60;
+						}
+					} else {
+						$(".limit_second").html(limitSecond);
+					}
+					limitSecond--;
+					if ($(".limit_minute").text() == "00" && $(".limit_second").text() == "00") {
+						alert("제한시간이 초과되었습니다.");
+						$(".confirm_number p").text("제한시간이 초과되었습니다.");
+						$(".confirm_number p").addClass("red");
+						clearInterval(timeCheck);
+					}
+				}
+			});
+
+			// 확인
+			function checkedNum() {
+				$(".confirm_number .submit").on("click", function() {
+					var inputVal = $(".input_wrap input[name='confirm_number']").val();
+					var smsValue;
+					var smsStatus;
+
+					var ux = $(".input_wrap input[name='ux']").val();
+					// 문자전송 보내기 
+					var allData = { "mode": "A", "ux": ux, "inputVal": inputVal };
+					$.ajax({
+						url: "/cr-includes/sms_send.php",
+						type: "post",
+						dataType: "json",
+						async: false,
+						data: allData,
+						success: function(data) {
+							if (data.status == "false") {
+								smsStatus = false;
+								return false;
+							} else {
+								smsStatus = true;
+								smsValue = data.authcode;
+								return true;
+							}
+
+						},
+						error: function(data) {
+							alert("죄송합니다. 잠시 후 다시 시도해주세요.");
+							return false;
+						}
+					});
+
+
+
+					if (inputVal == "") {
+						alert("인증번호를 입력해 주세요.");
+					} else if (inputVal != smsValue) {
+						alert("인증번호가 다릅니다.");
+					} else {
+						$("#dimm").addClass("displayNone");
+						clearInterval(timeCheck);
+					}
+
+				});
+			}
+		})(jQuery)
+	});
+	</script>
+</head>
+
+<body>
+	<div id="dimm">
+		<div class="confirm_number">
+			<h3>본인 인증번호</h3>
+			<div class="input_wrap">
+				<input type="hidden" name="ux" value="<?=get_current_user_id();?>">
+				<input type="text" name="confirm_number" placeholder="인증번호를 입력해주세요.">
+				<span class="limit_minute">03</span> :
+				<span class="limit_second">00</span>
+			</div>
+			<button class="loadNum" type="button">인증번호 받기</button>
+			<style>
+			.cn_login_btn {
+				width: 100%;
+				padding: 5px;
+				font-size: 20px;
+				border: none;
+				outline: none;
+				color: #fff;
+				background: #666;
+				cursor: pointer;
+				display: block;
+				text-decoration: none;
+			}
+			</style>
+			<a href="/" class="cn_login_btn cnLoginBtn" style="display: none;">메인으로 바로가기</a>
+			<div class="reload_wrap displayNone">
+				<p>인증번호를 받지 못하셧나요?</p>
+				<button class="reload" type="button" name="button">인증번호 재전송</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,119 +1,199 @@
 <!DOCTYPE html>
 <html lang="ko" class="">
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-        <title>코딩리스트</title>
-        <script src="./js/plugin/jquery-1.9.1.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="./conding_list.css">
-        <script type="text/javascript">
-        if (location.href.indexOf(':8000') != -1) document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+	<title>코딩리스트</title>
+	<script src="./js/plugin/jquery-1.9.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./conding_list.css">
+	<script type="text/javascript">
+	if (location.href.indexOf(':8000') != -1) document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
 
-        $(document).ready(function() {
-            $('a').each(function() {
-                if ($(this).attr('href') == '#') {
-                    $(this).css({
-                        'color': '#000',
-                    });
-                }
-            });
-        });
-        </script>
-    </head>
+	$(document).ready(function() {
+		$('a').each(function() {
+			if ($(this).attr('href') == '#') {
+				$(this).css({
+					'color': '#000',
+				});
+			}
+		});
+	});
+	</script>
+</head>
 
-    <body>
-        <div class="tbl_box">
-            <h1>코딩리스트</h1>
-            <h3 style="margin: 10px 0; font-size: 15px; color: red; font-weight: bold">&middot;&nbsp;css/js/images는 파일전송때마다 업데이트되오니, 지속적으로 덮어쓰기 요청드립니다.</h3>
-            <span class="pos_ab"></span>
-            <table id="list" summary="">
-                <colgroup>
-                    <col width="8%">
-                    <col width="5%">
-                    <col width="8%">
-                    <col width="12%">
-                    <col width="12%">
-                    <col width="8%">
-                    <col width="10%">
-                    <col width="*">
-                </colgroup>
-                <thead>
-                    <tr>
-                        <th scope="col">프로젝트명</th>
-                        <th scope="col" colspan="2">1뎁스</th>
-                        <th scope="col">2뎁스</th>
-                        <th scope="col">링크</th>
-                        <th scope="col">담당자</th>
-                        <th scope="col">상태</th>
-                        <th scope="col">비고</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    
-                    <tr class="mt">
-                      <td class="tit" rowspan="152">크레존</td>
-                        <td class="date" colspan="3">메인페이지</td>
-                        <td class="pass_page">
-                            <a href="./index.html" target="_blank">/index.html</a>
-                        </td>
-                        <td class="date">임희재</td>
-                        <td class="blue">완료</td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr class="mt">
-                        <td class="date" colspan="3">서브페이지</td>
-                        <td class="pass_page">
-                            <a href="./subPage.html" target="_blank">/subPage.html</a>
-                        </td>
-                        <td class="date">임희재</td>
-                        <td class="blue">완료</td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr class="mt">
-                        <td class="date" colspan="3">학부모창의교실</td>
-                        <td class="pass_page">
-                            <a href="./partSchRoom.html" target="_blank">/partSchRoom.html</a>
-                        </td>
-                        <td class="date">임희재</td>
-                        <td class="blue">완료</td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr class="mt">
-                        <td class="date" colspan="3">학부모창의교실 개요</td>
-                        <td class="pass_page">
-                            <a href="./partSchRoomInfo.html" target="_blank">/partSchRoomInfo.html</a>
-                        </td>
-                        <td class="date">임희재</td>
-                        <td class="blue">완료</td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr class="mt">
-                        <td class="date" colspan="3">백문백답</td>
-                        <td class="pass_page">
-                            <a href="./qustRplyPage.html" target="_blank">/qustRplyPage.html</a>
-                        </td>
-                        <td class="date">임희재</td>
-                        <td class="blue">완료</td>
-                        <td>
-                        </td>
-                    </tr><tr class="mt">
-                        <td class="date" colspan="3">로컬페이지</td>
-                        <td class="pass_page">
-                            <a href="./로컬페이지.html" target="_blank">/로컬페이지.html</a>
-                        </td>
-                        <td class="date">임희재</td>
-                        <td class="blue">완료</td>
-                        <td>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </body>
+<body>
+	<div class="tbl_box">
+		<h1>코딩리스트</h1>
+		<h3 style="margin: 10px 0; font-size: 15px; color: red; font-weight: bold">&middot;&nbsp;css/js/images는 파일전송때마다 업데이트되오니, 지속적으로 덮어쓰기 요청드립니다.</h3>
+		<span class="pos_ab"></span>
+		<table id="list" summary="">
+			<colgroup>
+				<col width="8%">
+				<col width="5%">
+				<col width="8%">
+				<col width="12%">
+				<col width="12%">
+				<col width="8%">
+				<col width="10%">
+				<col width="*">
+			</colgroup>
+			<thead>
+				<tr>
+					<th scope="col">프로젝트명</th>
+					<th scope="col" colspan="2">1뎁스</th>
+					<th scope="col">2뎁스</th>
+					<th scope="col">링크</th>
+					<th scope="col">담당자</th>
+					<th scope="col">상태</th>
+					<th scope="col">비고</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="mt">
+					<td class="tit" rowspan="152">크레존</td>
+					<td class="date" colspan="3">메인페이지</td>
+					<td class="pass_page">
+						<a href="./index.html" target="_blank">/index.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">서브페이지</td>
+					<td class="pass_page">
+						<a href="./subPage.html" target="_blank">/subPage.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">학부모창의교실</td>
+					<td class="pass_page">
+						<a href="./partSchRoom.html" target="_blank">/partSchRoom.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">학부모창의교실 개요</td>
+					<td class="pass_page">
+						<a href="./partSchRoomInfo.html" target="_blank">/partSchRoomInfo.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">백문백답</td>
+					<td class="pass_page">
+						<a href="./qustRplyPage.html" target="_blank">/qustRplyPage.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">로컬페이지</td>
+					<td class="pass_page">
+						<a href="./로컬페이지.html" target="_blank">/로컬페이지.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">창의적 체험활동 소개 > 창의적 체험활동이란?</td>
+					<td class="pass_page">
+						<a href="./local8.html" target="_blank">/locals.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">창의적 체험활동 소개 > 자율활동</td>
+					<td class="pass_page">
+						<a href="./local1.html" target="_blank">/locals.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">창의적 체험활동 소개 > 동아리활동이란?</td>
+					<td class="pass_page">
+						<a href="./local2.html" target="_blank">/locals.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">창의적 체험활동 소개 > 봉사활동이란?</td>
+					<td class="pass_page">
+						<a href="./local3.html" target="_blank">/locals.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">창의적 체험활동 소개 > 진로활동이란?</td>
+					<td class="pass_page">
+						<a href="./local4.html" target="_blank">/locals.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">현장체험학습 > 현장체험학습 소개</td>
+					<td class="pass_page">
+						<a href="./local5.html" target="_blank">/locals.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">지속가능발전교육 > 지속가능발전교육 소개</td>
+					<td class="pass_page">
+						<a href="./local6.html" target="_blank">/locals.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+				<tr class="mt">
+					<td class="date" colspan="3">고객센터 > 크레존소개 </td>
+					<td class="pass_page">
+						<a href="./local7.html" target="_blank">/locals.html</a>
+					</td>
+					<td class="date">임희재</td>
+					<td class="blue">완료</td>
+					<td>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
 
 </html>

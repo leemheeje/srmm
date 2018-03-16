@@ -1,445 +1,460 @@
-            <!-- 상단배너 : S -->
-            <script type="text/javascript">
-            $(document).ready(function() {
-                gnbMenuActFun.init();
-                /*var menupars = (function() {
-                    MENU.forEach(function(i, idx) {
-                        $('.gnbDepthLst01').append('<li><a href="' + i[0][1] + '" class="txt">' + i[0][0] + '</a><ul class="gnb_dp02 nanum gnbDepthLst02"></ul></li>');
-                        i[1].forEach(function(j, idx2) {
-                            if (!j[2]) {
-                                $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02').append('<li><a href="' + j[1] + '" class="txt">' + j[0] + '</a></li>');
-                            } else {
-                                $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02').append('<li class="inDp03"><a href="' + j[1] + '" class="txt">' + j[0] + '</a><ul class="gnb_dp03 gnbDepthLst03"></ul></li>');
-                                j[2].forEach(function(q) {
-                                    $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02>li:eq(' + idx2 + ')>.gnbDepthLst03').append('<li><a href="' + q[1] + '" class="txt">' + q[0] + '</a></li>');
-                                });
-                            }
-                        });
-                    });
-                })();*/
-                $(this).find('.tbccCloseBtn').click(function() {
-                    $('.tbccCloseBanner').slideToggle();
-                });
-                //메인 공통탭
-                $(this).find('.cmmShowHideTabs').each(function() {
-                    var tabInSlideOn = $(this).closest('.nm_ncps').length ? true : false;
-                    $(this).cmmShowHideTabs({
-                        tabUl: '.cmmShowHideTabsUl',
-                        tabDivs: '.cmmShowHideTabsDiv',
-                        tabInSlide: tabInSlideOn,
-                        callb: function(p, z, o) {
-                            if (tabInSlideOn) {
-                                $('.nm_ncps').find('.contr').hide();
-                                $('.nm_ncps').find('.tab_divs_in:eq(' + z + ') .contr').show();
-                                $('.nm_ncps').find('.tab_divs_more').hide();
-                                $('.nm_ncps').find('.tab_divs_in:eq(' + z + ') .tab_divs_more').show();
-                            }
-                        },
-                    });
-                });
-            });
-            </script>
-            <div class="nm_tbcc tbccCloseBanner dataBgColor" data-background='{"start" : "#003d76" , "end" : "#003d76"}'>
-                <div class="in_box">
-                    <a href="#" class="img">
-                        <img src="./reRsrc/images/sample1.jpg" alt="kofac50atanniversary한국과학창의재단50주년" />
-                    </a>
-                    <a href="#;" class="tbcc_close tbccCloseBtn" title="상단배너닫기"></a>
-                </div>
-            </div>
-            <!-- 상단배너 : E -->
-            <div class="st_inf nanum">
-                <div class="in_box clearfix">
-                    <a href="#;" class="stif_btn">자원관리자 신청</a>
-                    <ul class="stif_lst stInfAppendEl">
-                        <li class="stInfAppendLst">
-                            <a href="#" class="txt">크레존 소개</a>
-                        </li>
-                        <li>
-                            <a href="#" class="txt">로그인</a>
-                        </li>
-                        <li>
-                            <a href="#" class="txt">회원가입</a>
-                        </li>
-                        <li class="stInfAppendLst">
-                            <a href="#" class="txt">이벤트</a>
-                        </li>
-                        <li class="stInfAppendLst">
-                            <a href="#" class="txt">고객센터</a>
-                        </li>
-                        <li class="stInfAppendLst">
-                            <a href="#" class="txt">자료실</a>
-                        </li>
-                        <li>
-                            <a href="#" class="txt">교직원등록</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="st_sch">
-                <div class="in_box">
-                    <a href="#;" class="nmm_menu_btn mmMenuBtn" title="메뉴열림닫힘"></a>
-                    <a href="/" class="nm_logo" title="크레존로고"></a>
-                    <!-- 통합검색 부분 : S -->
-                    <div class="stch_inner mmStchArea">
-                        <div class="sch_fild">
-                            <input type="text" class="sch_input" title="검색어입력" placeholder="검색어를 입력해주세요.">
-                            <a href="#;" class="sch_btn" title="검색하기"></a>
-                        </div>
-                        <div class="sch_pers nanum">
-                            <span class="tit">인기검색어</span>
-                            <ol class="scpers_lst">
-                                <li data-number="1">
-                                    <a href="#" class="txt">학부모창의교실</a>
-                                </li>
-                                <li data-number="2">
-                                    <a href="#" class="txt">해외창의</a>
-                                </li>
-                                <li data-number="3">
-                                    <a href="#" class="txt">수업모델</a>
-                                </li>
-                                <li data-number="4">
-                                    <a href="#" class="txt">현장학습</a>
-                                </li>
-                                <li data-number="5">
-                                    <a href="#" class="txt">체험활동</a>
-                                </li>
-                            </ol>
-                        </div>
-                        <a href="#" class="mm_sch_close mmSchCloseBtn" title="통합검색 닫기"></a>
-                        <ul class="sch_rt_lst">
-                            <li class="tp tp01">
-                                <a href="#" class="txt">교과지원 자료 검색</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- 통합검색 부분 : E -->
-                    <!-- <a href="#;" class="gnb_togg_btn gnbToggleBtn" title="메뉴열림닫힘"></a> -->
-                    <span class="stch_img">
-                        <span class="hidetxt">과학을 담아 미래로 창의를 펼쳐 현실로</span>
-                    </span>
-                    <a href="#;" class="nmm_totals_btn mmSchOpenBtn" title="통합검색 활성화 버튼"></a>
-                </div>
-            </div>
-            <div class="gnb_area">
-                <div class="in_box">
-                    <ul class="gnb_dp01 gnbDepthLst01">
-                        <li class="active">
-                            <a href="/subPage.html?page_id=3633" class="txt">창의교육</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li class="inDp03 active">
-                                    <a href="/subPage.html?page_id=3633" class="txt menuIdx" data-menuidx='[0,0,0]'>창의교육 수업모델</a>
-                                    <ul class="gnb_dp03 gnbDepthLst03">
-                                        <li class="inDp04 active">
-                                            <a href="/subPage.html?page_id=3633" class="txt menuIdx" data-menuidx='[0,0,0]'>창의ㆍ인성교육 수업모델 프로그램 개요</a>
-                                            <ul class="gnb_dp04 gnbDepthLst04">
-                                                <li class="active">
-                                                    <a href="#" class="txt">역사체험</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="txt">역사체험</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="txt">역사체험</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?crfile_cat=%ec%b0%bd%ec%9d%98%ec%9d%b8%ec%84%b1%ea%b5%90%ec%9c%a1-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[0,0,0]'>창의ㆍ인성교육 수업모델</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?crfile_cat=%ec%b0%bd%ec%9d%98%ec%9d%b8%ec%84%b1%ea%b5%90%ec%9c%a1-%ed%8f%89%ea%b0%80%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[0,0,1]'>창의ㆍ인성교육 평가모델</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?crfile_cat=%ec%b0%bd%ec%9d%98%ec%9d%b8%ec%84%b1-%ec%88%98%ec%97%85%ec%97%b0%ea%b5%ac%ed%9a%8c-%ec%9a%b0%ec%88%98%ec%82%ac%eb%a1%80" class="txt menuIdx" data-menuidx='[0,0,2]'>창의ㆍ인성 수업연구회 우수사례</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=510158" class="txt menuIdx" data-menuidx='[0,1]'>연구회 공개 자료방</a>
-                                </li>
-                                <li class="inDp03">
-                                    <a href="/subPage.html?page_id=490309" class="txt menuIdx" data-menuidx='[0,2,0]'>창의교육 교원연수</a>
-                                    <ul class="gnb_dp03 gnbDepthLst03">
-                                        <li>
-                                            <a href="/subPage.html?page_id=490309" class="txt menuIdx" data-menuidx='[0,2,0]'>창의교육 원격연수 신청</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=490307" class="txt menuIdx" data-menuidx='[0,2,1]'>지속가능발전교육 원격연수 신청</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=490308" class="txt menuIdx" data-menuidx='[0,2,2]'>자유학기제 꿈끼 프로그램 원격연수 신청</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=290773" class="txt menuIdx" data-menuidx='[0,2,3]'>자유학기제 현장포럼 신청</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=3652" class="txt menuIdx" data-menuidx='[0,2,4]'>창의교육 포럼 신청</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=124672" class="txt menuIdx" data-menuidx='[0,2,5]'>창의교육 현장포럼 동영상</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=526908" class="txt menuIdx" data-menuidx='[0,2,6]'>수도·중부권 창의교육 교원 연수 신청</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=526910" class="txt menuIdx" data-menuidx='[0,2,7]'>남부권 창의교육 교원 연수 신청</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="inDp03">
-                                    <a href="/subPage.html?page_id=447628" class="txt menuIdx" data-menuidx='[0,3,0]'>창의교육 거점센터</a>
-                                    <ul class="gnb_dp03 gnbDepthLst03">
-                                        <li>
-                                            <a href="/subPage.html?page_id=447628" class="txt menuIdx" data-menuidx='[0,3,0]'>소개</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=447628&m=notice" class="txt menuIdx" data-menuidx='[0,3,1]'>공지사항</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=447628&m=pds&M3=pds" class="txt menuIdx" data-menuidx='[0,3,2]'>자료실</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=447628&m=RCL&search_year=2017" class="txt menuIdx" data-menuidx='[0,3,3]'>커뮤니티 목록</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="inDp03">
-                                    <a href="/subPage.html?page_id=424573" class="txt menuIdx" data-menuidx='[0,4,0]'>창의교육 선도 교원양성대학</a>
-                                    <ul class="gnb_dp03 gnbDepthLst03">
-                                        <li>
-                                            <a href="/subPage.html?page_id=424573" class="txt menuIdx" data-menuidx='[0,4,0]'>소개</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=424573&m=notice" class="txt menuIdx" data-menuidx='[0,4,1]'>공지사항</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=424573&m=referenceroom&M3=referenceroom" class="txt menuIdx" data-menuidx='[0,4,2]'>자료실</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=424573&m=RCL&search_year=2017" class="txt menuIdx" data-menuidx='[0,4,3]'>커뮤니티 목록</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="inDp03">
-                                    <a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=1" class="txt menuIdx" data-menuidx='[0,5,0]'>창의교육 백문 백답</a>
-                                    <ul class="gnb_dp03 gnbDepthLst03">
-                                        <li>
-                                            <a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=1" class="txt menuIdx" data-menuidx='[0,5,0]'>수업‧ 평가방법 개선</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=2" class="txt menuIdx" data-menuidx='[0,5,1]'>교육과정 재구성‧ 운영</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=3" class="txt menuIdx" data-menuidx='[0,5,2]'>체험학습 기획‧ 운영</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=4" class="txt menuIdx" data-menuidx='[0,5,3]'>동아리 지도</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=5" class="txt menuIdx" data-menuidx='[0,5,4]'>학교경영‧ 행정</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=235305" class="txt menuIdx" data-menuidx='[0,6]'>창의 인성 수업연구회</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="/subPage.html?page_id=300" class="txt menuIdx" data-menuidx='[1,0]'>창의적 체험활동</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li>
-                                    <a href="/subPage.html?page_id=300" class="txt menuIdx" data-menuidx='[1,0]'>창의적 체험활동 소개</a>
-                                </li>
-                                <li class="inDp03">
-                                    <a href="/subPage.html?resourcecat=%EC%B2%B4%ED%97%98%EC%8B%9C%EC%84%A4" class="txt menuIdx" data-menuidx='[1,1,0]'>창의체험 자원</a>
-                                    <ul class="gnb_dp03 gnbDepthLst03">
-                                        <li>
-                                            <a href="/subPage.html?resourcecat=%EC%B2%B4%ED%97%98%EC%8B%9C%EC%84%A4" class="txt menuIdx" data-menuidx='[1,1,1]'>체험시설</a>
-                                        </li>
-                                        <li>
-                                            <a href="?resourcecat=%ec%a0%84%ec%8b%9c-%ea%b3%b5%ec%97%b0%ec%8b%9c%ec%84%a4" class="txt menuIdx" data-menuidx='[1,1,2]'>전시/공연시설</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?resourcecat=%eb%ac%b8%ed%99%94%ec%9e%ac-%ec%97%ad%ec%82%ac" class="txt menuIdx" data-menuidx='[1,1,3]'>문화재/역사</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?resourcecat=%ec%9e%90%ec%97%b0" class="txt menuIdx" data-menuidx='[1,1,4]'>자연</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?resourcecat=%ea%b4%80%ea%b3%b5%ec%84%9c" class="txt menuIdx" data-menuidx='[1,1,5]'>관공서</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?resourcecat=%ec%95%88%ec%a0%84-%ec%9d%98%eb%a3%8c-%eb%b3%b5%ec%a7%80%ec%8b%9c%ec%84%a4" class="txt menuIdx" data-menuidx='[1,1,6]'>안전/의료/복지시설</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?resourcecat=%ec%97%b0%ea%b5%ac%ec%8b%9c%ec%84%a4" class="txt menuIdx" data-menuidx='[1,1,7]'>연구시설</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="inDp03">
-                                    <a href="/subPage.html?programcat=%EC%B0%BD%EC%9D%98%EC%A0%81%EC%B2%B4%ED%97%98%ED%99%9C%EB%8F%99" class="txt menuIdx" data-menuidx='[1,2,0]'>창의체험 프로그램</a>
-                                    <ul class="gnb_dp03 gnbDepthLst03">
-                                        <li>
-                                            <a href="/subPage.html?programcat=%EC%B0%BD%EC%9D%98%EC%A0%81%EC%B2%B4%ED%97%98%ED%99%9C%EB%8F%99" class="txt menuIdx" data-menuidx='[1,2,0]'>창의적 체험활동</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?programcat=%ec%a7%84%eb%a1%9c%ec%a7%81%ec%97%85%ec%b2%b4%ed%97%98" class="txt menuIdx" data-menuidx='[1,2,1]'>진로직업체험</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?programcat=%ea%b5%90%ea%b3%bc%ed%95%99%ec%8a%b5%ec%a7%80%ec%9b%90" class="txt menuIdx" data-menuidx='[1,2,2]'>교과학습지원</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="inDp03">
-                                    <a href="/subPage.html?crmodelcat=%ec%88%98%eb%8f…%b4%ed%97%98-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,0]'>창의체험 수업모델</a>
-                                    <ul class="gnb_dp03 gnbDepthLst03">
-                                        <li>
-                                            <a href="/subPage.html?crmodelcat=%ec%88%98%eb%8f%84%ea%b6%8c-%ec%b0%bd%ec%9d%98%ec%b2%b4%ed%97%98-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,0]'>수도권 창의체험 수업모델</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?crmodelcat=%ea%b0%95%ec%9b%90%e3%86%8d%ec%b6%a9%ec%b2%ad%ea%b6%8c-%ec%b0%bd%ec%9d%98%ec%b2%b4%ed%97%98-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,1]'>강원ㆍ충청권 창의체험 수업모델</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?crmodelcat=%ec%98%81%eb%82%a8%ea%b6%8c-%ec%b0%bd%ec%9d%98%ec%b2%b4%ed%97%98-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,2]'>영남권 창의체험 수업모델</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?crmodelcat=%ec%a0%9c%ec%a3%bc%e3%86%8d%ec%a0%84%eb%9d%bc%ea%b6%8c-%ec%b0%bd%ec%9d%98%ec%b2%b4%ed%97%98-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,3]'>제주ㆍ전라권 창의체험 수업모델</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?crmodelcat=%ea%b3%84%ea%b8%b0%ea%b5%90%ec%9c%a1-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,4]'>계기교육 수업모델</a>
-                                        </li>
-                                        <li>
-                                            <a href="/subPage.html?crmodelcat=%eb%b2%94%ea%b5%90%ea%b3%bc-100%eb%8c%80-%ec%a3%bc%ec%a0%9c-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,5]'>범교과 수업모델</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=424070&n=1&m=9" class="txt menuIdx" data-menuidx='[1,4,0]'>이달의 추천 큐레이션</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=289452" class="txt menuIdx" data-menuidx='[1,5,0]'>창의적 체험활동 실천 교사연구회</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="/subPage.html?page_id=153545" class="txt menuIdx" data-menuidx='[2,0]'>현장체험학습</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li>
-                                    <a href="신규링크생성" class="txt menuIdx" data-menuidx='[2,0]'>현장체험학습이란?</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=153545" class="txt menuIdx" data-menuidx='[2,1]'>현장체험학습 모델</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=152872" class="txt menuIdx" data-menuidx='[2,2]'>시도교육청 현장학습 공개방</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=433738" class="txt menuIdx" data-menuidx='[2,3]'>현장체험학습 자료실</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=126126" data-anthref='["/subPage.html?page_id=126125"]' class="txt menuIdx" data-menuidx='[2,4]'>안전요원 구인/구직</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="/subPage.html?crfile_cat=%EC%A7%80%EC%86%8D%EA%B0%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B5%90%EC%9C%A1-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8" class="txt menuIdx" data-menuidx='[3,0]'>지속가능발전교육</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li>
-                                    <a href="/subPage.html?crfile_cat=%EC%A7%80%EC%86%8D%EA%B0%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B5%90%EC%9C%A1-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8" class="txt menuIdx" data-menuidx='[3,0]'>지속가능발전교육 수업모델</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=235309" class="txt menuIdx" data-menuidx='[3,1]'>지속가능발전교육 실천 교사연구회</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="/subPage.html?page_id=124865" class="txt menuIdx" data-menuidx='[4,0]'>크레존 블로그</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li>
-                                    <a href="/subPage.html?page_id=125102" class="txt menuIdx" data-menuidx='[4,0]'>해외창의 이야기</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=125052" class="txt menuIdx" data-menuidx='[4,1]'>행복학교 이야기</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=127718" class="txt menuIdx" data-menuidx='[4,2]'>창의교육 이야기</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=514204" class="txt menuIdx" data-menuidx='[4,3]'>테마여행 이야기</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=124865" class="txt menuIdx" data-menuidx='[4,4]'>뉴스레터</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=425864" class="txt menuIdx" data-menuidx='[4,5]'>카드뉴스</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="tp tp01">
-                            <a href="/subPage.html?page_id=529834" class="txt menuIdx" data-menuidx='[5,0]'>학부모 창의길잡이</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li>
-                                    <a href="/subPage.html?page_id=529834" class="txt menuIdx" data-menuidx='[5,0]'>프로그램 개요</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?ebook_cat=%eb%a9%80%ed%8b%…%b8%eb%94%94%ec%96%b4-%ec%9e%90%eb%a3%8c%ec%8b%a4" class="txt menuIdx" data-menuidx='[5,1]'>프로그램 체험하기</a>
-                                </li>
-                                <!--<li>
+<!-- 상단배너 : S -->
+<script type="text/javascript">
+$(document).ready(function() {
+	gnbMenuActFun.init();
+	/*var menupars = (function() {
+	    MENU.forEach(function(i, idx) {
+	        $('.gnbDepthLst01').append('<li><a href="' + i[0][1] + '" class="txt">' + i[0][0] + '</a><ul class="gnb_dp02 nanum gnbDepthLst02"></ul></li>');
+	        i[1].forEach(function(j, idx2) {
+	            if (!j[2]) {
+	                $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02').append('<li><a href="' + j[1] + '" class="txt">' + j[0] + '</a></li>');
+	            } else {
+	                $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02').append('<li class="inDp03"><a href="' + j[1] + '" class="txt">' + j[0] + '</a><ul class="gnb_dp03 gnbDepthLst03"></ul></li>');
+	                j[2].forEach(function(q) {
+	                    $('.gnbDepthLst01>li:eq(' + idx + ')>.gnbDepthLst02>li:eq(' + idx2 + ')>.gnbDepthLst03').append('<li><a href="' + q[1] + '" class="txt">' + q[0] + '</a></li>');
+	                });
+	            }
+	        });
+	    });
+	})();*/
+	$(this).find('.tbccCloseBtn').click(function() {
+		$('.tbccCloseBanner').slideToggle();
+	});
+	//메인 공통탭
+	$(this).find('.cmmShowHideTabs').each(function() {
+		//var tabInSlideOn = $(this).closest('.nm_ncps').length ? true : false;
+		var tabInSlideOn = $(this).is('.nm_nc') ? true : $(this).closest('.ptncm_area').length ? true : false;
+		$(this).cmmShowHideTabs({
+			tabUl: '.cmmShowHideTabsUl',
+			tabDivs: '.cmmShowHideTabsDiv',
+			tabInSlide: tabInSlideOn,
+			callb: function(p, z, o) {
+				if (tabInSlideOn) {
+					$('.nm_ncps').find('.contr').hide();
+					$('.nm_ncps').find('.tab_divs_in:eq(' + z + ') .contr').show();
+					$('.nm_ncps').find('.tab_divs_more').hide();
+					$('.nm_ncps').find('.tab_divs_in:eq(' + z + ') .tab_divs_more').show();
+				}
+			},
+		});
+	});
+	/* 3월 개편 추가 : S*/
+	$(this).find('.stchImgSlide').uiSwiper({
+		slideObj: {
+			draggable: false,
+			dots: true
+		},
+		uiBtnsApp: {
+			uiShortDot: true
+		}
+	});
+	/* 3월 개편 추가 : E*/
+});
+</script>
+<!-- 상단배너 : E -->
+<div class="st_inf nanum">
+	<div class="in_box clearfix">
+		<a href="#;" class="stif_btn">자원관리자 신청</a>
+		<a href="#;" class="stif_btn tp2">뉴스레터 신청</a>
+		<ul class="stif_lst stInfAppendEl">
+			<li class="stInfAppendLst">
+				<a href="#" class="txt">크레존 소개</a>
+			</li>
+			<li>
+				<a href="#" class="txt">로그인</a>
+			</li>
+			<li>
+				<a href="#" class="txt">회원가입</a>
+			</li>
+			<li class="stInfAppendLst">
+				<a href="#" class="txt">이벤트</a>
+			</li>
+			<li class="stInfAppendLst">
+				<a href="#" class="txt">고객센터</a>
+			</li>
+			<li class="stInfAppendLst">
+				<a href="#" class="txt">자료실</a>
+			</li>
+			<li>
+				<a href="#" class="txt">교직원등록</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="st_sch">
+	<div class="in_box">
+		<a href="#;" class="nmm_menu_btn mmMenuBtn" title="메뉴열림닫힘"></a>
+		<a href="/" class="nm_logo" title="크레존로고"></a>
+		<!-- 통합검색 부분 : S -->
+		<div class="stch_inner mmStchArea">
+			<div class="sch_fild">
+				<input type="text" class="sch_input" title="검색어입력" placeholder="검색어를 입력해주세요.">
+				<a href="#;" class="sch_btn" title="검색하기"></a>
+			</div>
+			<div class="sch_pers nanum">
+				<span class="tit">인기검색어</span>
+				<ol class="scpers_lst">
+					<li data-number="1">
+						<a href="#" class="txt">학부모창의교실</a>
+					</li>
+					<li data-number="2">
+						<a href="#" class="txt">해외창의</a>
+					</li>
+					<li data-number="3">
+						<a href="#" class="txt">수업모델</a>
+					</li>
+					<li data-number="4">
+						<a href="#" class="txt">현장학습</a>
+					</li>
+					<li data-number="5">
+						<a href="#" class="txt">체험활동</a>
+					</li>
+				</ol>
+			</div>
+			<a href="#" class="mm_sch_close mmSchCloseBtn" title="통합검색 닫기"></a>
+			<ul class="sch_rt_lst">
+				<li class="tp tp01">
+					<a href="#" class="txt">교과지원 자료 검색</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 통합검색 부분 : E -->
+		<!-- <a href="#;" class="gnb_togg_btn gnbToggleBtn" title="메뉴열림닫힘"></a> -->
+		<!-- ### 3월개편 추가 :S -->
+		<div class="stch_img">
+			<div class="in stchImgSlide">
+				<a href="#" class="img" style="background-image: url('./reRsrc/images/banimg/banto02.jpg')">
+					<span class="hidetxt">과학을 담아 미래로 창의를 펼쳐 현실로</span>
+				</a>
+				<a href="#" class="img" style="background-image: url('./reRsrc/images/banimg/banto02.jpg')">
+					<span class="hidetxt">과학을 담아 미래로 창의를 펼쳐 현실로</span>
+				</a>
+			</div>
+		</div>
+		<!-- ### 3월개편 추가 :E -->
+		<a href="#;" class="nmm_totals_btn mmSchOpenBtn" title="통합검색 활성화 버튼"></a>
+	</div>
+</div>
+<div class="gnb_area">
+	<div class="in_box">
+		<a href="#" class="gnb_toggle_btn gnbToggleBtn" title="전체메뉴토글버튼"></a>
+		<ul class="gnb_dp01 gnbDepthLst01">
+			<li class="active">
+				<a href="/subPage.html?page_id=3633" class="txt">창의교육</a>
+				<ul class="gnb_dp02 nanum gnbDepthLst02">
+					<li class="inDp03 active">
+						<a href="/subPage.html?page_id=3633" class="txt menuIdx" data-menuidx='[0,0,0]'>창의교육 수업모델</a>
+						<ul class="gnb_dp03 gnbDepthLst03">
+							<li class="inDp04 active">
+								<a href="/subPage.html?page_id=3633" class="txt menuIdx" data-menuidx='[0,0,0]'>창의ㆍ인성교육 수업모델 프로그램 개요</a>
+								<ul class="gnb_dp04 gnbDepthLst04">
+									<li class="active">
+										<a href="#" class="txt">역사체험</a>
+									</li>
+									<li>
+										<a href="#" class="txt">역사체험</a>
+									</li>
+									<li>
+										<a href="#" class="txt">역사체험</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="/subPage.html?crfile_cat=%ec%b0%bd%ec%9d%98%ec%9d%b8%ec%84%b1%ea%b5%90%ec%9c%a1-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[0,0,0]'>창의ㆍ인성교육 수업모델</a>
+							</li>
+							<li>
+								<a href="/subPage.html?crfile_cat=%ec%b0%bd%ec%9d%98%ec%9d%b8%ec%84%b1%ea%b5%90%ec%9c%a1-%ed%8f%89%ea%b0%80%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[0,0,1]'>창의ㆍ인성교육 평가모델</a>
+							</li>
+							<li>
+								<a href="/subPage.html?crfile_cat=%ec%b0%bd%ec%9d%98%ec%9d%b8%ec%84%b1-%ec%88%98%ec%97%85%ec%97%b0%ea%b5%ac%ed%9a%8c-%ec%9a%b0%ec%88%98%ec%82%ac%eb%a1%80" class="txt menuIdx" data-menuidx='[0,0,2]'>창의ㆍ인성 수업연구회 우수사례</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=510158" class="txt menuIdx" data-menuidx='[0,1]'>연구회 공개 자료방</a>
+					</li>
+					<li class="inDp03">
+						<a href="/subPage.html?page_id=490309" class="txt menuIdx" data-menuidx='[0,2,0]'>창의교육 교원연수</a>
+						<ul class="gnb_dp03 gnbDepthLst03">
+							<li>
+								<a href="/subPage.html?page_id=490309" class="txt menuIdx" data-menuidx='[0,2,0]'>창의교육 원격연수 신청</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=490307" class="txt menuIdx" data-menuidx='[0,2,1]'>지속가능발전교육 원격연수 신청</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=490308" class="txt menuIdx" data-menuidx='[0,2,2]'>자유학기제 꿈끼 프로그램 원격연수 신청</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=290773" class="txt menuIdx" data-menuidx='[0,2,3]'>자유학기제 현장포럼 신청</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=3652" class="txt menuIdx" data-menuidx='[0,2,4]'>창의교육 포럼 신청</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=124672" class="txt menuIdx" data-menuidx='[0,2,5]'>창의교육 현장포럼 동영상</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=526908" class="txt menuIdx" data-menuidx='[0,2,6]'>수도·중부권 창의교육 교원 연수 신청</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=526910" class="txt menuIdx" data-menuidx='[0,2,7]'>남부권 창의교육 교원 연수 신청</a>
+							</li>
+						</ul>
+					</li>
+					<li class="inDp03">
+						<a href="/subPage.html?page_id=447628" class="txt menuIdx" data-menuidx='[0,3,0]'>창의교육 거점센터</a>
+						<ul class="gnb_dp03 gnbDepthLst03">
+							<li>
+								<a href="/subPage.html?page_id=447628" class="txt menuIdx" data-menuidx='[0,3,0]'>소개</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=447628&m=notice" class="txt menuIdx" data-menuidx='[0,3,1]'>공지사항</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=447628&m=pds&M3=pds" class="txt menuIdx" data-menuidx='[0,3,2]'>자료실</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=447628&m=RCL&search_year=2017" class="txt menuIdx" data-menuidx='[0,3,3]'>커뮤니티 목록</a>
+							</li>
+						</ul>
+					</li>
+					<li class="inDp03">
+						<a href="/subPage.html?page_id=424573" class="txt menuIdx" data-menuidx='[0,4,0]'>창의교육 선도 교원양성대학</a>
+						<ul class="gnb_dp03 gnbDepthLst03">
+							<li>
+								<a href="/subPage.html?page_id=424573" class="txt menuIdx" data-menuidx='[0,4,0]'>소개</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=424573&m=notice" class="txt menuIdx" data-menuidx='[0,4,1]'>공지사항</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=424573&m=referenceroom&M3=referenceroom" class="txt menuIdx" data-menuidx='[0,4,2]'>자료실</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=424573&m=RCL&search_year=2017" class="txt menuIdx" data-menuidx='[0,4,3]'>커뮤니티 목록</a>
+							</li>
+						</ul>
+					</li>
+					<li class="inDp03">
+						<a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=1" class="txt menuIdx" data-menuidx='[0,5,0]'>창의교육 백문 백답</a>
+						<ul class="gnb_dp03 gnbDepthLst03">
+							<li>
+								<a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=1" class="txt menuIdx" data-menuidx='[0,5,0]'>수업‧ 평가방법 개선</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=2" class="txt menuIdx" data-menuidx='[0,5,1]'>교육과정 재구성‧ 운영</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=3" class="txt menuIdx" data-menuidx='[0,5,2]'>체험학습 기획‧ 운영</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=4" class="txt menuIdx" data-menuidx='[0,5,3]'>동아리 지도</a>
+							</li>
+							<li>
+								<a href="/subPage.html?page_id=126176&ctype=L&R=Y&C=5" class="txt menuIdx" data-menuidx='[0,5,4]'>학교경영‧ 행정</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=235305" class="txt menuIdx" data-menuidx='[0,6]'>창의 인성 수업연구회</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/subPage.html?page_id=300" class="txt menuIdx" data-menuidx='[1,0]'>창의적 체험활동</a>
+				<ul class="gnb_dp02 nanum gnbDepthLst02">
+					<li>
+						<a href="/subPage.html?page_id=300" class="txt menuIdx" data-menuidx='[1,0]'>창의적 체험활동 소개</a>
+					</li>
+					<li class="inDp03">
+						<a href="/subPage.html?resourcecat=%EC%B2%B4%ED%97%98%EC%8B%9C%EC%84%A4" class="txt menuIdx" data-menuidx='[1,1,0]'>창의체험 자원</a>
+						<ul class="gnb_dp03 gnbDepthLst03">
+							<li>
+								<a href="/subPage.html?resourcecat=%EC%B2%B4%ED%97%98%EC%8B%9C%EC%84%A4" class="txt menuIdx" data-menuidx='[1,1,1]'>체험시설</a>
+							</li>
+							<li>
+								<a href="?resourcecat=%ec%a0%84%ec%8b%9c-%ea%b3%b5%ec%97%b0%ec%8b%9c%ec%84%a4" class="txt menuIdx" data-menuidx='[1,1,2]'>전시/공연시설</a>
+							</li>
+							<li>
+								<a href="/subPage.html?resourcecat=%eb%ac%b8%ed%99%94%ec%9e%ac-%ec%97%ad%ec%82%ac" class="txt menuIdx" data-menuidx='[1,1,3]'>문화재/역사</a>
+							</li>
+							<li>
+								<a href="/subPage.html?resourcecat=%ec%9e%90%ec%97%b0" class="txt menuIdx" data-menuidx='[1,1,4]'>자연</a>
+							</li>
+							<li>
+								<a href="/subPage.html?resourcecat=%ea%b4%80%ea%b3%b5%ec%84%9c" class="txt menuIdx" data-menuidx='[1,1,5]'>관공서</a>
+							</li>
+							<li>
+								<a href="/subPage.html?resourcecat=%ec%95%88%ec%a0%84-%ec%9d%98%eb%a3%8c-%eb%b3%b5%ec%a7%80%ec%8b%9c%ec%84%a4" class="txt menuIdx" data-menuidx='[1,1,6]'>안전/의료/복지시설</a>
+							</li>
+							<li>
+								<a href="/subPage.html?resourcecat=%ec%97%b0%ea%b5%ac%ec%8b%9c%ec%84%a4" class="txt menuIdx" data-menuidx='[1,1,7]'>연구시설</a>
+							</li>
+						</ul>
+					</li>
+					<li class="inDp03">
+						<a href="/subPage.html?programcat=%EC%B0%BD%EC%9D%98%EC%A0%81%EC%B2%B4%ED%97%98%ED%99%9C%EB%8F%99" class="txt menuIdx" data-menuidx='[1,2,0]'>창의체험 프로그램</a>
+						<ul class="gnb_dp03 gnbDepthLst03">
+							<li>
+								<a href="/subPage.html?programcat=%EC%B0%BD%EC%9D%98%EC%A0%81%EC%B2%B4%ED%97%98%ED%99%9C%EB%8F%99" class="txt menuIdx" data-menuidx='[1,2,0]'>창의적 체험활동</a>
+							</li>
+							<li>
+								<a href="/subPage.html?programcat=%ec%a7%84%eb%a1%9c%ec%a7%81%ec%97%85%ec%b2%b4%ed%97%98" class="txt menuIdx" data-menuidx='[1,2,1]'>진로직업체험</a>
+							</li>
+							<li>
+								<a href="/subPage.html?programcat=%ea%b5%90%ea%b3%bc%ed%95%99%ec%8a%b5%ec%a7%80%ec%9b%90" class="txt menuIdx" data-menuidx='[1,2,2]'>교과학습지원</a>
+							</li>
+						</ul>
+					</li>
+					<li class="inDp03">
+						<a href="/subPage.html?crmodelcat=%ec%88%98%eb%8f…%b4%ed%97%98-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,0]'>창의체험 수업모델</a>
+						<ul class="gnb_dp03 gnbDepthLst03">
+							<li>
+								<a href="/subPage.html?crmodelcat=%ec%88%98%eb%8f%84%ea%b6%8c-%ec%b0%bd%ec%9d%98%ec%b2%b4%ed%97%98-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,0]'>수도권 창의체험 수업모델</a>
+							</li>
+							<li>
+								<a href="/subPage.html?crmodelcat=%ea%b0%95%ec%9b%90%e3%86%8d%ec%b6%a9%ec%b2%ad%ea%b6%8c-%ec%b0%bd%ec%9d%98%ec%b2%b4%ed%97%98-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,1]'>강원ㆍ충청권 창의체험 수업모델</a>
+							</li>
+							<li>
+								<a href="/subPage.html?crmodelcat=%ec%98%81%eb%82%a8%ea%b6%8c-%ec%b0%bd%ec%9d%98%ec%b2%b4%ed%97%98-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,2]'>영남권 창의체험 수업모델</a>
+							</li>
+							<li>
+								<a href="/subPage.html?crmodelcat=%ec%a0%9c%ec%a3%bc%e3%86%8d%ec%a0%84%eb%9d%bc%ea%b6%8c-%ec%b0%bd%ec%9d%98%ec%b2%b4%ed%97%98-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,3]'>제주ㆍ전라권 창의체험 수업모델</a>
+							</li>
+							<li>
+								<a href="/subPage.html?crmodelcat=%ea%b3%84%ea%b8%b0%ea%b5%90%ec%9c%a1-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,4]'>계기교육 수업모델</a>
+							</li>
+							<li>
+								<a href="/subPage.html?crmodelcat=%eb%b2%94%ea%b5%90%ea%b3%bc-100%eb%8c%80-%ec%a3%bc%ec%a0%9c-%ec%88%98%ec%97%85%eb%aa%a8%eb%8d%b8" class="txt menuIdx" data-menuidx='[1,3,5]'>범교과 수업모델</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=424070&n=1&m=9" class="txt menuIdx" data-menuidx='[1,4,0]'>이달의 추천 큐레이션</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=289452" class="txt menuIdx" data-menuidx='[1,5,0]'>창의적 체험활동 실천 교사연구회</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/subPage.html?page_id=153545" class="txt menuIdx" data-menuidx='[2,0]'>현장체험학습</a>
+				<ul class="gnb_dp02 nanum gnbDepthLst02">
+					<li>
+						<a href="신규링크생성" class="txt menuIdx" data-menuidx='[2,0]'>현장체험학습이란?</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=153545" class="txt menuIdx" data-menuidx='[2,1]'>현장체험학습 모델</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=152872" class="txt menuIdx" data-menuidx='[2,2]'>시도교육청 현장학습 공개방</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=433738" class="txt menuIdx" data-menuidx='[2,3]'>현장체험학습 자료실</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=126126" data-anthref='["/subPage.html?page_id=126125"]' class="txt menuIdx" data-menuidx='[2,4]'>안전요원 구인/구직</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/subPage.html?crfile_cat=%EC%A7%80%EC%86%8D%EA%B0%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B5%90%EC%9C%A1-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8" class="txt menuIdx" data-menuidx='[3,0]'>지속가능발전교육</a>
+				<ul class="gnb_dp02 nanum gnbDepthLst02">
+					<li>
+						<a href="/subPage.html?crfile_cat=%EC%A7%80%EC%86%8D%EA%B0%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B5%90%EC%9C%A1-%EC%88%98%EC%97%85%EB%AA%A8%EB%8D%B8" class="txt menuIdx" data-menuidx='[3,0]'>지속가능발전교육 수업모델</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=235309" class="txt menuIdx" data-menuidx='[3,1]'>지속가능발전교육 실천 교사연구회</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/subPage.html?page_id=124865" class="txt menuIdx" data-menuidx='[4,0]'>크레존 블로그</a>
+				<ul class="gnb_dp02 nanum gnbDepthLst02">
+					<li>
+						<a href="/subPage.html?page_id=125102" class="txt menuIdx" data-menuidx='[4,0]'>해외창의 이야기</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=125052" class="txt menuIdx" data-menuidx='[4,1]'>행복학교 이야기</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=127718" class="txt menuIdx" data-menuidx='[4,2]'>창의교육 이야기</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=514204" class="txt menuIdx" data-menuidx='[4,3]'>테마여행 이야기</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=124865" class="txt menuIdx" data-menuidx='[4,4]'>뉴스레터</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=425864" class="txt menuIdx" data-menuidx='[4,5]'>카드뉴스</a>
+					</li>
+				</ul>
+			</li>
+			<li class="tp tp01">
+				<a href="/subPage.html?page_id=529834" class="txt menuIdx" data-menuidx='[5,0]'>학부모 창의길잡이</a>
+				<ul class="gnb_dp02 nanum gnbDepthLst02">
+					<li>
+						<a href="/subPage.html?page_id=529834" class="txt menuIdx" data-menuidx='[5,0]'>프로그램 개요</a>
+					</li>
+					<li>
+						<a href="/subPage.html?ebook_cat=%eb%a9%80%ed%8b%…%b8%eb%94%94%ec%96%b4-%ec%9e%90%eb%a3%8c%ec%8b%a4" class="txt menuIdx" data-menuidx='[5,1]'>프로그램 체험하기</a>
+					</li>
+					<!--<li>
                         <a href="/subPage.html?ebook_cat=%eb%a9%80%ed%8b%…%b8%eb%94%94%ec%96%b4-%ec%9e%90%eb%a3%8c%ec%8b%a4" class="txt menuIdx" data-menuidx='[5,2]'>프로그램 전체보기</a>
                     </li>-->
-                            </ul>
-                        </li>
-                        <li style="display: none;">
-                            <a href="/subPage.html?page_id=163" class="txt">자료실</a>
-                            <ul class="gnb_dp02 nanum gnbDepthLst02">
-                                <li>
-                                    <a href="/subPage.html?page_id=163" class="txt">문서 자료실</a>
-                                </li>
-                                <li>
-                                    <a href="?ebook_cat=%EB%A9%80%ED%8B%B0%EB%AF%B8%EB%94%94%EC%96%B4-%EC%9E%90%EB%A3%8C%EC%8B%A4" class="txt">멀티미디어 자료실</a>
-                                </li>
-                                <li>
-                                    <a href="/subPage.html?page_id=496939" class="txt">글로벌 창의포험 자료실 </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="gnb_bl_dm gnbBlGround">
-                        <a href="#;" class="gnb_close gnbCloseBtn" title="메뉴닫기"></a>
-                    </div>
-                </div>
-            </div>
-            <!-- mm_gnb_area : S -->
-            <div class="mm_gnb_wrap mmGnbWrap">
-                <div class="mm_gnb_area_inbx mmGnbAreaInbx">
-                    <!-- mmgnb_top : S -->
-                    <div class="mmgnb_top">
-                        <div class="cl2">
-                            <div class="mmgnbt_in">
-                                <a href="#" class="txt log">로그아웃</a>
-                                <a href="#" class="txt mycrezone">My크레존</a>
-                            </div>
-                        </div>
-                        <div class="cl2">
-                            <div class="mmgnbt_in">
-                                <a href="#" class="txt ico_book">교과지원 자료 검색</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- mmgnb_top : E -->
-                    <div class="mm_gnb_area">
-                        <ul class="gnb_dp01 mmGnbDepthLst01">
-                            <!-- 상단 gnb list append  -->
-                        </ul>
-                        <div class="mm_gnbbt">
-                            <a href="#" class="ln_txt">교직원 등록</a>
-                            <a href="#" class="ln_txt blk">교직원 등록</a>
-                        </div>
-                    </div>
-                    <a href="#;" class="mm_gnb_close_btn mmGnbCloseBtn" title="메뉴닫기"></a>
-                </div>
-                <div class="gl_dimm glDimm"></div>
-            </div>
-            <!-- mm_gnb_area : E -->
+				</ul>
+			</li>
+			<li style="display: none;">
+				<a href="/subPage.html?page_id=163" class="txt">자료실</a>
+				<ul class="gnb_dp02 nanum gnbDepthLst02">
+					<li>
+						<a href="/subPage.html?page_id=163" class="txt">문서 자료실</a>
+					</li>
+					<li>
+						<a href="?ebook_cat=%EB%A9%80%ED%8B%B0%EB%AF%B8%EB%94%94%EC%96%B4-%EC%9E%90%EB%A3%8C%EC%8B%A4" class="txt">멀티미디어 자료실</a>
+					</li>
+					<li>
+						<a href="/subPage.html?page_id=496939" class="txt">글로벌 창의포험 자료실 </a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<div class="gnb_bl_dm gnbBlGround">
+			<a href="#;" class="gnb_close gnbCloseBtn" title="메뉴닫기"></a>
+		</div>
+	</div>
+</div>
+<!-- mm_gnb_area : S -->
+<div class="mm_gnb_wrap mmGnbWrap">
+	<div class="mm_gnb_area_inbx mmGnbAreaInbx">
+		<!-- mmgnb_top : S -->
+		<div class="mmgnb_top">
+			<div class="cl2">
+				<div class="mmgnbt_in">
+					<a href="#" class="txt log">로그아웃</a>
+					<a href="#" class="txt mycrezone">My크레존</a>
+				</div>
+			</div>
+			<div class="cl2">
+				<div class="mmgnbt_in">
+					<a href="#" class="txt ico_book">교과지원 자료 검색</a>
+				</div>
+			</div>
+		</div>
+		<!-- mmgnb_top : E -->
+		<div class="mm_gnb_area">
+			<ul class="gnb_dp01 mmGnbDepthLst01">
+				<!-- 상단 gnb list append  -->
+			</ul>
+			<div class="mm_gnbbt">
+				<a href="#" class="ln_txt">교직원 등록</a>
+				<a href="#" class="ln_txt blk">교직원 등록</a>
+			</div>
+		</div>
+		<a href="#;" class="mm_gnb_close_btn mmGnbCloseBtn" title="메뉴닫기"></a>
+	</div>
+	<div class="gl_dimm glDimm"></div>
+</div>
+<!-- mm_gnb_area : E

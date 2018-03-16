@@ -97,7 +97,7 @@
                         tabDivs: '.cmmShowHideTabsDiv',
                         tabInSlide: tabInSlideOn,
                         callb: function(p, z, o) {
-                            if (tabInSlideOn) {
+                            if(tabInSlideOn) {
                                 $('.nm_ncps').find('.contr').hide();
                                 $('.nm_ncps').find('.tab_divs_in:eq(' + z + ') .contr').show();
                                 $('.nm_ncps').find('.tab_divs_more').hide();
@@ -564,7 +564,7 @@
                     </div>
                     <!-- 사이드메뉴 : E -->
                     <div class="cont_bx">
-                        222
+                        <div style="height: 890px;"></div>
                     </div>
                 </div>
             </div>
@@ -611,6 +611,8 @@
                         autoplaySpeed: 500000,
                         slidesToShow: 5,
                         slidesToScroll: 1,
+                        infinite: true,
+                        variableWidth: true,
                         dots: false,
                         responsive: [{
                                 breakpoint: 980,
@@ -640,20 +642,45 @@
             <div class="nm_foot_top">
                 <div class="in_box">
                     <div class="nmft_in nmFootSlideBanner">
-                        <div class="items">
-                            <img src="./reRsrc/images/footer/top_img01.png" alt="교육부" />
+                        <div class="items tp tp01">
+                            <a href="http://www.moe.go.kr/main.do" target="_blank" title="새창열림">
+                                <img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img01.png" alt="교육부" />
+                            </a>
                         </div>
-                        <div class="items">
-                            <img src="./reRsrc/images/footer/top_img02.png" alt="한국과학창의재단" />
+                        <div class="items tp tp02">
+                            <a href="https://www.kofac.re.kr/" target="_blank" title="새창열림">
+                                <img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img02.png" alt="한국과학창의재단" />
+                            </a>
                         </div>
-                        <div class="items">
-                            <img src="./reRsrc/images/footer/top_img03.png" alt="EDUNETT-CLEAR" />
+                        <div class="items tp tp03">
+                            <a href="http://www.edunet.net/" target="_blank" title="새창열림">
+                                <img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img03.png" alt="EDUNETT-CLEAR" />
+                            </a>
                         </div>
-                        <div class="items">
-                            <img src="./reRsrc/images/footer/top_img04.png" alt="과학기술인재진로지원센터" />
+                        <div class="items tp tp04">
+                            <a href="http://www.ggoomgil.go.kr" target="_blank" title="새창열림">
+                                <img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img04.png" alt="자유학기제" />
+                            </a>
                         </div>
-                        <div class="items">
-                            <img src="./reRsrc/images/footer/top_img05.png" alt="YTNSCIENCE" />
+                        <div class="items tp tp05">
+                            <a href="http://career.go.kr" target="_blank" title="새창열림">
+                                <img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img05.png" alt="진로정보망커리어넷" />
+                            </a>
+                        </div>
+                        <div class="items tp tp06">
+                            <a href="http://www.teachforkorea.go.kr/" target="_blank" title="새창열림">
+                                <img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img06.png" alt="교육기구" />
+                            </a>
+                        </div>
+                        <div class="items tp tp07">
+                            <a href="http://www.unesco.or.kr" target="_blank" title="새창열림">
+                                <img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img07.png" alt="유네스코한국위원회" />
+                            </a>
+                        </div>
+                        <div class="items tp tp08">
+                            <a href="http://ncsd.go.kr/app/index.do" target="_blank" title="새창열림">
+                                <img src="http://www.crezone.net/wp-content/themes/crezone/reRsrc/images/footer/top_img08.png" alt="지속가능발전포털" />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -687,7 +714,7 @@
                     <div class="nmfb_rt">
                         <div class="st_sit stSiteSelectFun">
                             <label for="stSiteSelect" class="hidetxt">관련사이트 선택해주세요.</label>
-                            <select id="stSiteSelect" class="cstSelect" onchange="location.href= ''+this.value+'' ">
+                            <select id="stSiteSelect" class="cstSelect" onchange="window.open(this.value, '_blank')">
                                 <option value="">선택해주세요</option>
                                 <option value="https://www.kofac.re.kr/">한국과학창의재단</option>
                                 <option value="http://www.scienceall.com/">사이언스올</option>
